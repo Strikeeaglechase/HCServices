@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0104a367fa9d4fd11226fc9dfafebe3a, type: 3}
+  m_Name: appa3
+  m_EditorClassIdentifier:
+  mapID: appa3
+  mapName:
+  mapDescription:
+  mapLatitude: 0
+  mapLongitude: 0
+  mapConfig: 'VTMapCustom
+
+	{
+
+		mapID = appa3
+
+		mapType = HeightMap
+
+		edgeMode = Hills
+
+		biome = Desert
+
+		seed = seed
+
+		mapSize = 64
+
+		TerrainSettings
+
+		{
+
+		}
+
+		StaticPrefabs
+
+		{
+
+			StaticPrefab
+
+			{
+
+				prefab = airbase1
+
+				id = 2
+
+				globalPos = (180718.947265625, 643.531494140625, 176840.48681640625)
+
+				rotation = (0, 0, 0)
+
+				grid = (58,57)
+
+				tSpacePos = (-2542.948, 1736.487, 643.5313)
+
+				terrainToLocalMatrix = -1;0;0;-2542.947;0;-1.192093E-07;1;-643.5315;0;1;-1.192093E-07;-1736.487;0;0;0;1;
+
+			}
+
+			StaticPrefab
+
+			{
+
+				prefab = airbase1
+
+				id = 3
+
+				globalPos = (93185.38818359375, 1315.5634765625, 34211.66064453125)
+
+				rotation = (0, 67.80361, 0)
+
+				grid = (30,11)
+
+				tSpacePos = (-1025.388, 419.6606, 1315.563)
+
+				terrainToLocalMatrix = -0.3777825;-0.9258946;1.103752E-07;1.187951;0;-1.192093E-07;1;-1315.563;-0.9258947;0.3777825;-4.503517E-08;-1107.941;0;0;0;1;
+
+			}
+
+		}
+
+		RoadSystem
+
+		{
+
+		}
+
+	}
+
+	
+
+	'
+  heightMap: {fileID: 2800000, guid: 4e919574bea4d4545af44bc24008846b, type: 3}
+  splitHeightmaps: []
+  previewImage: {fileID: 2800000, guid: a34c520046447f948847e9ac1a1423b2, type: 3}

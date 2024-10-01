@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0104a367fa9d4fd11226fc9dfafebe3a, type: 3}
+  m_Name: emptyMap
+  m_EditorClassIdentifier:
+  mapID: emptyMap
+  mapName:
+  mapDescription:
+  mapLatitude: 0
+  mapLongitude: 0
+  mapConfig: 'VTMapCustom
+
+	{
+
+		mapID = emptyMap
+
+		mapName = 
+
+		mapDescription = 
+
+		mapType = HeightMap
+
+		edgeMode = Water
+
+		biome = Boreal
+
+		seed = QXiNKCjKhlVQloI
+
+		mapSize = 8
+
+		TerrainSettings
+
+		{
+
+			mainNoiseScale = 6
+
+			maxMtnHeight = 4000
+
+		}
+
+		StaticPrefabs
+
+		{
+
+		}
+
+		BezierRoads
+
+		{
+
+		}
+
+	}
+
+	
+
+	'
+  heightMap: {fileID: 2800000, guid: 9a56b238b96f36d489d951c74ed85255, type: 3}
+  splitHeightmaps:
+  - {fileID: 2800000, guid: 749b4e93fc4e95a43965020fb16b6f6b, type: 3}
+  - {fileID: 2800000, guid: 07e7a2936f7a0cc449f8085e77cca6f4, type: 3}
+  - {fileID: 2800000, guid: f2efbe6ef70881041b27df45dac856df, type: 3}
+  - {fileID: 2800000, guid: 629103091cdd81a498ce07b6d96926fc, type: 3}
+  previewImage: {fileID: 2800000, guid: 57493e57ba58f8945a8f023645eb8d1c, type: 3}

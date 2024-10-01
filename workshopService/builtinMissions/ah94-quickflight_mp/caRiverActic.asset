@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0104a367fa9d4fd11226fc9dfafebe3a, type: 3}
+  m_Name: caRiverActic
+  m_EditorClassIdentifier:
+  mapID: caRiverActic
+  mapName:
+  mapDescription:
+  mapLatitude: 0
+  mapLongitude: 0
+  mapConfig: 'VTMapCustom
+
+	{
+
+		mapID = caRiverActic
+
+		mapName = 
+
+		mapDescription = 
+
+		mapType = HeightMap
+
+		edgeMode = Hills
+
+		biome = Arctic
+
+		seed = seed
+
+		mapSize = 42
+
+		TerrainSettings
+
+		{
+
+		}
+
+		StaticPrefabs
+
+		{
+
+			StaticPrefab
+
+			{
+
+				prefab = airbase2
+
+				id = 0
+
+				globalPos = (113297, 588.2813720703125, 56386.370849609375)
+
+				rotation = (0, 152.7939, 0)
+
+				grid = (36,18)
+
+				tSpacePos = (-2705, 1090.371, 588.2813)
+
+				terrainToLocalMatrix = 0.8893676;-0.4571935;5.45017E-08;2904.249;0;-1.192093E-07;1;-588.2814;-0.4571936;-0.8893675;1.060208E-07;-266.968;0;0;0;1;
+
+				baseName = Airbase Alpha
+
+			}
+
+			StaticPrefab
+
+			{
+
+				prefab = airbase2
+
+				id = 1
+
+				globalPos = (18497.44189453125, 632.671142578125, 102832.84521484375)
+
+				rotation = (0, 326.3051, 0)
+
+				grid = (6,33)
+
+				tSpacePos = (-65.44191, 1456.845, 632.6711)
+
+				terrainToLocalMatrix = -0.8320037;0.5547705;-6.613379E-08;-862.6627;0;-1.192093E-07;1;-632.6711;0.5547705;0.8320036;-9.918254E-08;-1175.795;0;0;0;1;
+
+				baseName = Airbase Bravo
+
+			}
+
+		}
+
+		BezierRoads
+
+		{
+
+		}
+
+	}
+
+	
+
+	'
+  heightMap: {fileID: 2800000, guid: 790fd83b7b23053458019f3b93ea89b1, type: 3}
+  splitHeightmaps:
+  - {fileID: 2800000, guid: 4bfc8891cb7ab4542a80db323314fb96, type: 3}
+  - {fileID: 2800000, guid: 685e384bfda547343a072a87ca4272ab, type: 3}
+  - {fileID: 2800000, guid: 2524c7e511379d44394063be96d227b9, type: 3}
+  - {fileID: 2800000, guid: 8e9208fc4762ebf43af59d8dcb5dd0ce, type: 3}
+  previewImage: {fileID: 2800000, guid: 82b39e182f9487d4c8c098af11838bf8, type: 3}

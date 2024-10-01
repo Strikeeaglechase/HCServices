@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0104a367fa9d4fd11226fc9dfafebe3a, type: 3}
+  m_Name: as_desertMtns
+  m_EditorClassIdentifier:
+  mapID: as_desertMtns
+  mapName:
+  mapDescription:
+  mapLatitude: 0
+  mapLongitude: 0
+  mapConfig: 'VTMapCustom
+
+	{
+
+		mapID = as_desertMtns
+
+		mapName = AS_DesertMtns
+
+		mapDescription = A large desert map with scattered mountains, canyons, and plains.
+
+		mapType = HeightMap
+
+		edgeMode = Hills
+
+		biome = Desert
+
+		seed = seed
+
+		mapSize = 64
+
+		TerrainSettings
+
+		{
+
+		}
+
+		StaticPrefabs
+
+		{
+
+			StaticPrefab
+
+			{
+
+				prefab = airbase1
+
+				id = 0
+
+				globalPos = (76638.981689453125, 903.468017578125, 144192.40161132813)
+
+				rotation = (0, 282.7137, 0)
+
+				grid = (24,46)
+
+				tSpacePos = (-2910.982, 2880.402, 903.4679)
+
+				terrainToLocalMatrix = -0.2200803;0.975482;-1.162865E-07;-3450.429;0;-1.192093E-07;1;-903.468;0.9754821;0.2200803;-2.623561E-08;2205.69;0;0;0;1;
+
+				baseName = Lone Base
+
+			}
+
+		}
+
+		BezierRoads
+
+		{
+
+		}
+
+	}
+
+	
+
+	'
+  heightMap: {fileID: 2800000, guid: 92d173b775a0fe3498abe92823a944f6, type: 3}
+  splitHeightmaps:
+  - {fileID: 2800000, guid: a3f27f9b6cd9e124eac5f61ff402e34c, type: 3}
+  - {fileID: 2800000, guid: 452e5b0e807d6e54fab7b6932a42591d, type: 3}
+  - {fileID: 2800000, guid: 97aa1ef94e8ab8841b41b6430d21d146, type: 3}
+  - {fileID: 2800000, guid: e01d458f4254dc042aafb7eb42f8e049, type: 3}
+  previewImage: {fileID: 2800000, guid: a1594789a75a9e142b7af73207d3b0ec, type: 3}

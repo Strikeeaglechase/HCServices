@@ -1,0 +1,905 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ced814a33e77c0fb2c37c3fd3a58b5d4, type: 3}
+  m_Name: arcadeTutorial
+  m_EditorClassIdentifier:
+  campaignID: arcadeTutorial
+  hideFromMenu: 1
+  campaignConfig: 'CAMPAIGN
+
+	{
+
+		campaignID = arcadeTutorial
+
+		campaignName = Tutorials
+
+		description = Basic tutorials for the AV-42C
+
+		vehicle = AV-42C
+
+		startingEquips = 
+
+		availability = Sequential
+
+	}
+
+	'
+  image: {fileID: 2800000, guid: 76a448220b62b7542aa30366eaf1a0e6, type: 3}
+  scenarios:
+  - scenarioID: tut_gettingStarted
+    scenarioConfig: 'CustomScenario
+
+	{
+
+		campaignID = arcadeTutorial
+
+		campaignOrderIdx = 0
+
+		scenarioName = Getting Started
+
+		scenarioID = tut_gettingStarted
+
+		scenarioDescription = Cockpit familiarization, start-up procedures.
+
+		mapID = map_akutan
+
+		vehicle = AV-42C
+
+		allowedEquips = gau-8;m230;h70-x7;h70-4x4;mk82x1;mk82x2;mk82x3;agm89x1;gbu38x1;gbu38x2;gbu38x3;gbu39x3;gbu39x4u;cbu97x1;hellfirex4;maverickx1;maverickx3;cagm-6;sidewinderx1;sidewinderx2;sidewinderx3;iris-t-x1;iris-t-x2;iris-t-x3;
+
+		forcedEquips = ;;;;;;;
+
+		forceEquips = True
+
+		equipsConfigurable = False
+
+		baseBudget = 1000
+
+		isTraining = True
+
+		rtbWptID = 
+
+		refuelWptID = 
+
+		envName = day
+
+		selectableEnv = False
+
+		UNITS
+
+		{
+
+			UnitSpawner
+
+			{
+
+				unitName = Player
+
+				globalPosition = (29033.58740234375, 0.12939453125, 32082.000854492188)
+
+				unitInstanceID = 0
+
+				unitID = PlayerSpawn
+
+				rotation = (4.851132E-06, 288.3811, -9.18412E-06)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					startMode = Cold
+
+					initialSpeed = 0
+
+					unitGroup = null
+
+				}
+
+			}
+
+		}
+
+		PATHS
+
+		{
+
+		}
+
+		WAYPOINTS
+
+		{
+
+		}
+
+		UNITGROUPS
+
+		{
+
+		}
+
+		TimedEventGroups
+
+		{
+
+		}
+
+		TRIGGER_EVENTS
+
+		{
+
+		}
+
+		OBJECTIVES
+
+		{
+
+		}
+
+		StaticObjects
+
+		{
+
+			StaticObject
+
+			{
+
+				prefabID = Tut_GettingStarted
+
+				id = 0
+
+				globalPos = (28993.049964904785, 0.451416015625, 31986.965004920959)
+
+				rotation = (0, 1.105762E-13, 0)
+
+			}
+
+		}
+
+		Briefing
+
+		{
+
+			BRIEFING_NOTE
+
+			{
+
+				text = Today we will be learning how to operate the AV-42C.///n///nThe start-up procedure is not very complicated, so let''s jump in and get started.
+
+				imagePath = Images\av42c.png
+
+				audioClipPath = 
+
+			}
+
+		}
+
+		ResourceManifest
+
+		{
+
+			0 = Images\av42c.png
+
+		}
+
+	}
+
+	'
+    image: {fileID: 2800000, guid: ec837d87bf3f49446bafee21a9dab55d, type: 3}
+    images:
+    - {fileID: 2800000, guid: cebbb99bef578ce4697a340f534934ad, type: 3}
+    imagePaths:
+    - Images\av42c.png
+    audioClips: []
+    audioClipPaths: []
+    videoClips: []
+    videoClipPaths: []
+  - scenarioID: tut_weapons1
+    scenarioConfig: 'CustomScenario
+
+	{
+
+		campaignID = arcadeTutorial
+
+		campaignOrderIdx = 2
+
+		scenarioName = Basic Weapons
+
+		scenarioID = tut_weapons1
+
+		scenarioDescription = Learn how to use the cannon, rockets, and targeting system.
+
+		mapID = map_akutan
+
+		vehicle = AV-42C
+
+		allowedEquips = gau-8;m230;h70-x7;h70-4x4;mk82x1;mk82x2;mk82x3;agm89x1;gbu38x1;gbu38x2;gbu38x3;gbu39x3;gbu39x4u;cbu97x1;hellfirex4;maverickx1;maverickx3;cagm-6;sidewinderx1;sidewinderx2;sidewinderx3;iris-t-x1;iris-t-x2;iris-t-x3;
+
+		forcedEquips = gau-8;h70-4x4;h70-4x4;h70-4x4;h70-4x4;;;
+
+		forceEquips = True
+
+		equipsConfigurable = False
+
+		baseBudget = 1000
+
+		isTraining = True
+
+		rtbWptID = 
+
+		refuelWptID = 
+
+		envName = day
+
+		selectableEnv = False
+
+		UNITS
+
+		{
+
+			UnitSpawner
+
+			{
+
+				unitName = Player
+
+				globalPosition = (28993.099319458008, 0.45127367973327637, 31986.803291320801)
+
+				unitInstanceID = 0
+
+				unitID = PlayerSpawn
+
+				rotation = (2.987957E-06, 287.2588, -6.677647E-06)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					startMode = FlightReady
+
+					initialSpeed = 0
+
+					unitGroup = null
+
+				}
+
+			}
+
+		}
+
+		PATHS
+
+		{
+
+		}
+
+		WAYPOINTS
+
+		{
+
+		}
+
+		UNITGROUPS
+
+		{
+
+		}
+
+		TimedEventGroups
+
+		{
+
+		}
+
+		TRIGGER_EVENTS
+
+		{
+
+		}
+
+		OBJECTIVES
+
+		{
+
+		}
+
+		StaticObjects
+
+		{
+
+			StaticObject
+
+			{
+
+				prefabID = Tut_Weapons1
+
+				id = 0
+
+				globalPos = (28993.09930229187, 0.451416015625, 31986.803283691406)
+
+				rotation = (7.263473E-06, 2.599393E-13, 8.722483E-07)
+
+			}
+
+		}
+
+		Briefing
+
+		{
+
+			BRIEFING_NOTE
+
+			{
+
+				text = The AV-42C is capable of equipping various weapons.  Today you will learn how to use the 30mm GAU-8 cannon, and the Hydra-70 unguided rockets.  You will also learn how to find and acquire targets using the TGP.
+
+				imagePath = TheIsland\Training3\ti-t3_interiorThumbnail.png
+
+				audioClipPath = 
+
+			}
+
+		}
+
+		ResourceManifest
+
+		{
+
+			0 = TheIsland\Training3\ti-t3_interiorThumbnail.png
+
+		}
+
+	}
+
+	'
+    image: {fileID: 2800000, guid: 6bfcb8fe9342a8b4ca9314ed26b206f2, type: 3}
+    images:
+    - {fileID: 2800000, guid: c1b763bfc4ce1cd4da0edd396d1e756f, type: 3}
+    imagePaths:
+    - TheIsland\Training3\ti-t3_interiorThumbnail.png
+    audioClips: []
+    audioClipPaths: []
+    videoClips: []
+    videoClipPaths: []
+  - scenarioID: verticalFlight1
+    scenarioConfig: 'CustomScenario
+
+	{
+
+		campaignID = arcadeTutorial
+
+		campaignOrderIdx = 3
+
+		scenarioName = AP Vertical Flight
+
+		scenarioID = verticalFlight1
+
+		scenarioDescription = Learn how to use the hover autopilot feature.
+
+		mapID = map_akutan
+
+		vehicle = AV-42C
+
+		allowedEquips = gau-8;m230;h70-x7;h70-4x4;mk82x1;mk82x2;mk82x3;agm89x1;gbu38x1;gbu38x2;gbu38x3;gbu39x3;gbu39x4u;cbu97x1;hellfirex4;maverickx1;maverickx3;cagm-6;sidewinderx1;sidewinderx2;sidewinderx3;iris-t-x1;iris-t-x2;iris-t-x3;
+
+		forcedEquips = ;;;;;;;
+
+		forceEquips = True
+
+		equipsConfigurable = False
+
+		baseBudget = 1000
+
+		isTraining = True
+
+		rtbWptID = 
+
+		refuelWptID = 
+
+		envName = day
+
+		selectableEnv = False
+
+		UNITS
+
+		{
+
+			UnitSpawner
+
+			{
+
+				unitName = Player
+
+				globalPosition = (28993.124755859375, 0.4512939453125, 31986.886596679688)
+
+				unitInstanceID = 0
+
+				unitID = PlayerSpawn
+
+				rotation = (3.358034E-06, 290.4762, -6.499421E-06)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					startMode = FlightReady
+
+					initialSpeed = 0
+
+					unitGroup = null
+
+				}
+
+			}
+
+		}
+
+		PATHS
+
+		{
+
+		}
+
+		WAYPOINTS
+
+		{
+
+		}
+
+		UNITGROUPS
+
+		{
+
+		}
+
+		TimedEventGroups
+
+		{
+
+		}
+
+		TRIGGER_EVENTS
+
+		{
+
+		}
+
+		OBJECTIVES
+
+		{
+
+		}
+
+		StaticObjects
+
+		{
+
+			StaticObject
+
+			{
+
+				prefabID = VFTraining1Prefab
+
+				id = 0
+
+				globalPos = (28993.124765872955, 0.451416015625, 31986.886573791504)
+
+				rotation = (0, 1.105762E-13, 0)
+
+			}
+
+		}
+
+		Briefing
+
+		{
+
+			BRIEFING_NOTE
+
+			{
+
+				text = Vertical flight can be tricky, but by using the hover autopilot, you can take off, hover, and land with ease.
+
+				imagePath = Images\ti-t3_vtolThumbnail.png
+
+				audioClipPath = 
+
+			}
+
+		}
+
+		ResourceManifest
+
+		{
+
+			0 = Images\ti-t3_vtolThumbnail.png
+
+		}
+
+	}
+
+	'
+    image: {fileID: 2800000, guid: 500c43ec27bda1746bad5c319a714411, type: 3}
+    images:
+    - {fileID: 2800000, guid: 30154e4a6d3fbf740b00e50ccf562fa6, type: 3}
+    imagePaths:
+    - Images\ti-t3_vtolThumbnail.png
+    audioClips: []
+    audioClipPaths: []
+    videoClips: []
+    videoClipPaths: []
+  - scenarioID: tut_basicFlight
+    scenarioConfig: 'CustomScenario
+
+	{
+
+		gameVersion = 0.0.14p18
+
+		campaignID = arcadeTutorial
+
+		campaignOrderIdx = 1
+
+		scenarioName = Basic Flight
+
+		scenarioID = tut_basicFlight
+
+		scenarioDescription = Taxi, take off, landing.
+
+		mapID = map_akutan
+
+		vehicle = AV-42C
+
+		allowedEquips = gau-8;m230;h70-x7;h70-4x4;mk82x1;mk82x2;mk82x3;agm89x1;gbu38x1;gbu38x2;gbu38x3;gbu39x3;gbu39x4u;cbu97x1;hellfirex4;maverickx1;maverickx3;cagm-6;sidewinderx1;sidewinderx2;sidewinderx3;iris-t-x1;iris-t-x2;iris-t-x3;
+
+		forcedEquips = ;;;;;;;
+
+		forceEquips = True
+
+		normForcedFuel = 1
+
+		equipsConfigurable = False
+
+		baseBudget = 1000
+
+		isTraining = True
+
+		rtbWptID = 
+
+		refuelWptID = 
+
+		envName = morning
+
+		selectableEnv = False
+
+		qsMode = Anywhere
+
+		qsLimit = -1
+
+		UNITS
+
+		{
+
+			UnitSpawner
+
+			{
+
+				unitName = Player
+
+				globalPosition = (29076.923461914063, 0.12939453125, 32226.60888671875)
+
+				unitInstanceID = 0
+
+				unitID = PlayerSpawn
+
+				rotation = (5.006697E-06, 289.356, -9.100251E-06)
+
+				spawnChance = 100
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					startMode = FlightReady
+
+					initialSpeed = 0
+
+					unitGroup = null
+
+				}
+
+			}
+
+		}
+
+		PATHS
+
+		{
+
+		}
+
+		WAYPOINTS
+
+		{
+
+		}
+
+		UNITGROUPS
+
+		{
+
+		}
+
+		TimedEventGroups
+
+		{
+
+		}
+
+		TRIGGER_EVENTS
+
+		{
+
+			TriggerEvent
+
+			{
+
+				id = 0
+
+				enabled = True
+
+				triggerType = Conditional
+
+				eventName = LandingSkipTrigger
+
+				EventInfo
+
+				{
+
+					eventName = 
+
+					EventTarget
+
+					{
+
+						targetType = Trigger_Events
+
+						targetID = 2
+
+						eventName = Enable
+
+						methodName = Enable
+
+					}
+
+				}
+
+			}
+
+			TriggerEvent
+
+			{
+
+				id = 1
+
+				enabled = True
+
+				triggerType = Conditional
+
+				eventName = CancelLandingSkipTrigger
+
+				EventInfo
+
+				{
+
+					eventName = 
+
+					EventTarget
+
+					{
+
+						targetType = Trigger_Events
+
+						targetID = 2
+
+						eventName = Disable
+
+						methodName = Disable
+
+					}
+
+				}
+
+			}
+
+			TriggerEvent
+
+			{
+
+				id = 2
+
+				enabled = False
+
+				triggerType = Conditional
+
+				conditional = 0
+
+				eventName = LandingTrigger
+
+				EventInfo
+
+				{
+
+					eventName = 
+
+					EventTarget
+
+					{
+
+						targetType = Static_Object
+
+						targetID = 0
+
+						eventName = Fire Custom Action
+
+						methodName = FireCustomAction
+
+						ParamInfo
+
+						{
+
+							type = System.Single
+
+							value = 0
+
+							name = Action Index
+
+							ParamAttrInfo
+
+							{
+
+								type = MinMax
+
+								data = (0,100)
+
+							}
+
+							ParamAttrInfo
+
+							{
+
+								type = UnitSpawnAttributeRange+RangeTypes
+
+								data = Int
+
+							}
+
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+		OBJECTIVES
+
+		{
+
+		}
+
+		StaticObjects
+
+		{
+
+			StaticObject
+
+			{
+
+				prefabID = Tut_BasicFlight
+
+				id = 0
+
+				globalPos = (28993.046478271484, 0.451416015625, 31986.895812988281)
+
+				rotation = (7.263473E-06, 1.105762E-13, 8.722483E-07)
+
+			}
+
+		}
+
+		Conditionals
+
+		{
+
+			CONDITIONAL
+
+			{
+
+				id = 0
+
+				outputNodePos = (0, 0, 0)
+
+				root = 0
+
+				COMP
+
+				{
+
+					id = 0
+
+					type = SCCUnit
+
+					uiPos = (-375, 45, 0)
+
+					unit = 0
+
+					methodName = SCC_Landed
+
+					methodParameters = null
+
+					isNot = False
+
+				}
+
+			}
+
+		}
+
+		BASES
+
+		{
+
+			BaseInfo
+
+			{
+
+				id = 0
+
+				overrideBaseName = 
+
+				baseTeam = Allied
+
+			}
+
+		}
+
+		Briefing
+
+		{
+
+		}
+
+	}
+
+	'
+    image: {fileID: 2800000, guid: eab9cf52ddece284ca7f6657fa92e047, type: 3}
+    images: []
+    imagePaths: []
+    audioClips: []
+    audioClipPaths: []
+    videoClips: []
+    videoClipPaths: []
+  vtMaps: []
+  campaignLivery: {fileID: 0}
+  campaignLiveryOpFor: {fileID: 0}
+  perVehicleLiveries: []
+  isStandaloneScenarios: 0
+  requireDLCs:

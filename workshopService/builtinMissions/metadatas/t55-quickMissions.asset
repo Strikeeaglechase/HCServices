@@ -1,0 +1,739 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ced814a33e77c0fb2c37c3fd3a58b5d4, type: 3}
+  m_Name: t55-quickMissions
+  m_EditorClassIdentifier:
+  campaignID: t55-quickMissions
+  hideFromMenu: 0
+  campaignConfig: 'CAMPAIGN
+
+	{
+
+		campaignID = t55-quickMissions
+
+		campaignName = T-55 Quick Missions
+
+		description = Free flight, target practice, and other quick missions for the T-55 Tyro.
+
+		vehicle = T-55
+
+		startingEquips = t55_gun;t55_aim9x1;t55_aim9x2;t55_aim9x3;t55_aim9e;t55_aim9ex2;t55_iris-t-x1;t55_iris-t-x2;t55_aim7Rail;t55_amraamRail;t55_amraamRailx2;t55_mk82;t55_mk82x2;t55_mk82x3;t55_mk82HDx1;t55_mk82HDx2;t55_mk82HDx3;t55_cbu97x1;t55_gbu12x1;t55_gbu12x2;t55_gbu12x3;t55_gbu38x1;t55_gbu38x2;t55_gbu38x3;t55_gbu39x4u;t55_maverickx1;t55_maverickx3;t55_cagm-6;t55_sidearmx1;t55_h70-x7ld;t55_h70-x14ld;t55_tgp;t55_droptank;t55_agm161;t55_agm89x1;
+
+		multiplayer = False
+
+		availability = All_Available
+
+	}
+
+	'
+  image: {fileID: 2800000, guid: cc92672ae60d47040a53fbdc071eaea2, type: 3}
+  scenarios:
+  - scenarioID: t55_freeflight
+    scenarioConfig: 'CustomScenario
+
+	{
+
+		gameVersion = 1.6.0p24
+
+		campaignID = t55-quickMissions
+
+		campaignOrderIdx = 0
+
+		scenarioName = Free Flight
+
+		scenarioID = t55_freeflight
+
+		scenarioDescription = No objectives or hostiles.
+
+		mapID = interlaken2
+
+		vehicle = T-55
+
+		multiplayer = False
+
+		allowedEquips = t55_gun;t55_aim9x1;t55_aim9x2;t55_aim9x3;t55_aim9e;t55_aim9ex2;t55_iris-t-x1;t55_iris-t-x2;t55_aim7Rail;t55_amraamRail;t55_amraamRailx2;t55_mk82;t55_mk82x2;t55_mk82x3;t55_mk82HDx1;t55_mk82HDx2;t55_mk82HDx3;t55_cbu97x1;t55_gbu12x1;t55_gbu12x2;t55_gbu12x3;t55_gbu38x1;t55_gbu38x2;t55_gbu38x3;t55_gbu39x4u;t55_maverickx1;t55_maverickx3;t55_cagm-6;t55_sidearmx1;t55_h70-x7ld;t55_h70-x14ld;t55_tgp;t55_droptank;t55_agm161;t55_agm89x1;
+
+		forcedEquips = ;;;;;;;;;
+
+		forceEquips = False
+
+		normForcedFuel = 1
+
+		equipsConfigurable = True
+
+		baseBudget = 200000
+
+		isTraining = False
+
+		rtbWptID = 
+
+		refuelWptID = 
+
+		infiniteAmmo = False
+
+		infAmmoReloadDelay = 5
+
+		fuelDrainMult = 1
+
+		envName = day
+
+		selectableEnv = False
+
+		qsMode = Anywhere
+
+		qsLimit = -1
+
+		UNITS
+
+		{
+
+			UnitSpawner
+
+			{
+
+				unitName = Player
+
+				globalPosition = (119761.1259765625, 342.61962890625, 25614.543701171875)
+
+				unitInstanceID = 0
+
+				unitID = PlayerSpawn
+
+				rotation = (-1.159489E-06, 114.6108, -8.406639E-06)
+
+				spawnChance = 100
+
+				lastValidPlacement = (119761.1259765625, 342.61962890625, 25614.543701171875)
+
+				editorPlacementMode = Ground
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					startMode = Cold
+
+					initialSpeed = 0
+
+					unitGroup = null
+
+					receiveFriendlyDamage = True
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = KC-49
+
+				globalPosition = (139754.939453125, 5387.45703125, 29755.8525390625)
+
+				unitInstanceID = 1
+
+				unitID = KC-49
+
+				rotation = (0, 88.36296, 0)
+
+				spawnChance = 100
+
+				lastValidPlacement = (139754.939453125, 5387.45703125, 29755.8525390625)
+
+				editorPlacementMode = Air
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = Allied:Foxtrot
+
+					defaultBehavior = Orbit
+
+					initialSpeed = 160
+
+					defaultNavSpeed = 160
+
+					defaultOrbitPoint = null
+
+					defaultPath = null
+
+					orbitAltitude = 3500
+
+					fuel = 100
+
+					autoRefuel = True
+
+					autoRTB = True
+
+					rtbDestination = 
+
+					parkedStartMode = FlightReady
+
+					engageEnemies = False
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					invincible = False
+
+					respawnable = False
+
+					receiveFriendlyDamage = True
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = T-55 Tyro
+
+				globalPosition = (139704.57572174072, 5387.45751953125, 29696.242828369141)
+
+				unitInstanceID = 2
+
+				unitID = T-55 AI
+
+				rotation = (0, 88.36296, 0)
+
+				spawnChance = 100
+
+				lastValidPlacement = (139704.57572174072, 5387.45751953125, 29696.242828369141)
+
+				editorPlacementMode = Air
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = Allied:Foxtrot
+
+					voiceProfile = null
+
+					playerCommandsMode = Unit_Group_Only
+
+					defaultBehavior = Orbit
+
+					initialSpeed = 220
+
+					defaultNavSpeed = 220
+
+					defaultOrbitPoint = null
+
+					defaultPath = null
+
+					orbitAltitude = 3000
+
+					fuel = 100
+
+					autoRefuel = True
+
+					autoRTB = True
+
+					defaultRadarEnabled = True
+
+					rtbDestination = 
+
+					parkedStartMode = FlightReady
+
+					engageEnemies = True
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					invincible = False
+
+					respawnable = False
+
+					receiveFriendlyDamage = True
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = Aircraft Carrier
+
+				globalPosition = (104639.376953125, -5, 5546.62548828125)
+
+				unitInstanceID = 3
+
+				unitID = AlliedCarrier
+
+				rotation = (0, 88.36296, 0)
+
+				spawnChance = 100
+
+				lastValidPlacement = (104639.376953125, -5, 5546.62548828125)
+
+				editorPlacementMode = Sea
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = Allied:Alpha
+
+					defaultBehavior = Parked
+
+					defaultWaypoint = null
+
+					defaultPath = null
+
+					hullNumber = 0
+
+					engageEnemies = True
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					invincible = False
+
+					respawnable = False
+
+					receiveFriendlyDamage = True
+
+					carrierSpawns = 
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = Cruiser
+
+				globalPosition = (104264.05847167969, -5, 5256.5546722412109)
+
+				unitInstanceID = 4
+
+				unitID = EscortCruiser
+
+				rotation = (0, 88.36296, 0)
+
+				spawnChance = 100
+
+				lastValidPlacement = (104264.05847167969, -5, 5256.5546722412109)
+
+				editorPlacementMode = Sea
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = Allied:Alpha
+
+					defaultBehavior = Parked
+
+					defaultWaypoint = null
+
+					defaultPath = null
+
+					hullNumber = 0
+
+					engageEnemies = True
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					invincible = False
+
+					respawnable = False
+
+					receiveFriendlyDamage = True
+
+				}
+
+			}
+
+		}
+
+		PATHS
+
+		{
+
+			PATH
+
+			{
+
+				id = 0
+
+				name = shipPath
+
+				loop = True
+
+				points = (104272.265625, -5, 5628.9921875);(136264.75, -5, 6068.126953125);(136475.203125, -5, -9260.330078125);(102022.6015625, -5, -6704.90234375);
+
+				pathMode = Linear
+
+			}
+
+		}
+
+		WAYPOINTS
+
+		{
+
+			WAYPOINT
+
+			{
+
+				id = 0
+
+				name = kc-49 orbit
+
+				globalPoint = (128914.30078125, 5387.45703125, 45813.6181640625)
+
+			}
+
+		}
+
+		UNITGROUPS
+
+		{
+
+			ALLIED
+
+			{
+
+				Foxtrot = 2;1;2;
+
+				Alpha = 1;3;4;
+
+				Foxtrot_SETTINGS
+
+				{
+
+					syncAltSpawns = False
+
+				}
+
+				Alpha_SETTINGS
+
+				{
+
+					syncAltSpawns = False
+
+				}
+
+			}
+
+		}
+
+		TimedEventGroups
+
+		{
+
+			TimedEventGroup
+
+			{
+
+				groupName = start
+
+				groupID = 0
+
+				beginImmediately = True
+
+				initialDelay = 0
+
+				TimedEventInfo
+
+				{
+
+					eventName = start
+
+					time = 0
+
+					EventTarget
+
+					{
+
+						targetType = UnitGroup
+
+						targetID = 100
+
+						eventName = Move Path
+
+						methodName = MovePath
+
+						ParamInfo
+
+						{
+
+							type = FollowPath
+
+							value = 0
+
+							name = Path
+
+						}
+
+					}
+
+					EventTarget
+
+					{
+
+						targetType = UnitGroup
+
+						targetID = 105
+
+						eventName = Fly Orbit
+
+						methodName = FlyOrbit
+
+						ParamInfo
+
+						{
+
+							type = Waypoint
+
+							value = 0
+
+							name = Waypoint
+
+						}
+
+						ParamInfo
+
+						{
+
+							type = System.Single
+
+							value = 20000
+
+							name = Radius
+
+							ParamAttrInfo
+
+							{
+
+								type = MinMax
+
+								data = (1000,80000)
+
+							}
+
+						}
+
+						ParamInfo
+
+						{
+
+							type = System.Single
+
+							value = 5249
+
+							name = Altitude
+
+							ParamAttrInfo
+
+							{
+
+								type = MinMax
+
+								data = (1500,10000)
+
+							}
+
+						}
+
+					}
+
+					EventTarget
+
+					{
+
+						targetType = UnitGroup
+
+						targetID = 105
+
+						eventName = Set Nav Speed
+
+						methodName = SetNavSpeed
+
+						ParamInfo
+
+						{
+
+							type = System.Single
+
+							value = 289
+
+							name = Airspeed
+
+							ParamAttrInfo
+
+							{
+
+								type = MinMax
+
+								data = (60,700)
+
+							}
+
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+		TRIGGER_EVENTS
+
+		{
+
+		}
+
+		OBJECTIVES
+
+		{
+
+		}
+
+		OBJECTIVES_OPFOR
+
+		{
+
+		}
+
+		StaticObjects
+
+		{
+
+		}
+
+		Conditionals
+
+		{
+
+		}
+
+		ConditionalActions
+
+		{
+
+		}
+
+		EventSequences
+
+		{
+
+		}
+
+		BASES
+
+		{
+
+			BaseInfo
+
+			{
+
+				id = 0
+
+				overrideBaseName = 
+
+				baseTeam = Allied
+
+			}
+
+			BaseInfo
+
+			{
+
+				id = 1
+
+				overrideBaseName = 
+
+				baseTeam = Allied
+
+			}
+
+		}
+
+		GlobalValues
+
+		{
+
+		}
+
+		Briefing
+
+		{
+
+			BRIEFING_NOTE
+
+			{
+
+				text = This is a free flight scenario with no objectives or hostiles.
+
+				imagePath = t55\ss_blueFlying.png
+
+				audioClipPath = 
+
+			}
+
+		}
+
+		ResourceManifest
+
+		{
+
+			0 = t55\ss_blueFlying.png
+
+		}
+
+	}
+
+	'
+    image: {fileID: 2800000, guid: 96c74ccb06d009f458d3add5478a9480, type: 3}
+    images:
+    - {fileID: 2800000, guid: 5f1c39f4a0b104941bd2c5a325b78c78, type: 3}
+    imagePaths:
+    - t55\ss_blueFlying.png
+    audioClips: []
+    audioClipPaths: []
+    videoClips: []
+    videoClipPaths: []
+  vtMaps:
+  - {fileID: 11400000, guid: 40aafa8c339fda74d92c0bdb6f93afe1, type: 2}
+  campaignLivery: {fileID: 0}
+  campaignLiveryOpFor: {fileID: 0}
+  perVehicleLiveries: []
+  isStandaloneScenarios: 0
+  requireDLCs: 04ae2000

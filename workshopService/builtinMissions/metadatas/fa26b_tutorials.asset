@@ -1,0 +1,9770 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ced814a33e77c0fb2c37c3fd3a58b5d4, type: 3}
+  m_Name: fa26b_tutorials
+  m_EditorClassIdentifier:
+  campaignID: fa26b_tutorials
+  hideFromMenu: 1
+  campaignConfig: 'CAMPAIGN
+
+	{
+
+		campaignID = fa26b_tutorials
+
+		campaignName = FA-26B Tutorials
+
+		description = Built-in tutorials for the F/A-26B.
+
+		vehicle = F/A-26B
+
+		startingEquips = fa26_droptank;fa26_droptankXL;fa26-cft;fa26_gun;af_amraam;af_amraamRail;af_aim9;fa26_aim9x2;fa26_aim9x3;fa26_iris-t-x1;fa26_iris-t-x2;fa26_iris-t-x3;af_mk82;fa26_mk82x2;fa26_mk82x3;fa26_mk82HDx1;fa26_mk82HDx2;fa26_mk82HDx3;fa26_mk83x1;fa26_cbu97x1;h70-x7ld;h70-x7ld-under;h70-x14ld;h70-x14ld-under;fa26_cagm-6;fa26_gbu38x1;fa26_gbu38x2;fa26_gbu38x3;fa26_gbu39x4uFront;fa26_gbu39x4uRear;fa26_maverickx1;fa26_maverickx3;fa26_agm89x1;fa26_tgp;fa26_harmx1;fa26_harmx1dpMount;fa26_sidearmx1;fa26_sidearmx2;fa26_sidearmx3;af_amraamRailx2;fa26_gbu12x1;fa26_gbu12x2;fa26_gbu12x3;fa26_agm161;
+
+		availability = All_Available
+
+	}
+
+	'
+  image: {fileID: 2800000, guid: e41fddf5c955b89488451a409330650a, type: 3}
+  scenarios:
+  - scenarioID: tut_26_radar
+    scenarioConfig: 'CustomScenario
+
+	{
+
+		gameVersion = 0.0.15p5
+
+		campaignID = fa26b_tutorials
+
+		campaignOrderIdx = 0
+
+		scenarioName = Radar
+
+		scenarioID = tut_26_radar
+
+		scenarioDescription = Learn how to use the radar to find, track, and lock onto aircraft.
+
+		mapID = picoCristo38x5840
+
+		vehicle = F/A-26B
+
+		allowedEquips = fa26_droptank;fa26_droptankXL;fa26-cft;fa26_gun;af_amraam;af_amraamRail;af_aim9;fa26_aim9x2;fa26_aim9x3;fa26_iris-t-x1;fa26_iris-t-x2;fa26_iris-t-x3;af_mk82;fa26_mk82x2;fa26_mk82x3;fa26_mk82HDx1;fa26_mk82HDx2;fa26_mk82HDx3;fa26_mk83x1;fa26_cbu97x1;h70-x7ld;h70-x7ld-under;h70-x14ld;h70-x14ld-under;fa26_cagm-6;fa26_gbu38x1;fa26_gbu38x2;fa26_gbu38x3;fa26_gbu39x4uFront;fa26_gbu39x4uRear;fa26_maverickx1;fa26_maverickx3;fa26_agm89x1;fa26_tgp;fa26_harmx1;fa26_harmx1dpMount;fa26_sidearmx1;fa26_sidearmx2;fa26_sidearmx3;af_amraamRailx2;fa26_gbu12x1;fa26_gbu12x2;fa26_gbu12x3;fa26_agm161;
+
+		forcedEquips = fa26_gun;af_amraamRail;af_amraamRail;af_amraamRail;af_amraam;af_amraam;af_amraam;af_amraam;af_amraamRail;af_amraamRail;af_amraamRail;af_amraamRailx2;af_amraamRailx2;fa26_droptankXL;;;
+
+		forceEquips = True
+
+		normForcedFuel = 1
+
+		equipsConfigurable = False
+
+		baseBudget = 100000
+
+		isTraining = False
+
+		rtbWptID = 
+
+		refuelWptID = 
+
+		envName = day
+
+		selectableEnv = False
+
+		qsMode = None
+
+		qsLimit = -1
+
+		UNITS
+
+		{
+
+			UnitSpawner
+
+			{
+
+				unitName = Player
+
+				globalPosition = (11302.541015625, 5495, 97916.404052734375)
+
+				unitInstanceID = 1
+
+				unitID = PlayerSpawn
+
+				rotation = (0, 85.52352, 0)
+
+				spawnChance = 100
+
+				lastValidPlacement = (11302.541015625, 5495, 97916.404052734375)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					startMode = FlightAP
+
+					initialSpeed = 280
+
+					unitGroup = null
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = ASF-30 First Lock
+
+				globalPosition = (105436.2626953125, 5495, 92065.890846252441)
+
+				unitInstanceID = 2
+
+				unitID = ASF-30
+
+				rotation = (0, 107.5026, 0)
+
+				spawnChance = 100
+
+				lastValidPlacement = (105436.2626953125, 5495, 92065.890846252441)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = null
+
+					defaultBehavior = Orbit
+
+					initialSpeed = 220
+
+					defaultNavSpeed = 220
+
+					defaultOrbitPoint = null
+
+					defaultPath = null
+
+					orbitAltitude = 3000
+
+					fuel = 100
+
+					autoRefuel = True
+
+					autoRTB = True
+
+					defaultRadarEnabled = True
+
+					rtbDestination = 
+
+					engageEnemies = False
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					invincible = False
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = ASF-30
+
+				globalPosition = (98113.318359375, 4995, 78486.243408203125)
+
+				unitInstanceID = 11
+
+				unitID = ASF-30
+
+				rotation = (0, 1.316364, 0)
+
+				spawnChance = 100
+
+				lastValidPlacement = (98113.318359375, 4995, 78486.243408203125)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = null
+
+					defaultBehavior = Orbit
+
+					initialSpeed = 220
+
+					defaultNavSpeed = 220
+
+					defaultOrbitPoint = null
+
+					defaultPath = null
+
+					orbitAltitude = 3000
+
+					fuel = 100
+
+					autoRefuel = True
+
+					autoRTB = True
+
+					defaultRadarEnabled = True
+
+					rtbDestination = 
+
+					engageEnemies = False
+
+					detectionMode = Default
+
+					spawnOnStart = False
+
+					invincible = False
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = ASF-30
+
+				globalPosition = (89096.12109375, 4995, 85154.571411132813)
+
+				unitInstanceID = 10
+
+				unitID = ASF-30
+
+				rotation = (0, 1.316364, 0)
+
+				spawnChance = 100
+
+				lastValidPlacement = (89096.12109375, 4995, 85154.571411132813)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = null
+
+					defaultBehavior = Orbit
+
+					initialSpeed = 220
+
+					defaultNavSpeed = 220
+
+					defaultOrbitPoint = null
+
+					defaultPath = null
+
+					orbitAltitude = 3000
+
+					fuel = 100
+
+					autoRefuel = True
+
+					autoRTB = True
+
+					defaultRadarEnabled = True
+
+					rtbDestination = 
+
+					engageEnemies = False
+
+					detectionMode = Default
+
+					spawnOnStart = False
+
+					invincible = False
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = F/A-26B
+
+				globalPosition = (82836.541015625, 5495, 100162.63110351563)
+
+				unitInstanceID = 6
+
+				unitID = FA-26B AI
+
+				rotation = (0, 0, 0)
+
+				spawnChance = 100
+
+				lastValidPlacement = (82836.541015625, 5495, 100162.63110351563)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = null
+
+					voiceProfile = null
+
+					playerCommandsMode = Unit_Group_Only
+
+					defaultBehavior = Orbit
+
+					initialSpeed = 220
+
+					defaultNavSpeed = 220
+
+					defaultOrbitPoint = null
+
+					defaultPath = null
+
+					orbitAltitude = 3000
+
+					fuel = 100
+
+					autoRefuel = True
+
+					autoRTB = True
+
+					defaultRadarEnabled = True
+
+					rtbDestination = 
+
+					engageEnemies = False
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					invincible = False
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = F/A-26B
+
+				globalPosition = (76598.1796875, 5495, 95725.001953125)
+
+				unitInstanceID = 7
+
+				unitID = FA-26B AI
+
+				rotation = (0, 0, 0)
+
+				spawnChance = 100
+
+				lastValidPlacement = (76598.1796875, 5495, 95725.001953125)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = null
+
+					voiceProfile = null
+
+					playerCommandsMode = Unit_Group_Only
+
+					defaultBehavior = Orbit
+
+					initialSpeed = 220
+
+					defaultNavSpeed = 220
+
+					defaultOrbitPoint = null
+
+					defaultPath = null
+
+					orbitAltitude = 3000
+
+					fuel = 100
+
+					autoRefuel = True
+
+					autoRTB = True
+
+					defaultRadarEnabled = True
+
+					rtbDestination = 
+
+					engageEnemies = False
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					invincible = False
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = F/A-26B
+
+				globalPosition = (76433.806640625, 5495, 102174.85559082031)
+
+				unitInstanceID = 8
+
+				unitID = FA-26B AI
+
+				rotation = (0, 0, 0)
+
+				spawnChance = 100
+
+				lastValidPlacement = (76433.806640625, 5495, 102174.85559082031)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = null
+
+					voiceProfile = null
+
+					playerCommandsMode = Unit_Group_Only
+
+					defaultBehavior = Orbit
+
+					initialSpeed = 220
+
+					defaultNavSpeed = 220
+
+					defaultOrbitPoint = null
+
+					defaultPath = null
+
+					orbitAltitude = 3000
+
+					fuel = 100
+
+					autoRefuel = True
+
+					autoRTB = True
+
+					defaultRadarEnabled = True
+
+					rtbDestination = 
+
+					engageEnemies = False
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					invincible = False
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = E-4 Overlord
+
+				globalPosition = (66726.822265625, 5495, 111095.37158203125)
+
+				unitInstanceID = 9
+
+				unitID = E-4
+
+				rotation = (0, 0, 0)
+
+				spawnChance = 100
+
+				lastValidPlacement = (66726.822265625, 5495, 111095.37158203125)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					commsEnabled = False
+
+					unitGroup = null
+
+					defaultBehavior = Orbit
+
+					initialSpeed = 70
+
+					defaultNavSpeed = 210
+
+					defaultOrbitPoint = null
+
+					defaultPath = null
+
+					orbitAltitude = 8000
+
+					fuel = 100
+
+					autoRefuel = True
+
+					autoRTB = True
+
+					defaultRadarEnabled = True
+
+					rtbDestination = 
+
+					engageEnemies = False
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					invincible = False
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = ASF-30
+
+				globalPosition = (88652.162109375, 4995, 82651.13427734375)
+
+				unitInstanceID = 13
+
+				unitID = ASF-30
+
+				rotation = (0, 1.316364, 0)
+
+				spawnChance = 100
+
+				lastValidPlacement = (88652.162109375, 4995, 82651.13427734375)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = null
+
+					defaultBehavior = Orbit
+
+					initialSpeed = 220
+
+					defaultNavSpeed = 220
+
+					defaultOrbitPoint = null
+
+					defaultPath = null
+
+					orbitAltitude = 3000
+
+					fuel = 100
+
+					autoRefuel = True
+
+					autoRTB = True
+
+					defaultRadarEnabled = True
+
+					rtbDestination = 
+
+					engageEnemies = False
+
+					detectionMode = Default
+
+					spawnOnStart = False
+
+					invincible = False
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = ASF-30
+
+				globalPosition = (89645.7109375, 4995, 84632.356323242188)
+
+				unitInstanceID = 14
+
+				unitID = ASF-30
+
+				rotation = (0, 1.316364, 0)
+
+				spawnChance = 100
+
+				lastValidPlacement = (89645.7109375, 4995, 84632.356323242188)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = null
+
+					defaultBehavior = Orbit
+
+					initialSpeed = 220
+
+					defaultNavSpeed = 220
+
+					defaultOrbitPoint = null
+
+					defaultPath = null
+
+					orbitAltitude = 3000
+
+					fuel = 100
+
+					autoRefuel = True
+
+					autoRTB = True
+
+					defaultRadarEnabled = True
+
+					rtbDestination = 
+
+					engageEnemies = False
+
+					detectionMode = Default
+
+					spawnOnStart = False
+
+					invincible = False
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = ASF-30
+
+				globalPosition = (87283.931640625, 4995, 85885.689086914063)
+
+				unitInstanceID = 15
+
+				unitID = ASF-30
+
+				rotation = (0, 1.316364, 0)
+
+				spawnChance = 100
+
+				lastValidPlacement = (87283.931640625, 4995, 85885.689086914063)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = null
+
+					defaultBehavior = Orbit
+
+					initialSpeed = 220
+
+					defaultNavSpeed = 220
+
+					defaultOrbitPoint = null
+
+					defaultPath = null
+
+					orbitAltitude = 3000
+
+					fuel = 100
+
+					autoRefuel = True
+
+					autoRTB = True
+
+					defaultRadarEnabled = True
+
+					rtbDestination = 
+
+					engageEnemies = False
+
+					detectionMode = Default
+
+					spawnOnStart = False
+
+					invincible = False
+
+				}
+
+			}
+
+		}
+
+		PATHS
+
+		{
+
+		}
+
+		WAYPOINTS
+
+		{
+
+			WAYPOINT
+
+			{
+
+				id = 0
+
+				name = wp enemies 2
+
+				globalPoint = (91584.634765625, 4995, 82414.943115234375)
+
+			}
+
+		}
+
+		UNITGROUPS
+
+		{
+
+		}
+
+		TimedEventGroups
+
+		{
+
+		}
+
+		TRIGGER_EVENTS
+
+		{
+
+		}
+
+		OBJECTIVES
+
+		{
+
+			Objective
+
+			{
+
+				objectiveName = Tutorial
+
+				objectiveInfo = Complete the radar tutorial
+
+				objectiveID = 0
+
+				orderID = 0
+
+				required = True
+
+				completionReward = 0
+
+				waypoint = null
+
+				autoSetWaypoint = False
+
+				startMode = Immediate
+
+				objectiveType = Conditional
+
+				startEvent
+
+				{
+
+					EventInfo
+
+					{
+
+						eventName = Start Event
+
+					}
+
+				}
+
+				failEvent
+
+				{
+
+					EventInfo
+
+					{
+
+						eventName = Failed Event
+
+					}
+
+				}
+
+				completeEvent
+
+				{
+
+					EventInfo
+
+					{
+
+						eventName = Completed Event
+
+					}
+
+				}
+
+				fields
+
+				{
+
+					successConditional = null
+
+					failConditional = null
+
+				}
+
+			}
+
+			Objective
+
+			{
+
+				objectiveName = Air Target 1
+
+				objectiveInfo = Shoot the target with an AIM-120
+
+				objectiveID = 1
+
+				orderID = 1
+
+				required = True
+
+				completionReward = 0
+
+				waypoint = null
+
+				autoSetWaypoint = False
+
+				startMode = Triggered
+
+				objectiveType = Destroy
+
+				startEvent
+
+				{
+
+					EventInfo
+
+					{
+
+						eventName = Start Event
+
+					}
+
+				}
+
+				failEvent
+
+				{
+
+					EventInfo
+
+					{
+
+						eventName = Failed Event
+
+					}
+
+				}
+
+				completeEvent
+
+				{
+
+					EventInfo
+
+					{
+
+						eventName = Completed Event
+
+					}
+
+				}
+
+				fields
+
+				{
+
+					targets = 2;
+
+					minRequired = 1
+
+					perUnitReward = 0
+
+					fullCompleteBonus = 0
+
+				}
+
+			}
+
+			Objective
+
+			{
+
+				objectiveName = Air Targets 2
+
+				objectiveInfo = Destroy the 5 other air targets.
+
+				objectiveID = 2
+
+				orderID = 2
+
+				required = True
+
+				completionReward = 0
+
+				waypoint = 0
+
+				autoSetWaypoint = True
+
+				startMode = Triggered
+
+				objectiveType = Destroy
+
+				startEvent
+
+				{
+
+					EventInfo
+
+					{
+
+						eventName = Start Event
+
+					}
+
+				}
+
+				failEvent
+
+				{
+
+					EventInfo
+
+					{
+
+						eventName = Failed Event
+
+					}
+
+				}
+
+				completeEvent
+
+				{
+
+					EventInfo
+
+					{
+
+						eventName = Completed Event
+
+					}
+
+				}
+
+				fields
+
+				{
+
+					targets = 15;14;13;11;10;
+
+					minRequired = 5
+
+					perUnitReward = 0
+
+					fullCompleteBonus = 0
+
+				}
+
+			}
+
+		}
+
+		StaticObjects
+
+		{
+
+		}
+
+		Conditionals
+
+		{
+
+			CONDITIONAL
+
+			{
+
+				id = 2
+
+				outputNodePos = (0, 0, 0)
+
+				root = 0
+
+				COMP
+
+				{
+
+					id = 0
+
+					type = SCCVehicleControl
+
+					uiPos = (-327, 57, 0)
+
+					vehicleControl = F/A-26B;Button;MFD1-Button-T4;
+
+					controlCondition = Interacted
+
+					controlValue = 0
+
+					isNot = False
+
+				}
+
+			}
+
+			CONDITIONAL
+
+			{
+
+				id = 1
+
+				outputNodePos = (0, 0, 0)
+
+				root = 0
+
+				COMP
+
+				{
+
+					id = 0
+
+					type = SCCVehicleControl
+
+					uiPos = (-309, 50, 0)
+
+					vehicleControl = F/A-26B;Int_Knob;RadarPowerInteractable;
+
+					controlCondition = EqualTo
+
+					controlValue = 1
+
+					isNot = False
+
+				}
+
+			}
+
+			CONDITIONAL
+
+			{
+
+				id = 3
+
+				outputNodePos = (0, 0, 0)
+
+				root = 0
+
+				COMP
+
+				{
+
+					id = 0
+
+					type = SCCVehicleControl
+
+					uiPos = (-327, 31, 0)
+
+					vehicleControl = F/A-26B;Int_Knob;RadarPowerInteractable;
+
+					controlCondition = EqualTo
+
+					controlValue = 1
+
+					isNot = False
+
+				}
+
+			}
+
+			CONDITIONAL
+
+			{
+
+				id = 4
+
+				outputNodePos = (0, 0, 0)
+
+				root = 0
+
+				COMP
+
+				{
+
+					id = 0
+
+					type = SCCVehicleControl
+
+					uiPos = (-354, 37, 0)
+
+					vehicleControl = F/A-26B;Button;MFD1-Button-T5;
+
+					controlCondition = Interacted
+
+					controlValue = 0
+
+					isNot = False
+
+				}
+
+			}
+
+			CONDITIONAL
+
+			{
+
+				id = 5
+
+				outputNodePos = (0, 0, 0)
+
+			}
+
+			CONDITIONAL
+
+			{
+
+				id = 6
+
+				outputNodePos = (0, 0, 0)
+
+				root = 0
+
+				COMP
+
+				{
+
+					id = 0
+
+					type = SCCVehicleControl
+
+					uiPos = (-360, 79, 0)
+
+					vehicleControl = F/A-26B;Button;MFD1-Button-R2;
+
+					controlCondition = Interacted
+
+					controlValue = 0
+
+					isNot = False
+
+				}
+
+			}
+
+			CONDITIONAL
+
+			{
+
+				id = 8
+
+				outputNodePos = (0, 0, 0)
+
+				root = 0
+
+				COMP
+
+				{
+
+					id = 0
+
+					type = SCCVehicleControl
+
+					uiPos = (-349, 53, 0)
+
+					vehicleControl = F/A-26B;Button;MFD1-Button-R2;
+
+					controlCondition = Interacted
+
+					controlValue = 0
+
+					isNot = False
+
+				}
+
+			}
+
+			CONDITIONAL
+
+			{
+
+				id = 9
+
+				outputNodePos = (0, 0, 0)
+
+				root = 0
+
+				COMP
+
+				{
+
+					id = 0
+
+					type = SCCVehicleControl
+
+					uiPos = (-285, 13, 0)
+
+					vehicleControl = F/A-26B;Button;MFD1-Button-T5;
+
+					controlCondition = Interacted
+
+					controlValue = 0
+
+					isNot = False
+
+				}
+
+			}
+
+			CONDITIONAL
+
+			{
+
+				id = 10
+
+				outputNodePos = (0, 0, 0)
+
+				root = 0
+
+				COMP
+
+				{
+
+					id = 0
+
+					type = SCCUnit
+
+					uiPos = (-387, 64, 0)
+
+					unit = 1
+
+					methodName = SCC_IsLockingTarget
+
+					methodParameters = 2;Radar;
+
+					isNot = False
+
+				}
+
+			}
+
+			CONDITIONAL
+
+			{
+
+				id = 11
+
+				outputNodePos = (0, 0, 0)
+
+				root = 0
+
+				COMP
+
+				{
+
+					id = 0
+
+					type = SCCUnit
+
+					uiPos = (-386, 44, 0)
+
+					unit = 2
+
+					methodName = SC_IsAlive
+
+					methodParameters = null
+
+					isNot = True
+
+				}
+
+			}
+
+			CONDITIONAL
+
+			{
+
+				id = 12
+
+				outputNodePos = (0, 0, 0)
+
+				root = 0
+
+				COMP
+
+				{
+
+					id = 0
+
+					type = SCCUnitList
+
+					uiPos = (-400, 46, 0)
+
+					unitList = 10;11;13;14;15;
+
+					methodName = SCC_NumAlive
+
+					methodParameters = Equals;0;
+
+					isNot = False
+
+				}
+
+			}
+
+			CONDITIONAL
+
+			{
+
+				id = 13
+
+				outputNodePos = (0, 0, 0)
+
+				root = 0
+
+				COMP
+
+				{
+
+					id = 0
+
+					type = SCCUnit
+
+					uiPos = (-311.9999, 63, 0)
+
+					unit = 1
+
+					methodName = SCC_UsingWeaponStr
+
+					methodParameters = AIM120;
+
+					isNot = False
+
+				}
+
+			}
+
+		}
+
+		ConditionalActions
+
+		{
+
+		}
+
+		EventSequences
+
+		{
+
+			SEQUENCE
+
+			{
+
+				id = 0
+
+				sequenceName = Tutorial Sequence
+
+				startImmediately = True
+
+				EVENT
+
+				{
+
+					delay = 3
+
+					nodeName = t1-welcome
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message
+
+							methodName = DisplayMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = Welcome to the Radar tutorial for the F/A-26
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 5
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_radar\t1.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 5
+
+					nodeName = t2-today you will learn
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message
+
+							methodName = DisplayMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = Today, you will learn how to use the radar to find and track other aircraft, as well as designate targets for air to air missiles
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 8
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_radar\t2.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 8
+
+					nodeName = t3 - open radar
+
+					exitConditional = 2
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Control Message
+
+							methodName = DisplayControlMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = Open the RADAR MFD page
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 999
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = VehicleControlReference
+
+								value = F/A-26B;Button;MFD1-Button-T4;
+
+								name = Control
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_radar\t3.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 1
+
+					nodeName = t4-turn on radar
+
+					exitConditional = 3
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Control Message
+
+							methodName = DisplayControlMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = Turn ON the radar
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 999
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = VehicleControlReference
+
+								value = F/A-26B;Int_Knob;RadarPowerInteractable;
+
+								name = Control
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Play Priority Message
+
+							methodName = PlayPriorityMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_radar\t4.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 1
+
+					nodeName = t5-display
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message
+
+							methodName = DisplayMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = The display shows you a compressed representation of the radar''s 120 degree field of view
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 8
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Play Priority Message
+
+							methodName = PlayPriorityMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_radar\t5.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 8
+
+					nodeName = t6-display range
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Control Message
+
+							methodName = DisplayControlMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = The displayed range can be adjusted using the R+ and R- buttons
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 7
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = VehicleControlReference
+
+								value = F/A-26B;Button;MFD1-Button-R2;
+
+								name = Control
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_radar\t6.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 7
+
+					nodeName = t7-range up
+
+					exitConditional = 6
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Control Message
+
+							methodName = DisplayControlMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = Press R+ repeatedly until the display is at max range
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 999
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = VehicleControlReference
+
+								value = F/A-26B;Button;MFD1-Button-R2;
+
+								name = Control
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_radar\t7.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 0
+
+					nodeName = t7- wait for press 2
+
+					exitConditional = 8
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 0
+
+					nodeName = t8-icon info
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message
+
+							methodName = DisplayMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = As the radar sweeps over other aircraft, they will be displayed as blue icons for friends and orange icons for foes
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 8
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Play Priority Message
+
+							methodName = PlayPriorityMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_radar\t8.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 8
+
+					nodeName = t9-scan angles
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message Video
+
+							methodName = DisplayMessageWithVideo
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = The left/right SCAN ANGLE can also be adjusted to allow the radar to scan more rapidly but in a smaller slice of the sky
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 15
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = VTSVideoReference
+
+								value = Tutorials\tut_26_radar\v9.mp4
+
+								name = Video
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_radar\t9.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 15
+
+					nodeName = t10-SOI
+
+					exitConditional = 9
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Control Message
+
+							methodName = DisplayControlMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = Set the radar as SOI
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 999
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = VehicleControlReference
+
+								value = F/A-26B;Button;MFD1-Button-T5;
+
+								name = Control
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_radar\t10.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 0
+
+					nodeName = t11-slewing designator
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Control Message Video
+
+							methodName = DisplayControlMessageVideo
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = Now, you can slew the target designator using the joystick''s thumb control
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 8
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = VehicleControlReference
+
+								value = F/A-26B;TutorialTarget;rdr_cursor;
+
+								name = Control
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = VTSVideoReference
+
+								value = Tutorials\tut_26_radar\v11.mp4
+
+								name = Video
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Play Priority Message
+
+							methodName = PlayPriorityMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_radar\t11.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 8
+
+					nodeName = t12-track contact
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Control Message Video
+
+							methodName = DisplayControlMessageVideo
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = Slew the designator over a contact, and press in on the center of the thumb control to start tracking it
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 9
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = VehicleControlReference
+
+								value = F/A-26B;TutorialTarget;rdr_cursor;
+
+								name = Control
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = VTSVideoReference
+
+								value = Tutorials\tut_26_radar\v12.mp4
+
+								name = Video
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_radar\t12.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 9
+
+					nodeName = t13-up to 4 contacts
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message Video
+
+							methodName = DisplayMessageWithVideo
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = You can track up to 4 contacts while still being able to scan the rest of the sky
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 8
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = VTSVideoReference
+
+								value = Tutorials\tut_26_radar\v12.mp4
+
+								name = Video
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_radar\t13.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 8
+
+					nodeName = t14-small circle on hud
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message
+
+							methodName = DisplayMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = They will appear as small circle on your HUD, along with their corresponding number
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 8
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_radar\t14.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 8
+
+					nodeName = t15-lock target
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message Video
+
+							methodName = DisplayMessageWithVideo
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = In order to lock a target for weapons, click on a track again using the designator, or press the numbered MFD button on the left
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 13
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = VTSVideoReference
+
+								value = Tutorials\tut_26_radar\v15.mp4
+
+								name = Video
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_radar\t15.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 13
+
+					nodeName = t16-tws
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message Video
+
+							methodName = DisplayMessageWithVideo
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = While a target is locked, the other tracks will continue to be displayed, but the radar will not be able to scan for new targets
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 10
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = VTSVideoReference
+
+								value = Tutorials\tut_26_radar\v15.mp4
+
+								name = Video
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_radar\t16.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 10
+
+					nodeName = t17-info on target
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message Video
+
+							methodName = DisplayMessageWithVideo
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = Information about the locked target''s bearing, range, altitude, airspeed, and aircraft type will appear on the bottom right of the display
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 11
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = VTSVideoReference
+
+								value = Tutorials\tut_26_radar\v15.mp4
+
+								name = Video
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_radar\t17.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 11
+
+					nodeName = t18-unlock
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message Video
+
+							methodName = DisplayMessageWithVideo
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = Use the UNLCK button to unlock the target, and the CLR button to clear the tracks
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 8
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = VTSVideoReference
+
+								value = Tutorials\tut_26_radar\v18.mp4
+
+								name = Video
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_radar\t18.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 8
+
+					nodeName = t19-boresight mode
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Control Message Video
+
+							methodName = DisplayControlMessageVideo
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = For close in engagements, the radar can be switched to boresight mode using the MODE button
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 7
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = VehicleControlReference
+
+								value = F/A-26B;Button;MFD1-Button-R4;
+
+								name = Control
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = VTSVideoReference
+
+								value = Tutorials\tut_26_radar\v21.mp4
+
+								name = Video
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_radar\t19.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 7
+
+					nodeName = t20-boresight info
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message Video
+
+							methodName = DisplayMessageWithVideo
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = In this mode, the radar will point straight forward and lock onto the first contact it sees
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 8
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = VTSVideoReference
+
+								value = Tutorials\tut_26_radar\v21.mp4
+
+								name = Video
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_radar\t20.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 8
+
+					nodeName = t21-SOI quick unlock
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message Video
+
+							methodName = DisplayMessageWithVideo
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = If the radar is SOI, you can press the joystick thumb control to quickly unlock and find a new target
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 10
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = VTSVideoReference
+
+								value = Tutorials\tut_26_radar\v21.mp4
+
+								name = Video
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_radar\t21.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 10
+
+					nodeName = t22-weapons practice
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message
+
+							methodName = DisplayMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = Now for some weapons practice. Go back to scan mode and find, track, and lock the enemy aircraft.
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 10
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_radar\t22.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					conditional = 10
+
+					delay = 1
+
+					nodeName = t23-wait for lock
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message
+
+							methodName = DisplayMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = Good. Now arm your weapon system and switch to the AIM-120
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 8
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Play Priority Message
+
+							methodName = PlayPriorityMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_radar\t23.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					conditional = 13
+
+					delay = 1
+
+					nodeName = t24-hud weapon
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message
+
+							methodName = DisplayMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = On the HUD, the locked target will appear as a small square.  The small dot is the shot lead cue
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 9
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Play Priority Message
+
+							methodName = PlayPriorityMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_radar\t24.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 9
+
+					nodeName = t25-lead cue
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Control Message
+
+							methodName = DisplayControlMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = When firing air to air missiles, aim for the lead cue to help the missile conserve energy as it steers toward the target
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 8.5
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = VehicleControlReference
+
+								value = F/A-26B;TutorialTarget;LeadIndicator;
+
+								name = Control
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_radar\t25.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 8.5
+
+					nodeName = t26-dlz
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Control Message
+
+							methodName = DisplayControlMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = The DLZ is displayed on the right side of the HUD. The missile should be fired when the target chevron lies between the min and max marks
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 14
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = VehicleControlReference
+
+								value = F/A-26B;TutorialTarget;dlz_displayTop;
+
+								name = Control
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_radar\t26.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 14
+
+					nodeName = t27-Try shooting
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message
+
+							methodName = DisplayMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = Try shooting down the target.
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 6
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_radar\t27.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 6
+
+					nodeName = objective
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = Objective
+
+							targetID = 1
+
+							eventName = Begin Objective
+
+							methodName = BeginObjective
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					conditional = 11
+
+					delay = 1
+
+					nodeName = t28-good kill
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message
+
+							methodName = DisplayMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = Splash!  Good kill!
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 5
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_radar\t28.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 5
+
+					nodeName = t29-multiple targets
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message
+
+							methodName = DisplayMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = By tracking multiple contacts, you can fire up to 4 AIM-120s on separate targets as long as you maintain line of sight with each of them
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 11
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_radar\t29.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 11
+
+					nodeName = t30-pitbull
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message
+
+							methodName = DisplayMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = When the AIM-120''s time to impact counter displays the letter M, it has switched to active homing and you no longer need to track it.
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 15
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_radar\t30.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 15
+
+					nodeName = t31-now try shooting em
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message
+
+							methodName = DisplayMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = Now, try shooting down the rest of the enemy air targets.
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 5
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_radar\t31.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 5
+
+					nodeName = spawn targets
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = Unit
+
+							targetID = 10
+
+							eventName = Spawn Unit
+
+							methodName = SpawnUnit
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = Unit
+
+							targetID = 11
+
+							eventName = Spawn Unit
+
+							methodName = SpawnUnit
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = Unit
+
+							targetID = 13
+
+							eventName = Spawn Unit
+
+							methodName = SpawnUnit
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = Unit
+
+							targetID = 14
+
+							eventName = Spawn Unit
+
+							methodName = SpawnUnit
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = Unit
+
+							targetID = 15
+
+							eventName = Spawn Unit
+
+							methodName = SpawnUnit
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = Objective
+
+							targetID = 2
+
+							eventName = Begin Objective
+
+							methodName = BeginObjective
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					conditional = 12
+
+					delay = 0
+
+					nodeName = t32-good job
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message
+
+							methodName = DisplayMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = Good job!
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 6
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_radar\t32.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 6
+
+					nodeName = done
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = Objective
+
+							targetID = 0
+
+							eventName = Complete Objective
+
+							methodName = CompleteObjective
+
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+		BASES
+
+		{
+
+			BaseInfo
+
+			{
+
+				id = 1
+
+				overrideBaseName = 
+
+				baseTeam = Allied
+
+			}
+
+			BaseInfo
+
+			{
+
+				id = 28
+
+				overrideBaseName = 
+
+				baseTeam = Allied
+
+			}
+
+		}
+
+		Briefing
+
+		{
+
+			BRIEFING_NOTE
+
+			{
+
+				text = The F/A-26B is equipped with powerful forward facing radar. Learn how to use it to detect and track other aircraft.  Lock onto enemy targets to allow you to fire radar guided missiles.
+
+				imagePath = Example\strikeFighter.jpg
+
+				audioClipPath = 
+
+			}
+
+		}
+
+		ResourceManifest
+
+		{
+
+			0 = Tutorials\tut_26_radar\t1.ogg
+
+			1 = Tutorials\tut_26_radar\t2.ogg
+
+			2 = Tutorials\tut_26_radar\t3.ogg
+
+			3 = Tutorials\tut_26_radar\t4.ogg
+
+			4 = Tutorials\tut_26_radar\t5.ogg
+
+			5 = Tutorials\tut_26_radar\t6.ogg
+
+			6 = Tutorials\tut_26_radar\t7.ogg
+
+			7 = Tutorials\tut_26_radar\t8.ogg
+
+			8 = Tutorials\tut_26_radar\v9.mp4
+
+			9 = Tutorials\tut_26_radar\t9.ogg
+
+			10 = Tutorials\tut_26_radar\t10.ogg
+
+			11 = Tutorials\tut_26_radar\v11.mp4
+
+			12 = Tutorials\tut_26_radar\t11.ogg
+
+			13 = Tutorials\tut_26_radar\v12.mp4
+
+			14 = Tutorials\tut_26_radar\t12.ogg
+
+			15 = Tutorials\tut_26_radar\t13.ogg
+
+			16 = Tutorials\tut_26_radar\t14.ogg
+
+			17 = Tutorials\tut_26_radar\v15.mp4
+
+			18 = Tutorials\tut_26_radar\t15.ogg
+
+			19 = Tutorials\tut_26_radar\t16.ogg
+
+			20 = Tutorials\tut_26_radar\t17.ogg
+
+			21 = Tutorials\tut_26_radar\v18.mp4
+
+			22 = Tutorials\tut_26_radar\t18.ogg
+
+			23 = Tutorials\tut_26_radar\v21.mp4
+
+			24 = Tutorials\tut_26_radar\t19.ogg
+
+			25 = Tutorials\tut_26_radar\t20.ogg
+
+			26 = Tutorials\tut_26_radar\t21.ogg
+
+			27 = Tutorials\tut_26_radar\t22.ogg
+
+			28 = Tutorials\tut_26_radar\t23.ogg
+
+			29 = Tutorials\tut_26_radar\t24.ogg
+
+			30 = Tutorials\tut_26_radar\t25.ogg
+
+			31 = Tutorials\tut_26_radar\t26.ogg
+
+			32 = Tutorials\tut_26_radar\t27.ogg
+
+			33 = Tutorials\tut_26_radar\t28.ogg
+
+			34 = Tutorials\tut_26_radar\t29.ogg
+
+			35 = Tutorials\tut_26_radar\t30.ogg
+
+			36 = Tutorials\tut_26_radar\t31.ogg
+
+			37 = Tutorials\tut_26_radar\t32.ogg
+
+			38 = Example\strikeFighter.jpg
+
+		}
+
+	}
+
+	'
+    image: {fileID: 2800000, guid: 149c74ad543b38446951463939f8dce5, type: 3}
+    images:
+    - {fileID: 2800000, guid: 65d2a8ddb13eeb349adeba624da16cf5, type: 3}
+    imagePaths:
+    - Example\strikeFighter.jpg
+    audioClips:
+    - {fileID: 8300000, guid: 0850c73afbac1cb4986d75671c6f92bd, type: 3}
+    - {fileID: 8300000, guid: d264708c11f3a81428f62c05d40a6acb, type: 3}
+    - {fileID: 8300000, guid: b0849cc070d3979469283be54c854b44, type: 3}
+    - {fileID: 8300000, guid: 0a2375a4649996e49a21d4e0cbbccf6a, type: 3}
+    - {fileID: 8300000, guid: 55c7c4c5e53064346acb33ca7a443d68, type: 3}
+    - {fileID: 8300000, guid: 7317c925b096f9f48afecae02acdf7d7, type: 3}
+    - {fileID: 8300000, guid: cb4e5e9016981d845af80508b833bc33, type: 3}
+    - {fileID: 8300000, guid: 00c1e9c2cce6c7a46b2475c8ab18e8fa, type: 3}
+    - {fileID: 8300000, guid: f9b859103109d5041b726c164326fbc7, type: 3}
+    - {fileID: 8300000, guid: 78f0ba991b3582e4199f7456d3278b38, type: 3}
+    - {fileID: 8300000, guid: d5535b3c54d195f46854a74cc22038ca, type: 3}
+    - {fileID: 8300000, guid: 06e43fb692f7576468416d805911ff20, type: 3}
+    - {fileID: 8300000, guid: 9b547495a75956e449625e1d614c3f39, type: 3}
+    - {fileID: 8300000, guid: e2ccaae35dccd424c92b03203992705f, type: 3}
+    - {fileID: 8300000, guid: 5214e7e0d556c5248abe0a59c465e035, type: 3}
+    - {fileID: 8300000, guid: c046997523de6694e93e5cab49547f1b, type: 3}
+    - {fileID: 8300000, guid: 119f798e4b8b1a5409438f2be12446e2, type: 3}
+    - {fileID: 8300000, guid: 76f92b24ae5861f4d93026fed51da8ca, type: 3}
+    - {fileID: 8300000, guid: 454d84c75624d8d4ea90e111ed71706e, type: 3}
+    - {fileID: 8300000, guid: 4363c11b6360d2d488f7d74d24be3935, type: 3}
+    - {fileID: 8300000, guid: 01280419e22d37841bbb52e5f697e368, type: 3}
+    - {fileID: 8300000, guid: cfc6671024b8739408ef5cdf91c098ad, type: 3}
+    - {fileID: 8300000, guid: f57d247847915c14ea3dcea8333b3a9b, type: 3}
+    - {fileID: 8300000, guid: ddfff64a39d106446a68551da3bb6035, type: 3}
+    - {fileID: 8300000, guid: 18cf2c196ef5b744aadf2df30db6928d, type: 3}
+    - {fileID: 8300000, guid: 9553be88dcee65049865aec2fdd01352, type: 3}
+    - {fileID: 8300000, guid: ef7074ef37b1b8449836b05335cd51b1, type: 3}
+    - {fileID: 8300000, guid: 1ffb7d1297f5e0f47a90aff017f35b89, type: 3}
+    - {fileID: 8300000, guid: 3b117ab08f7d07f4ba0ad39158167592, type: 3}
+    - {fileID: 8300000, guid: 336b359cf348a5d45b32a605d1a85e0a, type: 3}
+    - {fileID: 8300000, guid: c739e669041bd2f4abe3cbed4b480420, type: 3}
+    - {fileID: 8300000, guid: e22a4790e42d31a4c9772b464ec2dd81, type: 3}
+    audioClipPaths:
+    - Tutorials\tut_26_radar\t1.ogg
+    - Tutorials\tut_26_radar\t2.ogg
+    - Tutorials\tut_26_radar\t3.ogg
+    - Tutorials\tut_26_radar\t4.ogg
+    - Tutorials\tut_26_radar\t5.ogg
+    - Tutorials\tut_26_radar\t6.ogg
+    - Tutorials\tut_26_radar\t7.ogg
+    - Tutorials\tut_26_radar\t8.ogg
+    - Tutorials\tut_26_radar\t9.ogg
+    - Tutorials\tut_26_radar\t10.ogg
+    - Tutorials\tut_26_radar\t11.ogg
+    - Tutorials\tut_26_radar\t12.ogg
+    - Tutorials\tut_26_radar\t13.ogg
+    - Tutorials\tut_26_radar\t14.ogg
+    - Tutorials\tut_26_radar\t15.ogg
+    - Tutorials\tut_26_radar\t16.ogg
+    - Tutorials\tut_26_radar\t17.ogg
+    - Tutorials\tut_26_radar\t18.ogg
+    - Tutorials\tut_26_radar\t19.ogg
+    - Tutorials\tut_26_radar\t20.ogg
+    - Tutorials\tut_26_radar\t21.ogg
+    - Tutorials\tut_26_radar\t22.ogg
+    - Tutorials\tut_26_radar\t23.ogg
+    - Tutorials\tut_26_radar\t24.ogg
+    - Tutorials\tut_26_radar\t25.ogg
+    - Tutorials\tut_26_radar\t26.ogg
+    - Tutorials\tut_26_radar\t27.ogg
+    - Tutorials\tut_26_radar\t28.ogg
+    - Tutorials\tut_26_radar\t29.ogg
+    - Tutorials\tut_26_radar\t30.ogg
+    - Tutorials\tut_26_radar\t31.ogg
+    - Tutorials\tut_26_radar\t32.ogg
+    videoClips:
+    - {fileID: 32900000, guid: 0c1806b28b5fec24b9b2af9136bfed0b, type: 3}
+    - {fileID: 32900000, guid: 0223c80748809c5419194c12c5af29ad, type: 3}
+    - {fileID: 32900000, guid: 9e54d5e16d9d2594b8e42e70f7f79d0b, type: 3}
+    - {fileID: 32900000, guid: e5252f7eb4b578d448bf48887fd69f44, type: 3}
+    - {fileID: 32900000, guid: 7f5357b97f1d816438874e1a098a5b45, type: 3}
+    - {fileID: 32900000, guid: 42c60095b592aa14ca9f15df1ca68c76, type: 3}
+    videoClipPaths:
+    - Tutorials\tut_26_radar\v9.mp4
+    - Tutorials\tut_26_radar\v11.mp4
+    - Tutorials\tut_26_radar\v12.mp4
+    - Tutorials\tut_26_radar\v15.mp4
+    - Tutorials\tut_26_radar\v18.mp4
+    - Tutorials\tut_26_radar\v21.mp4
+  - scenarioID: tut_26_sead
+    scenarioConfig: 'CustomScenario
+
+	{
+
+		gameVersion = 0.0.15p5
+
+		campaignID = fa26b_tutorials
+
+		campaignOrderIdx = 1
+
+		scenarioName = SEAD
+
+		scenarioID = tut_26_sead
+
+		scenarioDescription = Learn how to use the ARAD and AGM-88 to destroy radar targets.
+
+		mapID = bigIslands_98x3_b
+
+		vehicle = F/A-26B
+
+		allowedEquips = fa26_droptank;fa26_droptankXL;fa26-cft;fa26_gun;af_amraam;af_amraamRail;af_aim9;fa26_aim9x2;fa26_aim9x3;fa26_iris-t-x1;fa26_iris-t-x2;fa26_iris-t-x3;af_mk82;fa26_mk82x2;fa26_mk82x3;fa26_mk82HDx1;fa26_mk82HDx2;fa26_mk82HDx3;fa26_mk83x1;fa26_cbu97x1;h70-x7ld;h70-x7ld-under;h70-x14ld;h70-x14ld-under;fa26_cagm-6;fa26_gbu38x1;fa26_gbu38x2;fa26_gbu38x3;fa26_gbu39x4uFront;fa26_gbu39x4uRear;fa26_maverickx1;fa26_maverickx3;fa26_agm89x1;fa26_tgp;fa26_harmx1;fa26_harmx1dpMount;fa26_sidearmx1;fa26_sidearmx2;fa26_sidearmx3;af_amraamRailx2;fa26_gbu12x1;fa26_gbu12x2;fa26_gbu12x3;fa26_agm161;
+
+		forcedEquips = fa26_gun;fa26_harmx1;af_aim9;af_aim9;fa26_harmx1;;;fa26_harmx1;af_aim9;af_aim9;fa26_harmx1;fa26_harmx1dpMount;fa26_harmx1dpMount;;fa26_tgp;fa26-cft;
+
+		forceEquips = True
+
+		normForcedFuel = 1
+
+		equipsConfigurable = False
+
+		baseBudget = 100000
+
+		isTraining = False
+
+		rtbWptID = 
+
+		refuelWptID = 
+
+		envName = day
+
+		selectableEnv = False
+
+		qsMode = Anywhere
+
+		qsLimit = -1
+
+		UNITS
+
+		{
+
+			UnitSpawner
+
+			{
+
+				unitName = Player
+
+				globalPosition = (51843.6611328125, 5982.310546875, -12067.76953125)
+
+				unitInstanceID = 0
+
+				unitID = PlayerSpawn
+
+				rotation = (0, 350.5885, 0)
+
+				spawnChance = 100
+
+				lastValidPlacement = (51843.6611328125, 5982.310546875, -12067.76953125)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					startMode = FlightReady
+
+					initialSpeed = 281.6136
+
+					unitGroup = null
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = SAM S/A Radar
+
+				globalPosition = (43173.50732421875, 97.207763671875, 49730.550018310547)
+
+				unitInstanceID = 1
+
+				unitID = SamFCR2
+
+				rotation = (7.527899E-06, 150.6218, -1.795478E-05)
+
+				spawnChance = 100
+
+				lastValidPlacement = (43173.50732421875, 97.207763671875, 49730.550018310547)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					engageEnemies = True
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					invincible = False
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = SAM S/A Radar
+
+				globalPosition = (47701.664215087891, 1430.6940002441406, 16505.463646888733)
+
+				unitInstanceID = 2
+
+				unitID = SamFCR2
+
+				rotation = (-7.460136E-06, 104.2311, 1.631201E-06)
+
+				spawnChance = 100
+
+				lastValidPlacement = (47701.664215087891, 1430.6940002441406, 16505.463646888733)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					engageEnemies = False
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					invincible = False
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = SAM S/A Radar
+
+				globalPosition = (31362.879943847656, 133.13604736328125, 46268.760330200195)
+
+				unitInstanceID = 3
+
+				unitID = SamFCR2
+
+				rotation = (-1.376198E-05, 116.6777, 8.372972E-06)
+
+				spawnChance = 100
+
+				lastValidPlacement = (31362.879943847656, 133.13604736328125, 46268.760330200195)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					engageEnemies = False
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					invincible = False
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = SAM S/A Radar
+
+				globalPosition = (54224.934799194336, 4.3746337890625, 57842.18278503418)
+
+				unitInstanceID = 5
+
+				unitID = SamFCR2
+
+				rotation = (0, 116.6777, 0)
+
+				spawnChance = 100
+
+				lastValidPlacement = (54224.934799194336, 4.3746337890625, 57842.18278503418)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					engageEnemies = False
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					invincible = False
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = SAM S/A Radar
+
+				globalPosition = (60421.478775024414, 2618.9176273345947, 32159.536071777344)
+
+				unitInstanceID = 6
+
+				unitID = SamFCR2
+
+				rotation = (-3.65773E-06, 45.33728, 6.015664E-06)
+
+				spawnChance = 100
+
+				lastValidPlacement = (60421.478775024414, 2618.9176273345947, 32159.536071777344)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					engageEnemies = False
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					invincible = False
+
+				}
+
+			}
+
+		}
+
+		PATHS
+
+		{
+
+		}
+
+		WAYPOINTS
+
+		{
+
+		}
+
+		UNITGROUPS
+
+		{
+
+		}
+
+		TimedEventGroups
+
+		{
+
+		}
+
+		TRIGGER_EVENTS
+
+		{
+
+		}
+
+		OBJECTIVES
+
+		{
+
+			Objective
+
+			{
+
+				objectiveName = SEAD Tutorial
+
+				objectiveInfo = Complete the SEAD tutorial
+
+				objectiveID = 0
+
+				orderID = 0
+
+				required = True
+
+				completionReward = 0
+
+				waypoint = null
+
+				autoSetWaypoint = False
+
+				startMode = Immediate
+
+				objectiveType = Conditional
+
+				startEvent
+
+				{
+
+					EventInfo
+
+					{
+
+						eventName = Start Event
+
+					}
+
+				}
+
+				failEvent
+
+				{
+
+					EventInfo
+
+					{
+
+						eventName = Failed Event
+
+					}
+
+				}
+
+				completeEvent
+
+				{
+
+					EventInfo
+
+					{
+
+						eventName = Completed Event
+
+					}
+
+				}
+
+				fields
+
+				{
+
+					successConditional = null
+
+					failConditional = null
+
+				}
+
+			}
+
+			Objective
+
+			{
+
+				objectiveName = SEAD
+
+				objectiveInfo = Destroy the SAM radars.
+
+				objectiveID = 1
+
+				orderID = 1
+
+				required = True
+
+				completionReward = 0
+
+				waypoint = null
+
+				autoSetWaypoint = False
+
+				startMode = Immediate
+
+				objectiveType = Destroy
+
+				startEvent
+
+				{
+
+					EventInfo
+
+					{
+
+						eventName = Start Event
+
+						EventTarget
+
+						{
+
+							targetType = Event_Sequences
+
+							targetID = 3
+
+							eventName = Begin
+
+							methodName = BeginEvent
+
+						}
+
+					}
+
+				}
+
+				failEvent
+
+				{
+
+					EventInfo
+
+					{
+
+						eventName = Failed Event
+
+					}
+
+				}
+
+				completeEvent
+
+				{
+
+					EventInfo
+
+					{
+
+						eventName = Completed Event
+
+						EventTarget
+
+						{
+
+							targetType = Event_Sequences
+
+							targetID = 2
+
+							eventName = Begin
+
+							methodName = BeginEvent
+
+						}
+
+					}
+
+				}
+
+				fields
+
+				{
+
+					targets = 1;2;5;3;6;
+
+					minRequired = 5
+
+					perUnitReward = 0
+
+					fullCompleteBonus = 0
+
+				}
+
+			}
+
+		}
+
+		StaticObjects
+
+		{
+
+			StaticObject
+
+			{
+
+				prefabID = platform1
+
+				id = 0
+
+				globalPos = (47703.08154296875, 1430.593994140625, 16504.579528808594)
+
+				rotation = (0, 104.311, 0)
+
+			}
+
+			StaticObject
+
+			{
+
+				prefabID = platform1
+
+				id = 1
+
+				globalPos = (31362.879943847656, 133.03604125976563, 46268.760330200195)
+
+				rotation = (0, 116.6656, 0)
+
+			}
+
+			StaticObject
+
+			{
+
+				prefabID = platform1
+
+				id = 2
+
+				globalPos = (60422.359375, 2618.817626953125, 32159.138946533203)
+
+				rotation = (0, 45.32175, 0)
+
+			}
+
+		}
+
+		Conditionals
+
+		{
+
+			CONDITIONAL
+
+			{
+
+				id = 0
+
+				outputNodePos = (0, 0, 0)
+
+				root = 0
+
+				COMP
+
+				{
+
+					id = 0
+
+					type = SCCVehicleControl
+
+					uiPos = (-339, 53, 0)
+
+					vehicleControl = F/A-26B;Button;MFD1-Button-T5;
+
+					controlCondition = Interacted
+
+					controlValue = 0
+
+					isNot = False
+
+				}
+
+			}
+
+			CONDITIONAL
+
+			{
+
+				id = 1
+
+				outputNodePos = (0, 0, 0)
+
+				root = 0
+
+				COMP
+
+				{
+
+					id = 0
+
+					type = SCCVehicleControl
+
+					uiPos = (-334, 56, 0)
+
+					vehicleControl = F/A-26B;Button;MFD1-Button-R4;
+
+					controlCondition = Interacted
+
+					controlValue = 0
+
+					isNot = False
+
+				}
+
+			}
+
+			CONDITIONAL
+
+			{
+
+				id = 2
+
+				outputNodePos = (0, 0, 0)
+
+				root = 0
+
+				COMP
+
+				{
+
+					id = 0
+
+					type = SCCVehicleControl
+
+					uiPos = (-290, 31, 0)
+
+					vehicleControl = F/A-26B;Button;MFD1-Button-T5;
+
+					controlCondition = Interacted
+
+					controlValue = 0
+
+					isNot = False
+
+				}
+
+			}
+
+			CONDITIONAL
+
+			{
+
+				id = 3
+
+				outputNodePos = (0, 0, 0)
+
+				root = 0
+
+				COMP
+
+				{
+
+					id = 0
+
+					type = SCCUnit
+
+					uiPos = (-368, 26, 0)
+
+					unit = 0
+
+					methodName = SCC_IsLockingTarget
+
+					methodParameters = 1;ARAD;
+
+					isNot = False
+
+				}
+
+			}
+
+			CONDITIONAL
+
+			{
+
+				id = 4
+
+				outputNodePos = (0, 0, 0)
+
+				root = 0
+
+				COMP
+
+				{
+
+					id = 0
+
+					type = SCCVehicleControl
+
+					uiPos = (-343, 53, 0)
+
+					vehicleControl = F/A-26B;Lever;masterArmSwitchInteractable;
+
+					controlCondition = EqualTo
+
+					controlValue = 1
+
+					isNot = False
+
+				}
+
+			}
+
+			CONDITIONAL
+
+			{
+
+				id = 5
+
+				outputNodePos = (0, 0, 0)
+
+				root = 0
+
+				COMP
+
+				{
+
+					id = 0
+
+					type = SCCUnit
+
+					uiPos = (-431, 56, 0)
+
+					unit = 0
+
+					methodName = SCC_UsingWeaponStr
+
+					methodParameters = AGM-88;
+
+					isNot = False
+
+				}
+
+			}
+
+			CONDITIONAL
+
+			{
+
+				id = 6
+
+				outputNodePos = (0, 0, 0)
+
+				root = 1
+
+				COMP
+
+				{
+
+					id = 1
+
+					type = SCCUnit
+
+					uiPos = (-302, 41, 0)
+
+					unit = 0
+
+					methodName = SCC_WeaponCount
+
+					methodParameters = AGM-88;Equals;0;
+
+					isNot = False
+
+				}
+
+			}
+
+			CONDITIONAL
+
+			{
+
+				id = 7
+
+				outputNodePos = (0, 0, 0)
+
+				root = 0
+
+				COMP
+
+				{
+
+					id = 0
+
+					type = SCCUnitList
+
+					uiPos = (-363, 70, 0)
+
+					unitList = 1;2;3;5;6;
+
+					methodName = SCC_NumAlive
+
+					methodParameters = Equals;0;
+
+					isNot = False
+
+				}
+
+			}
+
+			CONDITIONAL
+
+			{
+
+				id = 8
+
+				outputNodePos = (0, 0, 0)
+
+				root = 0
+
+				COMP
+
+				{
+
+					id = 0
+
+					type = SCCVehicleControl
+
+					uiPos = (-256, 29, 0)
+
+					vehicleControl = F/A-26B;Button;visorButtonInteractable;
+
+					controlCondition = Interacted
+
+					controlValue = 0
+
+					isNot = False
+
+				}
+
+			}
+
+		}
+
+		ConditionalActions
+
+		{
+
+			ConditionalAction
+
+			{
+
+				id = 0
+
+				name = display message depending on if player hit some targets or not
+
+				BASE_BLOCK
+
+				{
+
+					blockName = some were hit
+
+					CONDITIONAL
+
+					{
+
+						id = 0
+
+						outputNodePos = (0, 0, 0)
+
+						root = 0
+
+						COMP
+
+						{
+
+							id = 0
+
+							type = SCCUnitList
+
+							uiPos = (-277, 25, 0)
+
+							unitList = 1;2;3;5;6;
+
+							methodName = SCC_NumAlive
+
+							methodParameters = Less_Than;5;
+
+							isNot = False
+
+						}
+
+					}
+
+					ACTIONS
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message
+
+							methodName = DisplayMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = Out of missiles!  You hit some of the targets though!
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 6
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = Objective
+
+							targetID = 1
+
+							eventName = Complete Objective
+
+							methodName = CompleteObjective
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = Objective
+
+							targetID = 0
+
+							eventName = Complete Objective
+
+							methodName = CompleteObjective
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Play Priority Message
+
+							methodName = PlayPriorityMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_sead\t20_radio.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+					ELSE_ACTIONS
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message
+
+							methodName = DisplayMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = Out of missiles!  You didn''t hit anything.  Want to try again?
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 8
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = Objective
+
+							targetID = 1
+
+							eventName = Fail Objective
+
+							methodName = FailObjective
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Play Priority Message
+
+							methodName = PlayPriorityMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_sead\t21_radio.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+		EventSequences
+
+		{
+
+			SEQUENCE
+
+			{
+
+				id = 0
+
+				sequenceName = Tutorial Sequence
+
+				startImmediately = True
+
+				EVENT
+
+				{
+
+					delay = 3
+
+					nodeName = t01-welcome
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message
+
+							methodName = DisplayMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = Welcome to the SEAD tutorial!
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 4
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_sead\t01_radio.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 4
+
+					nodeName = t02-SEAD means..
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message
+
+							methodName = DisplayMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = SEAD stands for Suppression of Enemy Air Defenses
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 5
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_sead\t02_radio.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 5
+
+					nodeName = t03-sensors n weaps
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message
+
+							methodName = DisplayMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = You will use a combination of radar detecting sensors and special weapons to disable SAM sites
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 7
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_sead\t03_radio.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 7
+
+					nodeName = t04-rwr info1
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Control Message
+
+							methodName = DisplayControlMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = When a radar is searching for aircraft, it emits a signal that can be detected by your RWR
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 7
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = VehicleControlReference
+
+								value = F/A-26B;TutorialTarget;miniMFDLeftTutTarget;
+
+								name = Control
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_sead\t04_radio.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 7
+
+					nodeName = t05-rwr info2
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Control Message
+
+							methodName = DisplayControlMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = The radar type, bearing, and approximate range is shown on the RWR display, relative to your position in the center
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 9
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = VehicleControlReference
+
+								value = F/A-26B;TutorialTarget;miniMFDLeftTutTarget;
+
+								name = Control
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_sead\t05_radio.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 9
+
+					nodeName = t06-open arad
+
+					exitConditional = 0
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Control Message
+
+							methodName = DisplayControlMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = Open the Anti-Radar Attack Display (ARAD)
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 999
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = VehicleControlReference
+
+								value = F/A-26B;Button;MFD1-Button-T5;
+
+								name = Control
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_sead\t06_radio.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 0
+
+					nodeName = t07-arad info
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Control Message
+
+							methodName = DisplayControlMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = This display shows the same information gathered by the RWR, but allows you to select targets for ARMs
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 9
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = VehicleControlReference
+
+								value = F/A-26B;Button;MFD1-Button-T3;
+
+								name = Control
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Play Priority Message
+
+							methodName = PlayPriorityMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_sead\t07_radio.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 9
+
+					nodeName = t08-arad hud info
+
+					exitConditional = 1
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Control Message
+
+							methodName = DisplayControlMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = You can also set radar sources to be displayed as diamonds in the HUD
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 999
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = VehicleControlReference
+
+								value = F/A-26B;Button;MFD1-Button-R4;
+
+								name = Control
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Play Priority Message
+
+							methodName = PlayPriorityMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_sead\t08_radio.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 0
+
+					nodeName = t22-visor
+
+					exitConditional = 8
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Control Message
+
+							methodName = DisplayControlMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = When you lower the AR visor, you''ll be able to see all of the targets around you for better situational awareness
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 999
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = VehicleControlReference
+
+								value = F/A-26B;Button;visorButtonInteractable;
+
+								name = Control
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Play Priority Message
+
+							methodName = PlayPriorityMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_sead\t22_radio.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 0
+
+					nodeName = hide msg
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Hide Message
+
+							methodName = HideMessage
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 2
+
+					nodeName = t09-arad SOI
+
+					exitConditional = 2
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Control Message
+
+							methodName = DisplayControlMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = Set the ARAD as SOI
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 999
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = VehicleControlReference
+
+								value = F/A-26B;Button;MFD1-Button-T5;
+
+								name = Control
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_sead\t09_radio.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 0
+
+					nodeName = t10-thumb control
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Control Message
+
+							methodName = DisplayControlMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = Now you can use your joystick thumb control to slew the targeting cursor
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 6
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = VehicleControlReference
+
+								value = F/A-26B;Button;MFD1-Button-T3;
+
+								name = Control
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Play Priority Message
+
+							methodName = PlayPriorityMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_sead\t10_radio.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 6
+
+					nodeName = t11-set target
+
+					exitConditional = 3
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Control Message
+
+							methodName = DisplayControlMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = Slew the cursor onto the enemy radar, then press in on the thumb control to set the target
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 999
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = VehicleControlReference
+
+								value = F/A-26B;Button;MFD1-Button-T3;
+
+								name = Control
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_sead\t11_radio.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 0
+
+					nodeName = t12-tgt square
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message
+
+							methodName = DisplayMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = A square will appear on the selected target in both the MFD and the HUD
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 7
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Play Priority Message
+
+							methodName = PlayPriorityMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_sead\t12_radio.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 7
+
+					nodeName = t13-master arm
+
+					exitConditional = 4
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Control Message
+
+							methodName = DisplayControlMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = Now arm the weapon system
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 999
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = VehicleControlReference
+
+								value = F/A-26B;Lever;masterArmSwitchInteractable;
+
+								name = Control
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Play Priority Message
+
+							methodName = PlayPriorityMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_sead\t13_radio.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 0
+
+					nodeName = t14-switch to agm88
+
+					exitConditional = 5
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message
+
+							methodName = DisplayMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = Switch to the AGM-88
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 999
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Play Priority Message
+
+							methodName = PlayPriorityMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_sead\t14_radio.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 0
+
+					nodeName = t15-HARM info
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message
+
+							methodName = DisplayMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = This is a high speed, fire-and-forget anti-radiation missile (ARM)
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 5
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Play Priority Message
+
+							methodName = PlayPriorityMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_sead\t15_radio.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 5
+
+					nodeName = t16-HARM info 2
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message
+
+							methodName = DisplayMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = When fired, it will home in on the radar source designated in the ARAD
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 6
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Play Priority Message
+
+							methodName = PlayPriorityMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_sead\t16_radio.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 6
+
+					nodeName = t17-how to shoot
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message
+
+							methodName = DisplayMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = Once you have a target selected, all you need to do is fly toward the target, and fire once the missile is in range
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 8
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Play Priority Message
+
+							methodName = PlayPriorityMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_sead\t17_radio.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 9
+
+					nodeName = start objective
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 2
+
+					nodeName = t18-begin mission
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message
+
+							methodName = DisplayMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = Try taking out the SAM radars using the AGM-88
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 5
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = Event_Sequences
+
+							targetID = 1
+
+							eventName = Begin
+
+							methodName = BeginEvent
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Play Priority Message
+
+							methodName = PlayPriorityMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_sead\t18_radio.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+			}
+
+			SEQUENCE
+
+			{
+
+				id = 1
+
+				sequenceName = Enable Radars
+
+				startImmediately = False
+
+				EVENT
+
+				{
+
+					delay = 2
+
+					nodeName = New Node
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = Unit
+
+							targetID = 2
+
+							eventName = Set Engage Enemies
+
+							methodName = SetEngageEnemies
+
+							ParamInfo
+
+							{
+
+								type = System.Boolean
+
+								value = True
+
+								name = Engage
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 1
+
+					nodeName = New Node
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = Unit
+
+							targetID = 3
+
+							eventName = Set Engage Enemies
+
+							methodName = SetEngageEnemies
+
+							ParamInfo
+
+							{
+
+								type = System.Boolean
+
+								value = True
+
+								name = Engage
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 2
+
+					nodeName = New Node
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = Unit
+
+							targetID = 5
+
+							eventName = Set Engage Enemies
+
+							methodName = SetEngageEnemies
+
+							ParamInfo
+
+							{
+
+								type = System.Boolean
+
+								value = True
+
+								name = Engage
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 1
+
+					nodeName = New Node
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = Unit
+
+							targetID = 6
+
+							eventName = Set Engage Enemies
+
+							methodName = SetEngageEnemies
+
+							ParamInfo
+
+							{
+
+								type = System.Boolean
+
+								value = True
+
+								name = Engage
+
+							}
+
+						}
+
+					}
+
+				}
+
+			}
+
+			SEQUENCE
+
+			{
+
+				id = 2
+
+				sequenceName = End Sequence
+
+				startImmediately = False
+
+				EVENT
+
+				{
+
+					conditional = 7
+
+					delay = 0
+
+					nodeName = t19-good job
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message
+
+							methodName = DisplayMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = Great!  This is the end of the SEAD tutorial.
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 6
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Play Priority Message
+
+							methodName = PlayPriorityMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_26_sead\t19_radio.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 6
+
+					nodeName = mission complete
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = Objective
+
+							targetID = 0
+
+							eventName = Complete Objective
+
+							methodName = CompleteObjective
+
+						}
+
+					}
+
+				}
+
+			}
+
+			SEQUENCE
+
+			{
+
+				id = 3
+
+				sequenceName = Ran out of missiles
+
+				startImmediately = False
+
+				EVENT
+
+				{
+
+					delay = 0
+
+					nodeName = wait for no missiles
+
+					exitConditional = 6
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 45
+
+					nodeName = wait for possible hits
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 0
+
+					nodeName = t20/21
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Fire Conditional Action
+
+							methodName = FireConditionalAction
+
+							ParamInfo
+
+							{
+
+								type = ConditionalActionReference
+
+								value = 0
+
+								name = Action
+
+							}
+
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+		BASES
+
+		{
+
+			BaseInfo
+
+			{
+
+				id = 0
+
+				overrideBaseName = 
+
+				baseTeam = Allied
+
+			}
+
+		}
+
+		Briefing
+
+		{
+
+			BRIEFING_NOTE
+
+			{
+
+				text = One of the most abundant and dangerous threats to aircraft are Surface-to-Air Missiles (SAMs), most of which rely on radar to find and track targets.///n///nSuppression of Enemy Air Defense (SEAD) operations neutralize or destroy these threats.
+
+				imagePath = TheIsland\Mission7\airbaseDefenses.jpg
+
+				audioClipPath = 
+
+			}
+
+			BRIEFING_NOTE
+
+			{
+
+				text = One method of performing SEAD involves destroying the radar used by the SAMs.///n///nYou will learn how to use the Anti-Radar Attack Display (ARAD) in conjunction with the AGM-88 weapon to locate, target, and destroy enemy radars.
+
+				imagePath = Tutorials\tut_26_sead\agm88.png
+
+				audioClipPath = 
+
+			}
+
+		}
+
+		ResourceManifest
+
+		{
+
+			0 = Tutorials\tut_26_sead\t20_radio.ogg
+
+			1 = Tutorials\tut_26_sead\t21_radio.ogg
+
+			2 = Tutorials\tut_26_sead\t01_radio.ogg
+
+			3 = Tutorials\tut_26_sead\t02_radio.ogg
+
+			4 = Tutorials\tut_26_sead\t03_radio.ogg
+
+			5 = Tutorials\tut_26_sead\t04_radio.ogg
+
+			6 = Tutorials\tut_26_sead\t05_radio.ogg
+
+			7 = Tutorials\tut_26_sead\t06_radio.ogg
+
+			8 = Tutorials\tut_26_sead\t07_radio.ogg
+
+			9 = Tutorials\tut_26_sead\t08_radio.ogg
+
+			10 = Tutorials\tut_26_sead\t22_radio.ogg
+
+			11 = Tutorials\tut_26_sead\t09_radio.ogg
+
+			12 = Tutorials\tut_26_sead\t10_radio.ogg
+
+			13 = Tutorials\tut_26_sead\t11_radio.ogg
+
+			14 = Tutorials\tut_26_sead\t12_radio.ogg
+
+			15 = Tutorials\tut_26_sead\t13_radio.ogg
+
+			16 = Tutorials\tut_26_sead\t14_radio.ogg
+
+			17 = Tutorials\tut_26_sead\t15_radio.ogg
+
+			18 = Tutorials\tut_26_sead\t16_radio.ogg
+
+			19 = Tutorials\tut_26_sead\t17_radio.ogg
+
+			20 = Tutorials\tut_26_sead\t18_radio.ogg
+
+			21 = Tutorials\tut_26_sead\t19_radio.ogg
+
+			22 = TheIsland\Mission7\airbaseDefenses.jpg
+
+			23 = Tutorials\tut_26_sead\agm88.png
+
+		}
+
+	}
+
+	'
+    image: {fileID: 2800000, guid: 4309c13dba616c64285c50a0ad008156, type: 3}
+    images:
+    - {fileID: 2800000, guid: e0516cb368a10cd4598f5925066e12a2, type: 3}
+    - {fileID: 2800000, guid: 7fa88261f5499ba42839ab0a3820bbd7, type: 3}
+    imagePaths:
+    - TheIsland\Mission7\airbaseDefenses.jpg
+    - Tutorials\tut_26_sead\agm88.png
+    audioClips:
+    - {fileID: 8300000, guid: 1b288dee953fdff4cb8748466669d80a, type: 3}
+    - {fileID: 8300000, guid: e9744a5a13d2d934f95026a013d4241b, type: 3}
+    - {fileID: 8300000, guid: 5bf4461faa453564aaab9f51a4f77357, type: 3}
+    - {fileID: 8300000, guid: 1fa2ebc186744694392223f354988b67, type: 3}
+    - {fileID: 8300000, guid: 878caf0a2d5e48040aa5f2e0f2edf03c, type: 3}
+    - {fileID: 8300000, guid: 471b00df797364a4ba9f7991db8c98e0, type: 3}
+    - {fileID: 8300000, guid: 6e265e15466e7c44e818644c016dab3c, type: 3}
+    - {fileID: 8300000, guid: 426e5831d94733645918a48b707d8e3b, type: 3}
+    - {fileID: 8300000, guid: 414e876c619c7204f99493cadae3f0db, type: 3}
+    - {fileID: 8300000, guid: 8ab402abbbe6be244b716b5b59efffed, type: 3}
+    - {fileID: 8300000, guid: c55d873fbad54cd4da23a05bdb0413f2, type: 3}
+    - {fileID: 8300000, guid: da0837dbee331cc47b52f8ed09eeb015, type: 3}
+    - {fileID: 8300000, guid: 179e4e10131afe8459db72415e4c747d, type: 3}
+    - {fileID: 8300000, guid: 6e1c153cd2bcea846b7d08c16ce0c7cf, type: 3}
+    - {fileID: 8300000, guid: 6da492036596fc444975d4077e5ac78e, type: 3}
+    - {fileID: 8300000, guid: e6aa701cd86fbe0439a9c27c612871d3, type: 3}
+    - {fileID: 8300000, guid: e16d687c32c547449b8c4e1c649b507c, type: 3}
+    - {fileID: 8300000, guid: e3951f6b365ab32489ee453018c0bc03, type: 3}
+    - {fileID: 8300000, guid: 8eedbc60e97ff9a45af607fb590d07f9, type: 3}
+    - {fileID: 8300000, guid: 1c37d7211dd77a748936f312b3970b95, type: 3}
+    - {fileID: 8300000, guid: d8c22f7d8a133f24a9d2481c0330d6d6, type: 3}
+    - {fileID: 8300000, guid: d720ba9a658f27c4196280e763b3dcbe, type: 3}
+    audioClipPaths:
+    - Tutorials\tut_26_sead\t20_radio.ogg
+    - Tutorials\tut_26_sead\t21_radio.ogg
+    - Tutorials\tut_26_sead\t01_radio.ogg
+    - Tutorials\tut_26_sead\t02_radio.ogg
+    - Tutorials\tut_26_sead\t03_radio.ogg
+    - Tutorials\tut_26_sead\t04_radio.ogg
+    - Tutorials\tut_26_sead\t05_radio.ogg
+    - Tutorials\tut_26_sead\t06_radio.ogg
+    - Tutorials\tut_26_sead\t07_radio.ogg
+    - Tutorials\tut_26_sead\t08_radio.ogg
+    - Tutorials\tut_26_sead\t22_radio.ogg
+    - Tutorials\tut_26_sead\t09_radio.ogg
+    - Tutorials\tut_26_sead\t10_radio.ogg
+    - Tutorials\tut_26_sead\t11_radio.ogg
+    - Tutorials\tut_26_sead\t12_radio.ogg
+    - Tutorials\tut_26_sead\t13_radio.ogg
+    - Tutorials\tut_26_sead\t14_radio.ogg
+    - Tutorials\tut_26_sead\t15_radio.ogg
+    - Tutorials\tut_26_sead\t16_radio.ogg
+    - Tutorials\tut_26_sead\t17_radio.ogg
+    - Tutorials\tut_26_sead\t18_radio.ogg
+    - Tutorials\tut_26_sead\t19_radio.ogg
+    videoClips: []
+    videoClipPaths: []
+  vtMaps:
+  - {fileID: 11400000, guid: 6b52d90a012950944b642dfc4f7cafc5, type: 2}
+  campaignLivery: {fileID: 0}
+  campaignLiveryOpFor: {fileID: 0}
+  perVehicleLiveries: []
+  isStandaloneScenarios: 0
+  requireDLCs:

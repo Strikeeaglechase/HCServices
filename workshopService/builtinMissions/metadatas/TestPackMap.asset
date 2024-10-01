@@ -1,0 +1,371 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ced814a33e77c0fb2c37c3fd3a58b5d4, type: 3}
+  m_Name: TestPackMap
+  m_EditorClassIdentifier:
+  campaignID: TestPackMap
+  hideFromMenu: 0
+  campaignConfig: 'CAMPAIGN
+
+	{
+
+		campaignID = TestPackMap
+
+		campaignName = Test Packed Map Campaign
+
+		description = Enter description...
+
+		vehicle = AV-42C
+
+		startingEquips = gau-8;m230;h70-x7;h70-4x4;h70-x19;mk82x1;mk82x2;mk82x3;mk82HDx1;mk82HDx2;mk82HDx3;agm89x1;gbu38x1;gbu38x2;gbu38x3;gbu39x3;gbu39x4u;cbu97x1;hellfirex4;maverickx1;maverickx3;cagm-6;sidewinderx1;sidewinderx2;sidewinderx3;iris-t-x1;iris-t-x2;iris-t-x3;sidearmx3;marmx1;
+
+		availability = Sequential
+
+	}
+
+	'
+  image: {fileID: 0}
+  scenarios:
+  - scenarioID: mission1TinyTest
+    scenarioConfig: 'CustomScenario
+
+	{
+
+		campaignID = TestPackMap
+
+		campaignOrderIdx = 0
+
+		scenarioName = untitled
+
+		scenarioID = mission1TinyTest
+
+		scenarioDescription = 
+
+		mapID = tinyTestMap
+
+		vehicle = AV-42C
+
+		allowedEquips = gau-8;m230;h70-x7;h70-4x4;h70-x19;mk82x1;mk82x2;mk82x3;mk82HDx1;mk82HDx2;mk82HDx3;agm89x1;gbu38x1;gbu38x2;gbu38x3;gbu39x3;gbu39x4u;cbu97x1;hellfirex4;maverickx1;maverickx3;cagm-6;sidewinderx1;sidewinderx2;sidewinderx3;iris-t-x1;iris-t-x2;iris-t-x3;sidearmx3;marmx1;
+
+		forceEquips = False
+
+		normForcedFuel = 1
+
+		equipsConfigurable = True
+
+		baseBudget = 100000
+
+		isTraining = False
+
+		rtbWptID = 
+
+		refuelWptID = 
+
+		envName = day
+
+		selectableEnv = False
+
+		UNITS
+
+		{
+
+			UnitSpawner
+
+			{
+
+				unitName = Player
+
+				globalPosition = (12187.169189453125, 420.70703125, 11824.645751953125)
+
+				unitInstanceID = 0
+
+				unitID = PlayerSpawn
+
+				rotation = (-2.959744E-05, 0, 0)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					startMode = Cold
+
+					initialSpeed = 0
+
+					unitGroup = null
+
+				}
+
+			}
+
+		}
+
+		PATHS
+
+		{
+
+		}
+
+		WAYPOINTS
+
+		{
+
+		}
+
+		UNITGROUPS
+
+		{
+
+		}
+
+		TimedEventGroups
+
+		{
+
+		}
+
+		TRIGGER_EVENTS
+
+		{
+
+		}
+
+		OBJECTIVES
+
+		{
+
+		}
+
+		StaticObjects
+
+		{
+
+		}
+
+		Conditionals
+
+		{
+
+		}
+
+		BASES
+
+		{
+
+			BaseInfo
+
+			{
+
+				id = 0
+
+				overrideBaseName = 
+
+				baseTeam = Allied
+
+			}
+
+			BaseInfo
+
+			{
+
+				id = 2
+
+				overrideBaseName = 
+
+				baseTeam = Allied
+
+			}
+
+		}
+
+		Briefing
+
+		{
+
+		}
+
+	}
+
+	'
+    image: {fileID: 0}
+    images: []
+    imagePaths: []
+    audioClips: []
+    audioClipPaths: []
+    videoClips: []
+    videoClipPaths: []
+  - scenarioID: mission2smallHM
+    scenarioConfig: 'CustomScenario
+
+	{
+
+		campaignID = TestPackMap
+
+		campaignOrderIdx = 1
+
+		scenarioName = untitled
+
+		scenarioID = mission2smallHM
+
+		scenarioDescription = 
+
+		mapID = smallHm
+
+		vehicle = AV-42C
+
+		allowedEquips = gau-8;m230;h70-x7;h70-4x4;h70-x19;mk82x1;mk82x2;mk82x3;mk82HDx1;mk82HDx2;mk82HDx3;agm89x1;gbu38x1;gbu38x2;gbu38x3;gbu39x3;gbu39x4u;cbu97x1;hellfirex4;maverickx1;maverickx3;cagm-6;sidewinderx1;sidewinderx2;sidewinderx3;iris-t-x1;iris-t-x2;iris-t-x3;sidearmx3;marmx1;
+
+		forceEquips = False
+
+		normForcedFuel = 1
+
+		equipsConfigurable = True
+
+		baseBudget = 100000
+
+		isTraining = False
+
+		rtbWptID = 
+
+		refuelWptID = 
+
+		envName = day
+
+		selectableEnv = False
+
+		UNITS
+
+		{
+
+			UnitSpawner
+
+			{
+
+				unitName = Player
+
+				globalPosition = (40730.947265625, 1916.0067138671875, 67854.72021484375)
+
+				unitInstanceID = 0
+
+				unitID = PlayerSpawn
+
+				rotation = (0, 135.9127, 0)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					startMode = Cold
+
+					initialSpeed = 0
+
+					unitGroup = null
+
+				}
+
+			}
+
+		}
+
+		PATHS
+
+		{
+
+		}
+
+		WAYPOINTS
+
+		{
+
+		}
+
+		UNITGROUPS
+
+		{
+
+		}
+
+		TimedEventGroups
+
+		{
+
+		}
+
+		TRIGGER_EVENTS
+
+		{
+
+		}
+
+		OBJECTIVES
+
+		{
+
+		}
+
+		StaticObjects
+
+		{
+
+		}
+
+		Conditionals
+
+		{
+
+		}
+
+		BASES
+
+		{
+
+			BaseInfo
+
+			{
+
+				id = 0
+
+				overrideBaseName = 
+
+				baseTeam = Allied
+
+			}
+
+		}
+
+		Briefing
+
+		{
+
+		}
+
+	}
+
+	'
+    image: {fileID: 0}
+    images: []
+    imagePaths: []
+    audioClips: []
+    audioClipPaths: []
+    videoClips: []
+    videoClipPaths: []
+  vtMaps:
+  - {fileID: 11400000, guid: d455ea6eabe5ca7498ae6e31b848b1f5, type: 2}
+  - {fileID: 11400000, guid: 6d43855ceaca6954b9044d506399a6e5, type: 2}
+  campaignLivery: {fileID: 0}
+  campaignLiveryOpFor: {fileID: 0}
+  perVehicleLiveries: []
+  isStandaloneScenarios: 0
+  requireDLCs:

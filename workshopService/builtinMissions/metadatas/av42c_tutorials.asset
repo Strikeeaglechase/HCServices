@@ -1,0 +1,5943 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ced814a33e77c0fb2c37c3fd3a58b5d4, type: 3}
+  m_Name: av42c_tutorials
+  m_EditorClassIdentifier:
+  campaignID: av42c_tutorials
+  hideFromMenu: 1
+  campaignConfig: 'CAMPAIGN
+
+	{
+
+		campaignID = av42c_tutorials
+
+		campaignName = AV-42C Tutorials
+
+		description = Tutorials for the AV-42C
+
+		vehicle = AV-42C
+
+		startingEquips = gau-8;m230;h70-x7;h70-4x4;h70-x19;mk82x1;mk82x2;mk82x3;mk82HDx1;mk82HDx2;mk82HDx3;agm89x1;gbu38x1;gbu38x2;gbu38x3;gbu39x3;gbu39x4u;cbu97x1;hellfirex4;maverickx1;maverickx3;cagm-6;sidewinderx1;sidewinderx2;sidewinderx3;iris-t-x1;iris-t-x2;iris-t-x3;sidearmx1;sidearmx2;sidearmx3;marmx1;av42_gbu12x1;av42_gbu12x2;av42_gbu12x3;
+
+		availability = All_Available
+
+	}
+
+	'
+  image: {fileID: 0}
+  scenarios:
+  - scenarioID: tut_av42c_agm
+    scenarioConfig: 'CustomScenario
+
+	{
+
+		gameVersion = 1.0.2p2
+
+		campaignID = av42c_tutorials
+
+		campaignOrderIdx = 4
+
+		scenarioName = Air-to-Ground Missiles
+
+		scenarioID = tut_av42c_agm
+
+		scenarioDescription = Learn how to use air-to-ground missiles.
+
+		mapID = bigIslands_98x3_b
+
+		vehicle = AV-42C
+
+		allowedEquips = gau-8;m230;h70-x7;h70-4x4;h70-x19;mk82x1;mk82x2;mk82x3;mk82HDx1;mk82HDx2;mk82HDx3;agm89x1;gbu38x1;gbu38x2;gbu38x3;gbu39x3;gbu39x4u;cbu97x1;hellfirex4;maverickx1;maverickx3;cagm-6;sidewinderx1;sidewinderx2;sidewinderx3;iris-t-x1;iris-t-x2;iris-t-x3;sidearmx1;sidearmx2;sidearmx3;marmx1;av42_gbu12x1;av42_gbu12x2;av42_gbu12x3;
+
+		forcedEquips = m230;hellfirex4;maverickx3;maverickx3;hellfirex4;;;
+
+		forceEquips = True
+
+		normForcedFuel = 1
+
+		equipsConfigurable = False
+
+		baseBudget = 100000
+
+		isTraining = False
+
+		rtbWptID = 
+
+		refuelWptID = 
+
+		envName = day
+
+		selectableEnv = False
+
+		qsMode = None
+
+		qsLimit = -1
+
+		UNITS
+
+		{
+
+			UnitSpawner
+
+			{
+
+				unitName = Player
+
+				globalPosition = (35409.0283203125, 1975.1708984375, 32716.6279296875)
+
+				unitInstanceID = 0
+
+				unitID = PlayerSpawn
+
+				rotation = (0, 40.85921, 0)
+
+				spawnChance = 100
+
+				lastValidPlacement = (35409.0283203125, 1975.1708984375, 32716.6279296875)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					startMode = FlightAP
+
+					initialSpeed = 180
+
+					unitGroup = null
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = Rocket Artillery Truck
+
+				globalPosition = (44410.81103515625, 86.90234375, 51324.580322265625)
+
+				unitInstanceID = 1
+
+				unitID = ERocketTruck
+
+				rotation = (-3.434815E-06, 111.2279, 8.842701E-06)
+
+				spawnChance = 100
+
+				lastValidPlacement = (44410.81103515625, 86.90234375, 51324.580322265625)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					defaultShotsPerSalvo = 1
+
+					rippleRate = 60
+
+					allowReload = True
+
+					reloadTime = 180
+
+					unitGroup = null
+
+					moveSpeed = Slow_10
+
+					behavior = Parked
+
+					defaultPath = null
+
+					waypoint = null
+
+					engageEnemies = False
+
+					detectionMode = Default
+
+					spawnOnStart = False
+
+					invincible = False
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = MBT2-E Tank
+
+				globalPosition = (47802.73388671875, 111.31536865234375, 54520.8916015625)
+
+				unitInstanceID = 2
+
+				unitID = enemyMBT1
+
+				rotation = (9.472526E-06, 3.096615, 5.124522E-07)
+
+				spawnChance = 100
+
+				lastValidPlacement = (47802.73388671875, 111.31536865234375, 54520.8916015625)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = null
+
+					moveSpeed = Slow_10
+
+					behavior = Parked
+
+					defaultPath = null
+
+					waypoint = null
+
+					engageEnemies = False
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					invincible = False
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = Infantry
+
+				globalPosition = (47791.287414550781, 110.745361328125, 54522.641555786133)
+
+				unitInstanceID = 3
+
+				unitID = EnemySoldier
+
+				rotation = (9.472526E-06, 3.096614, 5.124522E-07)
+
+				spawnChance = 100
+
+				lastValidPlacement = (47791.287414550781, 110.745361328125, 54522.641555786133)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = null
+
+					behavior = Parked
+
+					defaultPath = null
+
+					waypoint = null
+
+					engageEnemies = False
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					invincible = False
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = Infantry
+
+				globalPosition = (47776.272201538086, 110.745361328125, 54494.940658569336)
+
+				unitInstanceID = 4
+
+				unitID = EnemySoldier
+
+				rotation = (9.472526E-06, 3.096614, 5.124522E-07)
+
+				spawnChance = 100
+
+				lastValidPlacement = (47776.272201538086, 110.745361328125, 54494.940658569336)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = null
+
+					behavior = Parked
+
+					defaultPath = null
+
+					waypoint = null
+
+					engageEnemies = False
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					invincible = False
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = MBT2-E Tank
+
+				globalPosition = (48021.361450195313, 105.62551116943359, 54491.301239013672)
+
+				unitInstanceID = 5
+
+				unitID = enemyMBT1
+
+				rotation = (351.1898, 3.171079, 359.5138)
+
+				spawnChance = 100
+
+				lastValidPlacement = (48021.361450195313, 105.62551116943359, 54491.301239013672)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = null
+
+					moveSpeed = Slow_10
+
+					behavior = Parked
+
+					defaultPath = null
+
+					waypoint = null
+
+					engageEnemies = False
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					invincible = False
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = MBT2-E Tank
+
+				globalPosition = (48048.037841796875, 105.49368286132813, 54490.452362060547)
+
+				unitInstanceID = 6
+
+				unitID = enemyMBT1
+
+				rotation = (351.1898, 3.171079, 359.5138)
+
+				spawnChance = 100
+
+				lastValidPlacement = (48048.037841796875, 105.49368286132813, 54490.452362060547)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = null
+
+					moveSpeed = Slow_10
+
+					behavior = Parked
+
+					defaultPath = null
+
+					waypoint = null
+
+					engageEnemies = False
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					invincible = False
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = MBT2-E Tank
+
+				globalPosition = (47994.677520751953, 100.22682189941406, 54765.888671875)
+
+				unitInstanceID = 7
+
+				unitID = enemyMBT1
+
+				rotation = (8.821181, 91.33043, 0.2040683)
+
+				spawnChance = 100
+
+				lastValidPlacement = (47994.677520751953, 100.22682189941406, 54765.888671875)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = null
+
+					moveSpeed = Slow_10
+
+					behavior = Parked
+
+					defaultPath = null
+
+					waypoint = null
+
+					engageEnemies = False
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					invincible = False
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = Rocket Artillery Truck
+
+				globalPosition = (44363.356201171875, 86.902099609375, 51193.766723632813)
+
+				unitInstanceID = 8
+
+				unitID = ERocketTruck
+
+				rotation = (-4.487673E-06, 198.8918, -1.535759E-06)
+
+				spawnChance = 100
+
+				lastValidPlacement = (44363.356201171875, 86.902099609375, 51193.766723632813)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					defaultShotsPerSalvo = 1
+
+					rippleRate = 60
+
+					allowReload = True
+
+					reloadTime = 180
+
+					unitGroup = null
+
+					moveSpeed = Slow_10
+
+					behavior = Parked
+
+					defaultPath = null
+
+					waypoint = null
+
+					engageEnemies = False
+
+					detectionMode = Default
+
+					spawnOnStart = False
+
+					invincible = False
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = Rocket Artillery Truck
+
+				globalPosition = (44519.623046875, 86.90234375, 51489.702392578125)
+
+				unitInstanceID = 9
+
+				unitID = ERocketTruck
+
+				rotation = (-9.48457E-06, 178.8743, 1.863675E-07)
+
+				spawnChance = 100
+
+				lastValidPlacement = (44519.623046875, 86.90234375, 51489.702392578125)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					defaultShotsPerSalvo = 1
+
+					rippleRate = 60
+
+					allowReload = True
+
+					reloadTime = 180
+
+					unitGroup = null
+
+					moveSpeed = Slow_10
+
+					behavior = Parked
+
+					defaultPath = null
+
+					waypoint = null
+
+					engageEnemies = False
+
+					detectionMode = Default
+
+					spawnOnStart = False
+
+					invincible = False
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = Rocket Artillery Truck
+
+				globalPosition = (43645.152709960938, 90.409912109375, 51062.154174804688)
+
+				unitInstanceID = 10
+
+				unitID = ERocketTruck
+
+				rotation = (359.5204, 142.1335, 0.7321313)
+
+				spawnChance = 100
+
+				lastValidPlacement = (43645.152709960938, 90.409912109375, 51062.154174804688)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					defaultShotsPerSalvo = 1
+
+					rippleRate = 60
+
+					allowReload = True
+
+					reloadTime = 180
+
+					unitGroup = null
+
+					moveSpeed = Slow_10
+
+					behavior = Parked
+
+					defaultPath = null
+
+					waypoint = null
+
+					engageEnemies = False
+
+					detectionMode = Default
+
+					spawnOnStart = False
+
+					invincible = False
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = Rocket Artillery Truck
+
+				globalPosition = (43472.576477050781, 95.299072265625, 50675.78125)
+
+				unitInstanceID = 11
+
+				unitID = ERocketTruck
+
+				rotation = (-8.095885E-06, 211.4139, -4.944445E-06)
+
+				spawnChance = 100
+
+				lastValidPlacement = (43472.576477050781, 95.299072265625, 50675.78125)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					defaultShotsPerSalvo = 1
+
+					rippleRate = 60
+
+					allowReload = True
+
+					reloadTime = 180
+
+					unitGroup = null
+
+					moveSpeed = Slow_10
+
+					behavior = Parked
+
+					defaultPath = null
+
+					waypoint = null
+
+					engageEnemies = False
+
+					detectionMode = Default
+
+					spawnOnStart = False
+
+					invincible = False
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = Rocket Artillery Truck
+
+				globalPosition = (43382.102783203125, 92.5667724609375, 50867.627685546875)
+
+				unitInstanceID = 12
+
+				unitID = ERocketTruck
+
+				rotation = (359.3027, 131.4238, 0.4500099)
+
+				spawnChance = 100
+
+				lastValidPlacement = (43382.102783203125, 92.5667724609375, 50867.627685546875)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					defaultShotsPerSalvo = 1
+
+					rippleRate = 60
+
+					allowReload = True
+
+					reloadTime = 180
+
+					unitGroup = null
+
+					moveSpeed = Slow_10
+
+					behavior = Parked
+
+					defaultPath = null
+
+					waypoint = null
+
+					engageEnemies = False
+
+					detectionMode = Default
+
+					spawnOnStart = False
+
+					invincible = False
+
+				}
+
+			}
+
+		}
+
+		PATHS
+
+		{
+
+		}
+
+		WAYPOINTS
+
+		{
+
+			WAYPOINT
+
+			{
+
+				id = 0
+
+				name = tgtArea
+
+				globalPoint = (44111.072509765625, 88.928466796875, 51101.581024169922)
+
+			}
+
+			WAYPOINT
+
+			{
+
+				id = 1
+
+				name = cityArea
+
+				globalPoint = (48090.954345703125, 104.184814453125, 54499.889312744141)
+
+			}
+
+			WAYPOINT
+
+			{
+
+				id = 2
+
+				name = rocket truck tgt
+
+				globalPoint = (56821.85888671875, -5, 48777.802612304688)
+
+			}
+
+		}
+
+		UNITGROUPS
+
+		{
+
+		}
+
+		TimedEventGroups
+
+		{
+
+			TimedEventGroup
+
+			{
+
+				groupName = start
+
+				groupID = 0
+
+				beginImmediately = True
+
+				initialDelay = 0
+
+				TimedEventInfo
+
+				{
+
+					eventName = mfds
+
+					time = 0
+
+					EventTarget
+
+					{
+
+						targetType = System
+
+						targetID = 1
+
+						eventName = Set MFD
+
+						methodName = SetMFD
+
+						ParamInfo
+
+						{
+
+							type = VTScenario+ScenarioTutorialActions+MFDTypes
+
+							value = Main
+
+							name = Type
+
+						}
+
+						ParamInfo
+
+						{
+
+							type = System.Single
+
+							value = 0
+
+							name = MFD
+
+							ParamAttrInfo
+
+							{
+
+								type = UnitSpawnAttributeRange+RangeTypes
+
+								data = Int
+
+							}
+
+							ParamAttrInfo
+
+							{
+
+								type = MinMax
+
+								data = (0,99)
+
+							}
+
+						}
+
+						ParamInfo
+
+						{
+
+							type = System.String
+
+							value = map
+
+							name = Page
+
+						}
+
+					}
+
+					EventTarget
+
+					{
+
+						targetType = System
+
+						targetID = 1
+
+						eventName = Set MFD
+
+						methodName = SetMFD
+
+						ParamInfo
+
+						{
+
+							type = VTScenario+ScenarioTutorialActions+MFDTypes
+
+							value = Main
+
+							name = Type
+
+						}
+
+						ParamInfo
+
+						{
+
+							type = System.Single
+
+							value = 2
+
+							name = MFD
+
+							ParamAttrInfo
+
+							{
+
+								type = UnitSpawnAttributeRange+RangeTypes
+
+								data = Int
+
+							}
+
+							ParamAttrInfo
+
+							{
+
+								type = MinMax
+
+								data = (0,99)
+
+							}
+
+						}
+
+						ParamInfo
+
+						{
+
+							type = System.String
+
+							value = mission
+
+							name = Page
+
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+		TRIGGER_EVENTS
+
+		{
+
+		}
+
+		OBJECTIVES
+
+		{
+
+			Objective
+
+			{
+
+				objectiveName = AGM Tutorial
+
+				objectiveInfo = Complete the AGM tutorial.
+
+				objectiveID = 0
+
+				orderID = 0
+
+				required = True
+
+				completionReward = 0
+
+				waypoint = null
+
+				autoSetWaypoint = False
+
+				startMode = Immediate
+
+				objectiveType = Conditional
+
+				startEvent
+
+				{
+
+					EventInfo
+
+					{
+
+						eventName = Start Event
+
+					}
+
+				}
+
+				failEvent
+
+				{
+
+					EventInfo
+
+					{
+
+						eventName = Failed Event
+
+					}
+
+				}
+
+				completeEvent
+
+				{
+
+					EventInfo
+
+					{
+
+						eventName = Completed Event
+
+					}
+
+				}
+
+				fields
+
+				{
+
+					successConditional = null
+
+					failConditional = null
+
+				}
+
+			}
+
+			Objective
+
+			{
+
+				objectiveName = Destroy Targets A
+
+				objectiveInfo = Destroy some of the targets around the waypoint using the AGM-114.
+
+				objectiveID = 1
+
+				orderID = 1
+
+				required = True
+
+				completionReward = 0
+
+				waypoint = 1
+
+				autoSetWaypoint = True
+
+				startMode = Triggered
+
+				objectiveType = Conditional
+
+				startEvent
+
+				{
+
+					EventInfo
+
+					{
+
+						eventName = Start Event
+
+					}
+
+				}
+
+				failEvent
+
+				{
+
+					EventInfo
+
+					{
+
+						eventName = Failed Event
+
+					}
+
+				}
+
+				completeEvent
+
+				{
+
+					EventInfo
+
+					{
+
+						eventName = Completed Event
+
+						EventTarget
+
+						{
+
+							targetType = Event_Sequences
+
+							targetID = 1
+
+							eventName = Begin
+
+							methodName = BeginEvent
+
+						}
+
+					}
+
+				}
+
+				fields
+
+				{
+
+					successConditional = 4
+
+					failConditional = null
+
+				}
+
+			}
+
+			Objective
+
+			{
+
+				objectiveName = Destroy Targets B
+
+				objectiveInfo = 
+
+				objectiveID = 2
+
+				orderID = 2
+
+				required = True
+
+				completionReward = 0
+
+				waypoint = 0
+
+				autoSetWaypoint = True
+
+				startMode = Triggered
+
+				objectiveType = Conditional
+
+				startEvent
+
+				{
+
+					EventInfo
+
+					{
+
+						eventName = Start Event
+
+						EventTarget
+
+						{
+
+							targetType = Unit
+
+							targetID = 1
+
+							eventName = Spawn Unit
+
+							methodName = SpawnUnit
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = Unit
+
+							targetID = 8
+
+							eventName = Spawn Unit
+
+							methodName = SpawnUnit
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = Unit
+
+							targetID = 9
+
+							eventName = Spawn Unit
+
+							methodName = SpawnUnit
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = Unit
+
+							targetID = 10
+
+							eventName = Spawn Unit
+
+							methodName = SpawnUnit
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = Unit
+
+							targetID = 11
+
+							eventName = Spawn Unit
+
+							methodName = SpawnUnit
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = Unit
+
+							targetID = 12
+
+							eventName = Spawn Unit
+
+							methodName = SpawnUnit
+
+						}
+
+					}
+
+				}
+
+				failEvent
+
+				{
+
+					EventInfo
+
+					{
+
+						eventName = Failed Event
+
+					}
+
+				}
+
+				completeEvent
+
+				{
+
+					EventInfo
+
+					{
+
+						eventName = Completed Event
+
+						EventTarget
+
+						{
+
+							targetType = Event_Sequences
+
+							targetID = 2
+
+							eventName = Begin
+
+							methodName = BeginEvent
+
+						}
+
+					}
+
+				}
+
+				fields
+
+				{
+
+					successConditional = 5
+
+					failConditional = null
+
+				}
+
+			}
+
+		}
+
+		StaticObjects
+
+		{
+
+		}
+
+		Conditionals
+
+		{
+
+			CONDITIONAL
+
+			{
+
+				id = 0
+
+				outputNodePos = (0, 0, 0)
+
+				root = 0
+
+				COMP
+
+				{
+
+					id = 0
+
+					type = SCCVehicleControl
+
+					uiPos = (-275, 17, 0)
+
+					vehicleControl = AV-42C;Button;MFD2-Button-B4;
+
+					controlCondition = Interacted
+
+					controlValue = 0
+
+					isNot = False
+
+				}
+
+			}
+
+			CONDITIONAL
+
+			{
+
+				id = 1
+
+				outputNodePos = (0, 0, 0)
+
+				root = 0
+
+				COMP
+
+				{
+
+					id = 0
+
+					type = SCCVehicleControl
+
+					uiPos = (-298, 37, 0)
+
+					vehicleControl = AV-42C;Button;MFD2-Button-B5;
+
+					controlCondition = Interacted
+
+					controlValue = 0
+
+					isNot = False
+
+				}
+
+			}
+
+			CONDITIONAL
+
+			{
+
+				id = 2
+
+				outputNodePos = (0, 0, 0)
+
+				root = 0
+
+				COMP
+
+				{
+
+					id = 0
+
+					type = SCCVehicleControl
+
+					uiPos = (-315, 49, 0)
+
+					vehicleControl = AV-42C;Lever;masterArmSwitchInteractable;
+
+					controlCondition = EqualTo
+
+					controlValue = 1
+
+					isNot = False
+
+				}
+
+			}
+
+			CONDITIONAL
+
+			{
+
+				id = 3
+
+				outputNodePos = (0, 0, 0)
+
+				root = 0
+
+				COMP
+
+				{
+
+					id = 0
+
+					type = SCCUnit
+
+					uiPos = (-337, 64, 0)
+
+					unit = 0
+
+					methodName = SCC_UsingWeaponStr
+
+					methodParameters = AGM-114;
+
+					isNot = False
+
+				}
+
+			}
+
+			CONDITIONAL
+
+			{
+
+				id = 4
+
+				outputNodePos = (0, 0, 0)
+
+				root = 0
+
+				COMP
+
+				{
+
+					id = 0
+
+					type = SCCUnitList
+
+					uiPos = (-290, 39, 0)
+
+					unitList = 2;5;6;7;
+
+					methodName = SCC_NumAlive
+
+					methodParameters = Less_Than;3;
+
+					isNot = False
+
+				}
+
+			}
+
+			CONDITIONAL
+
+			{
+
+				id = 5
+
+				outputNodePos = (0, 0, 0)
+
+				root = 0
+
+				COMP
+
+				{
+
+					id = 0
+
+					type = SCCUnitList
+
+					uiPos = (-341.6695, 19.04416, 0)
+
+					unitList = 8;9;10;11;12;1;
+
+					methodName = SCC_NumAlive
+
+					methodParameters = Less_Than;4;
+
+					isNot = False
+
+				}
+
+			}
+
+			CONDITIONAL
+
+			{
+
+				id = 6
+
+				outputNodePos = (0, 0, 0)
+
+				root = 0
+
+				COMP
+
+				{
+
+					id = 0
+
+					type = SCCUnit
+
+					uiPos = (-382.2042, 81.66757, 0)
+
+					unit = 0
+
+					methodName = SCC_UsingWeaponStr
+
+					methodParameters = AGM-65;
+
+					isNot = False
+
+				}
+
+			}
+
+		}
+
+		ConditionalActions
+
+		{
+
+		}
+
+		EventSequences
+
+		{
+
+			SEQUENCE
+
+			{
+
+				id = 0
+
+				sequenceName = Tutorial Sequence
+
+				startImmediately = True
+
+				EVENT
+
+				{
+
+					delay = 3
+
+					nodeName = t1-welcome
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message
+
+							methodName = DisplayMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = Welcome to the air-to-ground missile tutorial!
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 5
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_42_agm\t01_radio.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 5
+
+					nodeName = t2-agm info
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message
+
+							methodName = DisplayMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = Air-to-ground missiles (AGM) are useful for precisely hitting light to medium armored ground targets
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 8
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_42_agm\t02_radio.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 8
+
+					nodeName = t3-open tgp
+
+					exitConditional = 0
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Control Message
+
+							methodName = DisplayControlMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = Open TGP
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 999
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = VehicleControlReference
+
+								value = AV-42C;Button;MFD2-Button-B4;
+
+								name = Control
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_42_agm\t03_radio.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 0
+
+					nodeName = power tgp
+
+					exitConditional = 1
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Control Message
+
+							methodName = DisplayControlMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = Power On
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 999
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = VehicleControlReference
+
+								value = AV-42C;Button;MFD2-Button-B5;
+
+								name = Control
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 0
+
+					nodeName = t4-tgp for tgt
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message
+
+							methodName = DisplayMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = You will use the TGP to designate targets for the AGMs
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 5
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_42_agm\t04_radio.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 5
+
+					nodeName = t5-arm wpns
+
+					exitConditional = 2
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Control Message
+
+							methodName = DisplayControlMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = Arm weapons
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 999
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = VehicleControlReference
+
+								value = AV-42C;Lever;masterArmSwitchInteractable;
+
+								name = Control
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_42_agm\t05_radio.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 0
+
+					nodeName = t6-equip agm114
+
+					exitConditional = 3
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message
+
+							methodName = DisplayMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = Switch to AGM-114
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 999
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Play Priority Message
+
+							methodName = PlayPriorityMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_42_agm\t06_radio.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 0
+
+					nodeName = t7-agm114 info
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message Video
+
+							methodName = DisplayMessageWithVideo
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = These are small, laser-guided, anti-tank missiles
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 5
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = VTSVideoReference
+
+								value = Tutorials\tut_42_agm\tut_agm_t7.mp4
+
+								name = Video
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Play Priority Message
+
+							methodName = PlayPriorityMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_42_agm\t07_radio.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 5
+
+					nodeName = t8-line of sight
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message Video
+
+							methodName = DisplayMessageWithVideo
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = Since they home in on the laser point emitted by your TGP, you must maintain line of sight to the target until it hits
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 8
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = VTSVideoReference
+
+								value = Tutorials\tut_42_agm\tut_agm_t7.mp4
+
+								name = Video
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_42_agm\t08_radio.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 8
+
+					nodeName = t9-how to fire
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message Video
+
+							methodName = DisplayMessageWithVideo
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = To fire it, designate a target using the TGP, point your aircraft at the target until the missile locks on, then pull the trigger to fire
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 10
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = VTSVideoReference
+
+								value = Tutorials\tut_42_agm\tut_agm_t9.mp4
+
+								name = Video
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_42_agm\t09_radio.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 10
+
+					nodeName = t10-manual mode
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message Video
+
+							methodName = DisplayMessageWithVideo
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = You can also switch the missile seeker''s uncage mode to MANUAL, which will allow you to fire at targets off boresight
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 8
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = VTSVideoReference
+
+								value = Tutorials\tut_42_agm\tut_agm_t11.mp4
+
+								name = Video
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_42_agm\t10_radio.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 8
+
+					nodeName = t11-manual mode 2
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message Video
+
+							methodName = DisplayMessageWithVideo
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = In MANUAL mode, you hold the trigger to uncage the seeker, then press the weapon switch button to fire
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 9
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = VTSVideoReference
+
+								value = Tutorials\tut_42_agm\tut_agm_t11.mp4
+
+								name = Video
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_42_agm\t11_radio.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 9
+
+					nodeName = start mission obj
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = Objective
+
+							targetID = 1
+
+							eventName = Begin Objective
+
+							methodName = BeginObjective
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 2
+
+					nodeName = t12-mission 1
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message
+
+							methodName = DisplayMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = Try shooting the targets around the mission waypoint using the AGM-114
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 8
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_42_agm\t12_radio.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 8
+
+					nodeName = t13-remember LOS
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message
+
+							methodName = DisplayMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = Remember, you need to maintain line of sight with your TGP in order to guide the missile to the target
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 8
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_42_agm\t13_radio.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+			}
+
+			SEQUENCE
+
+			{
+
+				id = 1
+
+				sequenceName = Tutorial Sequence Pt 2
+
+				startImmediately = False
+
+				EVENT
+
+				{
+
+					delay = 0
+
+					nodeName = t14- completed mission A
+
+					exitConditional = 6
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message
+
+							methodName = DisplayMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = Great! Now switch to the AGM-65
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 999
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_42_agm\t14_radio.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 0
+
+					nodeName = t15-agm65 info
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message
+
+							methodName = DisplayMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = This is a larger, slightly heavier hitting anti-tank missile with a more advanced optical seeker
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 6
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Play Priority Message
+
+							methodName = PlayPriorityMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_42_agm\t15_radio.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 6
+
+					nodeName = t16-agm65 info 2
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message
+
+							methodName = DisplayMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = With this type of missile, you do not need to maintain a lock on the target after you fire at it
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 6
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_42_agm\t16_radio.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 6
+
+					nodeName = t17-faf
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message Video
+
+							methodName = DisplayMessageWithVideo
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = The fire-and-forget capability allows you to fire at multiple targets in one pass, or take cover after firing
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 10
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = VTSVideoReference
+
+								value = Tutorials\tut_42_agm\tut_agm_t17.mp4
+
+								name = Video
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_42_agm\t17_radio.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 10
+
+					nodeName = Start mission B
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = Objective
+
+							targetID = 2
+
+							eventName = Begin Objective
+
+							methodName = BeginObjective
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 2
+
+					nodeName = t18- mission B
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message
+
+							methodName = DisplayMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = Try taking down the targets at the next waypoint and practice taking advantage of the fire-and-forget capability
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 8
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_42_agm\t18_radio.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 15
+
+					nodeName = arty rockets
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = Unit
+
+							targetID = 1
+
+							eventName = Fire Salvos On Waypoint Radius
+
+							methodName = FireMultiOnWaypointRadius
+
+							ParamInfo
+
+							{
+
+								type = Waypoint
+
+								value = 2
+
+								name = Waypoint
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 500
+
+								name = Radius
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,5000)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 1
+
+								name = Shots per salvo
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,12)
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = UnitSpawnAttributeRange+RangeTypes
+
+									data = Int
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 12
+
+								name = Salvos
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,12)
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = UnitSpawnAttributeRange+RangeTypes
+
+									data = Int
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = Unit
+
+							targetID = 8
+
+							eventName = Fire Salvos On Waypoint Radius
+
+							methodName = FireMultiOnWaypointRadius
+
+							ParamInfo
+
+							{
+
+								type = Waypoint
+
+								value = 2
+
+								name = Waypoint
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 1
+
+								name = Radius
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,5000)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 1
+
+								name = Shots per salvo
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,12)
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = UnitSpawnAttributeRange+RangeTypes
+
+									data = Int
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 12
+
+								name = Salvos
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,12)
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = UnitSpawnAttributeRange+RangeTypes
+
+									data = Int
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = Unit
+
+							targetID = 9
+
+							eventName = Fire Salvos On Waypoint Radius
+
+							methodName = FireMultiOnWaypointRadius
+
+							ParamInfo
+
+							{
+
+								type = Waypoint
+
+								value = 2
+
+								name = Waypoint
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 500
+
+								name = Radius
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,5000)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 1
+
+								name = Shots per salvo
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,12)
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = UnitSpawnAttributeRange+RangeTypes
+
+									data = Int
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 12
+
+								name = Salvos
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,12)
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = UnitSpawnAttributeRange+RangeTypes
+
+									data = Int
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = Unit
+
+							targetID = 10
+
+							eventName = Fire Salvos On Waypoint Radius
+
+							methodName = FireMultiOnWaypointRadius
+
+							ParamInfo
+
+							{
+
+								type = Waypoint
+
+								value = 2
+
+								name = Waypoint
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 500
+
+								name = Radius
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,5000)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 1
+
+								name = Shots per salvo
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,12)
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = UnitSpawnAttributeRange+RangeTypes
+
+									data = Int
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 12
+
+								name = Salvos
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,12)
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = UnitSpawnAttributeRange+RangeTypes
+
+									data = Int
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = Unit
+
+							targetID = 11
+
+							eventName = Fire Salvos On Waypoint Radius
+
+							methodName = FireMultiOnWaypointRadius
+
+							ParamInfo
+
+							{
+
+								type = Waypoint
+
+								value = 2
+
+								name = Waypoint
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 500
+
+								name = Radius
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,5000)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 1
+
+								name = Shots per salvo
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,12)
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = UnitSpawnAttributeRange+RangeTypes
+
+									data = Int
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 12
+
+								name = Salvos
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,12)
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = UnitSpawnAttributeRange+RangeTypes
+
+									data = Int
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = Unit
+
+							targetID = 12
+
+							eventName = Fire Salvos On Waypoint Radius
+
+							methodName = FireMultiOnWaypointRadius
+
+							ParamInfo
+
+							{
+
+								type = Waypoint
+
+								value = 2
+
+								name = Waypoint
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 500
+
+								name = Radius
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,5000)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 1
+
+								name = Shots per salvo
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,12)
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = UnitSpawnAttributeRange+RangeTypes
+
+									data = Int
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 12
+
+								name = Salvos
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,12)
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = UnitSpawnAttributeRange+RangeTypes
+
+									data = Int
+
+								}
+
+							}
+
+						}
+
+					}
+
+				}
+
+			}
+
+			SEQUENCE
+
+			{
+
+				id = 2
+
+				sequenceName = Tutorial Sequence Pt 3
+
+				startImmediately = False
+
+				EVENT
+
+				{
+
+					delay = 0
+
+					nodeName = t19- nice shooting
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 1
+
+							eventName = Display Message
+
+							methodName = DisplayMessage
+
+							ParamInfo
+
+							{
+
+								type = System.String
+
+								value = Nice shooting!  This concludes the air-to-ground missile tutorial
+
+								name = Text
+
+								ParamAttrInfo
+
+								{
+
+									type = TextInputModes
+
+									data = MultiLine
+
+								}
+
+								ParamAttrInfo
+
+								{
+
+									type = System.Int32
+
+									data = 140
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 8
+
+								name = Duration
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1,9999)
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = Tutorials\tut_42_agm\t19_radio.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+					}
+
+				}
+
+				EVENT
+
+				{
+
+					delay = 6
+
+					nodeName = complete
+
+					EventInfo
+
+					{
+
+						eventName = 
+
+						EventTarget
+
+						{
+
+							targetType = Objective
+
+							targetID = 0
+
+							eventName = Complete Objective
+
+							methodName = CompleteObjective
+
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+		BASES
+
+		{
+
+			BaseInfo
+
+			{
+
+				id = 0
+
+				overrideBaseName = 
+
+				baseTeam = Allied
+
+			}
+
+		}
+
+		GlobalValues
+
+		{
+
+		}
+
+		Briefing
+
+		{
+
+			BRIEFING_NOTE
+
+			{
+
+				text = Today, you will learn how to use air-to-ground missiles (AGMs) to destroy armored ground targets.
+
+				imagePath = Tutorials\tut_42_agm\thumb.png
+
+				audioClipPath = 
+
+			}
+
+		}
+
+		ResourceManifest
+
+		{
+
+			0 = Tutorials\tut_42_agm\t01_radio.ogg
+
+			1 = Tutorials\tut_42_agm\t02_radio.ogg
+
+			2 = Tutorials\tut_42_agm\t03_radio.ogg
+
+			3 = Tutorials\tut_42_agm\t04_radio.ogg
+
+			4 = Tutorials\tut_42_agm\t05_radio.ogg
+
+			5 = Tutorials\tut_42_agm\t06_radio.ogg
+
+			6 = Tutorials\tut_42_agm\tut_agm_t7.mp4
+
+			7 = Tutorials\tut_42_agm\t07_radio.ogg
+
+			8 = Tutorials\tut_42_agm\t08_radio.ogg
+
+			9 = Tutorials\tut_42_agm\tut_agm_t9.mp4
+
+			10 = Tutorials\tut_42_agm\t09_radio.ogg
+
+			11 = Tutorials\tut_42_agm\tut_agm_t11.mp4
+
+			12 = Tutorials\tut_42_agm\t10_radio.ogg
+
+			13 = Tutorials\tut_42_agm\t11_radio.ogg
+
+			14 = Tutorials\tut_42_agm\t12_radio.ogg
+
+			15 = Tutorials\tut_42_agm\t13_radio.ogg
+
+			16 = Tutorials\tut_42_agm\t14_radio.ogg
+
+			17 = Tutorials\tut_42_agm\t15_radio.ogg
+
+			18 = Tutorials\tut_42_agm\t16_radio.ogg
+
+			19 = Tutorials\tut_42_agm\tut_agm_t17.mp4
+
+			20 = Tutorials\tut_42_agm\t17_radio.ogg
+
+			21 = Tutorials\tut_42_agm\t18_radio.ogg
+
+			22 = Tutorials\tut_42_agm\t19_radio.ogg
+
+			23 = Tutorials\tut_42_agm\thumb.png
+
+		}
+
+	}
+
+	'
+    image: {fileID: 2800000, guid: 9926aec45f9de5545a0b46b576d9c4d3, type: 3}
+    images:
+    - {fileID: 2800000, guid: e7f2a409164cc1c4eb1d5bad8318ff47, type: 3}
+    imagePaths:
+    - Tutorials\tut_42_agm\thumb.png
+    audioClips:
+    - {fileID: 8300000, guid: 5816fbedf395cb847bd0f0f31ea3b1d8, type: 3}
+    - {fileID: 8300000, guid: a1d625ca8e4d4cc469be746b481f19ee, type: 3}
+    - {fileID: 8300000, guid: 879b560187c9ccc4f94d50e2a4557257, type: 3}
+    - {fileID: 8300000, guid: e881c07bb21dd8142b283788dbb39cbc, type: 3}
+    - {fileID: 8300000, guid: 7e36044be7cd51044ad7a32afced8b13, type: 3}
+    - {fileID: 8300000, guid: 6e2b47a12e231e14d8bc49ed927782a3, type: 3}
+    - {fileID: 8300000, guid: 16a27f04e6c5e444281738bbd1104407, type: 3}
+    - {fileID: 8300000, guid: 52585cde0aebafc4d997562ee53d16f6, type: 3}
+    - {fileID: 8300000, guid: d5daa33797243c948b054afcf6ad16be, type: 3}
+    - {fileID: 8300000, guid: 91f37bfcfd368ca478be678e5030b7a1, type: 3}
+    - {fileID: 8300000, guid: 1441de12054149c49906089d6b036769, type: 3}
+    - {fileID: 8300000, guid: 2810311ddb4c1b44aa629eeddcd82a93, type: 3}
+    - {fileID: 8300000, guid: feb4840e87f158f4bb1e223862996894, type: 3}
+    - {fileID: 8300000, guid: 7790ac4dfe94d084c937e374635a5e47, type: 3}
+    - {fileID: 8300000, guid: 999aae8f41645e84d86fa0f14be99251, type: 3}
+    - {fileID: 8300000, guid: f8162f306b02f35479f5fbd341092fa6, type: 3}
+    - {fileID: 8300000, guid: 8858b14e90cc9d747806166053a76297, type: 3}
+    - {fileID: 8300000, guid: 39fe1471ab95d754ab43237e6d0a9474, type: 3}
+    - {fileID: 8300000, guid: 60c81dd01e3c203429a3694f17a68da0, type: 3}
+    audioClipPaths:
+    - Tutorials\tut_42_agm\t01_radio.ogg
+    - Tutorials\tut_42_agm\t02_radio.ogg
+    - Tutorials\tut_42_agm\t03_radio.ogg
+    - Tutorials\tut_42_agm\t04_radio.ogg
+    - Tutorials\tut_42_agm\t05_radio.ogg
+    - Tutorials\tut_42_agm\t06_radio.ogg
+    - Tutorials\tut_42_agm\t07_radio.ogg
+    - Tutorials\tut_42_agm\t08_radio.ogg
+    - Tutorials\tut_42_agm\t09_radio.ogg
+    - Tutorials\tut_42_agm\t10_radio.ogg
+    - Tutorials\tut_42_agm\t11_radio.ogg
+    - Tutorials\tut_42_agm\t12_radio.ogg
+    - Tutorials\tut_42_agm\t13_radio.ogg
+    - Tutorials\tut_42_agm\t14_radio.ogg
+    - Tutorials\tut_42_agm\t15_radio.ogg
+    - Tutorials\tut_42_agm\t16_radio.ogg
+    - Tutorials\tut_42_agm\t17_radio.ogg
+    - Tutorials\tut_42_agm\t18_radio.ogg
+    - Tutorials\tut_42_agm\t19_radio.ogg
+    videoClips:
+    - {fileID: 32900000, guid: d5d3e03b591a50440a286f4c09152299, type: 3}
+    - {fileID: 32900000, guid: 4863540817fc0a444bf4aa519211a8dc, type: 3}
+    - {fileID: 32900000, guid: 903bec0066af7004c909b3e1a1626b97, type: 3}
+    - {fileID: 32900000, guid: 313fe7ba3e748a54895f8fec29e76dbf, type: 3}
+    videoClipPaths:
+    - Tutorials\tut_42_agm\tut_agm_t7.mp4
+    - Tutorials\tut_42_agm\tut_agm_t9.mp4
+    - Tutorials\tut_42_agm\tut_agm_t11.mp4
+    - Tutorials\tut_42_agm\tut_agm_t17.mp4
+  - scenarioID: tut_basicFlight
+    scenarioConfig: 'CustomScenario
+
+	{
+
+		gameVersion = 0.1.0p1
+
+		campaignID = av42c_tutorials
+
+		campaignOrderIdx = 1
+
+		scenarioName = Basic Flight
+
+		scenarioID = tut_basicFlight
+
+		scenarioDescription = Taxi, take off, landing.
+
+		mapID = map_akutan
+
+		vehicle = AV-42C
+
+		allowedEquips = gau-8;m230;h70-x7;h70-4x4;mk82x1;mk82x2;mk82x3;agm89x1;gbu38x1;gbu38x2;gbu38x3;gbu39x3;gbu39x4u;cbu97x1;hellfirex4;maverickx1;maverickx3;cagm-6;sidewinderx1;sidewinderx2;sidewinderx3;iris-t-x1;iris-t-x2;iris-t-x3;
+
+		forcedEquips = ;;;;;;;
+
+		forceEquips = True
+
+		normForcedFuel = 1
+
+		equipsConfigurable = False
+
+		baseBudget = 1000
+
+		isTraining = False
+
+		rtbWptID = 
+
+		refuelWptID = 
+
+		envName = morning
+
+		selectableEnv = False
+
+		qsMode = None
+
+		qsLimit = -1
+
+		UNITS
+
+		{
+
+			UnitSpawner
+
+			{
+
+				unitName = Player
+
+				globalPosition = (29076.923461914063, 0.12939453125, 32226.60888671875)
+
+				unitInstanceID = 0
+
+				unitID = PlayerSpawn
+
+				rotation = (5.006697E-06, 289.356, -9.100251E-06)
+
+				spawnChance = 100
+
+				lastValidPlacement = (29076.923461914063, 0.12939453125, 32226.60888671875)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					startMode = FlightReady
+
+					initialSpeed = 0
+
+					unitGroup = null
+
+				}
+
+			}
+
+		}
+
+		PATHS
+
+		{
+
+		}
+
+		WAYPOINTS
+
+		{
+
+		}
+
+		UNITGROUPS
+
+		{
+
+		}
+
+		TimedEventGroups
+
+		{
+
+		}
+
+		TRIGGER_EVENTS
+
+		{
+
+			TriggerEvent
+
+			{
+
+				id = 0
+
+				enabled = True
+
+				triggerType = Conditional
+
+				eventName = LandingSkipTrigger
+
+				EventInfo
+
+				{
+
+					eventName = 
+
+					EventTarget
+
+					{
+
+						targetType = Trigger_Events
+
+						targetID = 2
+
+						eventName = Enable
+
+						methodName = Enable
+
+					}
+
+				}
+
+			}
+
+			TriggerEvent
+
+			{
+
+				id = 1
+
+				enabled = True
+
+				triggerType = Conditional
+
+				eventName = CancelLandingSkipTrigger
+
+				EventInfo
+
+				{
+
+					eventName = 
+
+					EventTarget
+
+					{
+
+						targetType = Trigger_Events
+
+						targetID = 2
+
+						eventName = Disable
+
+						methodName = Disable
+
+					}
+
+				}
+
+			}
+
+			TriggerEvent
+
+			{
+
+				id = 2
+
+				enabled = False
+
+				triggerType = Conditional
+
+				conditional = 0
+
+				eventName = LandingTrigger
+
+				EventInfo
+
+				{
+
+					eventName = 
+
+					EventTarget
+
+					{
+
+						targetType = Static_Object
+
+						targetID = 0
+
+						eventName = Fire Custom Action
+
+						methodName = FireCustomAction
+
+						ParamInfo
+
+						{
+
+							type = System.Single
+
+							value = 0
+
+							name = Action Index
+
+							ParamAttrInfo
+
+							{
+
+								type = MinMax
+
+								data = (0,100)
+
+							}
+
+							ParamAttrInfo
+
+							{
+
+								type = UnitSpawnAttributeRange+RangeTypes
+
+								data = Int
+
+							}
+
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+		OBJECTIVES
+
+		{
+
+		}
+
+		StaticObjects
+
+		{
+
+			StaticObject
+
+			{
+
+				prefabID = Tut_BasicFlight
+
+				id = 0
+
+				globalPos = (28993.046478271484, 0.451416015625, 31986.895812988281)
+
+				rotation = (7.263473E-06, 1.105762E-13, 8.722483E-07)
+
+			}
+
+		}
+
+		Conditionals
+
+		{
+
+			CONDITIONAL
+
+			{
+
+				id = 0
+
+				outputNodePos = (0, 0, 0)
+
+				root = 0
+
+				COMP
+
+				{
+
+					id = 0
+
+					type = SCCUnit
+
+					uiPos = (-375, 45, 0)
+
+					unit = 0
+
+					methodName = SCC_Landed
+
+					methodParameters = null
+
+					isNot = False
+
+				}
+
+			}
+
+		}
+
+		ConditionalActions
+
+		{
+
+		}
+
+		EventSequences
+
+		{
+
+		}
+
+		BASES
+
+		{
+
+			BaseInfo
+
+			{
+
+				id = 0
+
+				overrideBaseName = 
+
+				baseTeam = Allied
+
+			}
+
+		}
+
+		GlobalValues
+
+		{
+
+		}
+
+		Briefing
+
+		{
+
+			BRIEFING_NOTE
+
+			{
+
+				{text} = {Learn how to use the virtual flight controls to taxi, take off, and land the AV-42C "Kestrel".}
+
+				imagePath = TheIsland\Training3\ti-t3_interiorThumbnail.png
+
+				audioClipPath = 
+
+			}
+
+		}
+
+		ResourceManifest
+
+		{
+
+			0 = TheIsland\Training3\ti-t3_interiorThumbnail.png
+
+		}
+
+	}
+
+	'
+    image: {fileID: 2800000, guid: 7e1445ddda7159a439fdcbff3ee38b3f, type: 3}
+    images:
+    - {fileID: 2800000, guid: 4f1ef03da8312f440b8547a05fe02193, type: 3}
+    imagePaths:
+    - TheIsland\Training3\ti-t3_interiorThumbnail.png
+    audioClips: []
+    audioClipPaths: []
+    videoClips: []
+    videoClipPaths: []
+  - scenarioID: tut_gettingStarted
+    scenarioConfig: 'CustomScenario
+
+	{
+
+		gameVersion = 1.0.2p2
+
+		campaignID = av42c_tutorials
+
+		campaignOrderIdx = 0
+
+		scenarioName = Getting Started
+
+		scenarioID = tut_gettingStarted
+
+		scenarioDescription = Cockpit familiarization, start-up procedures.
+
+		mapID = map_akutan
+
+		vehicle = AV-42C
+
+		allowedEquips = gau-8;m230;h70-x7;h70-4x4;mk82x1;mk82x2;mk82x3;agm89x1;gbu38x1;gbu38x2;gbu38x3;gbu39x3;gbu39x4u;cbu97x1;hellfirex4;maverickx1;maverickx3;cagm-6;sidewinderx1;sidewinderx2;sidewinderx3;iris-t-x1;iris-t-x2;iris-t-x3;
+
+		forcedEquips = ;;;;;;;
+
+		forceEquips = True
+
+		normForcedFuel = 1
+
+		equipsConfigurable = False
+
+		baseBudget = 1000
+
+		isTraining = False
+
+		rtbWptID = 
+
+		refuelWptID = 
+
+		envName = day
+
+		selectableEnv = False
+
+		qsMode = None
+
+		qsLimit = -1
+
+		UNITS
+
+		{
+
+			UnitSpawner
+
+			{
+
+				unitName = Player
+
+				globalPosition = (29033.58740234375, 0.12939453125, 32082.000854492188)
+
+				unitInstanceID = 0
+
+				unitID = PlayerSpawn
+
+				rotation = (4.851133E-06, 288.3811, -9.184122E-06)
+
+				spawnChance = 100
+
+				lastValidPlacement = (29033.58740234375, 0.12939453125, 32082.000854492188)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					startMode = Cold
+
+					initialSpeed = 0
+
+					unitGroup = null
+
+				}
+
+			}
+
+		}
+
+		PATHS
+
+		{
+
+		}
+
+		WAYPOINTS
+
+		{
+
+		}
+
+		UNITGROUPS
+
+		{
+
+		}
+
+		TimedEventGroups
+
+		{
+
+		}
+
+		TRIGGER_EVENTS
+
+		{
+
+		}
+
+		OBJECTIVES
+
+		{
+
+		}
+
+		StaticObjects
+
+		{
+
+			StaticObject
+
+			{
+
+				prefabID = Tut_GettingStarted
+
+				id = 0
+
+				globalPos = (28993.049964904785, 0.451416015625, 31986.965004920959)
+
+				rotation = (0, 1.105762E-13, 0)
+
+			}
+
+		}
+
+		Conditionals
+
+		{
+
+		}
+
+		ConditionalActions
+
+		{
+
+		}
+
+		EventSequences
+
+		{
+
+		}
+
+		BASES
+
+		{
+
+			BaseInfo
+
+			{
+
+				id = 0
+
+				overrideBaseName = 
+
+				baseTeam = Allied
+
+			}
+
+		}
+
+		GlobalValues
+
+		{
+
+		}
+
+		Briefing
+
+		{
+
+			BRIEFING_NOTE
+
+			{
+
+				text = Today we will be learning how to operate the AV-42C.///n///nThe start-up procedure is not very complicated, so let''s jump in and get started.
+
+				imagePath = Images\av42c.png
+
+				audioClipPath = 
+
+			}
+
+		}
+
+		ResourceManifest
+
+		{
+
+			0 = Images\av42c.png
+
+		}
+
+	}
+
+	'
+    image: {fileID: 2800000, guid: 2e1d91765cda37d4a9efc1e06496859e, type: 3}
+    images:
+    - {fileID: 2800000, guid: 255a054dc7d341045b64a4c44834b8a0, type: 3}
+    imagePaths:
+    - Images\av42c.png
+    audioClips: []
+    audioClipPaths: []
+    videoClips: []
+    videoClipPaths: []
+  - scenarioID: tut_weapons1
+    scenarioConfig: 'CustomScenario
+
+	{
+
+		gameVersion = 1.0.2p2
+
+		campaignID = av42c_tutorials
+
+		campaignOrderIdx = 2
+
+		scenarioName = Basic Weapons
+
+		scenarioID = tut_weapons1
+
+		scenarioDescription = Learn how to use the cannon, rockets, and targeting system.
+
+		mapID = map_akutan
+
+		vehicle = AV-42C
+
+		allowedEquips = gau-8;m230;h70-x7;h70-4x4;mk82x1;mk82x2;mk82x3;agm89x1;gbu38x1;gbu38x2;gbu38x3;gbu39x3;gbu39x4u;cbu97x1;hellfirex4;maverickx1;maverickx3;cagm-6;sidewinderx1;sidewinderx2;sidewinderx3;iris-t-x1;iris-t-x2;iris-t-x3;
+
+		forcedEquips = gau-8;h70-4x4;h70-4x4;h70-4x4;h70-4x4;;;
+
+		forceEquips = True
+
+		normForcedFuel = 1
+
+		equipsConfigurable = False
+
+		baseBudget = 1000
+
+		isTraining = False
+
+		rtbWptID = 
+
+		refuelWptID = 
+
+		envName = day
+
+		selectableEnv = False
+
+		qsMode = None
+
+		qsLimit = -1
+
+		UNITS
+
+		{
+
+			UnitSpawner
+
+			{
+
+				unitName = Player
+
+				globalPosition = (28993.099319458008, 0.45127367973327637, 31986.803291320801)
+
+				unitInstanceID = 0
+
+				unitID = PlayerSpawn
+
+				rotation = (2.987957E-06, 287.2588, -6.677647E-06)
+
+				spawnChance = 100
+
+				lastValidPlacement = (28993.099319458008, 0.45127367973327637, 31986.803291320801)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					startMode = FlightReady
+
+					initialSpeed = 0
+
+					unitGroup = null
+
+				}
+
+			}
+
+		}
+
+		PATHS
+
+		{
+
+		}
+
+		WAYPOINTS
+
+		{
+
+		}
+
+		UNITGROUPS
+
+		{
+
+		}
+
+		TimedEventGroups
+
+		{
+
+		}
+
+		TRIGGER_EVENTS
+
+		{
+
+		}
+
+		OBJECTIVES
+
+		{
+
+		}
+
+		StaticObjects
+
+		{
+
+			StaticObject
+
+			{
+
+				prefabID = Tut_Weapons1
+
+				id = 0
+
+				globalPos = (28993.09930229187, 0.451416015625, 31986.803283691406)
+
+				rotation = (7.263473E-06, 2.599393E-13, 8.722483E-07)
+
+			}
+
+		}
+
+		Conditionals
+
+		{
+
+		}
+
+		ConditionalActions
+
+		{
+
+		}
+
+		EventSequences
+
+		{
+
+		}
+
+		BASES
+
+		{
+
+			BaseInfo
+
+			{
+
+				id = 0
+
+				overrideBaseName = 
+
+				baseTeam = Allied
+
+			}
+
+		}
+
+		GlobalValues
+
+		{
+
+		}
+
+		Briefing
+
+		{
+
+			BRIEFING_NOTE
+
+			{
+
+				text = The AV-42C is capable of equipping various weapons.  Today you will learn how to use the 30mm GAU-8 cannon, and the Hydra-70 unguided rockets.  You will also learn how to find and acquire targets using the TGP.
+
+				imagePath = TheIsland\Training3\ti-t3_interiorThumbnail.png
+
+				audioClipPath = 
+
+			}
+
+		}
+
+		ResourceManifest
+
+		{
+
+			0 = TheIsland\Training3\ti-t3_interiorThumbnail.png
+
+		}
+
+	}
+
+	'
+    image: {fileID: 2800000, guid: 77ece42407335cc4d9186c03ceaaf4a4, type: 3}
+    images:
+    - {fileID: 2800000, guid: a5823a70e9e365b44970c8ba8e4afb75, type: 3}
+    imagePaths:
+    - TheIsland\Training3\ti-t3_interiorThumbnail.png
+    audioClips: []
+    audioClipPaths: []
+    videoClips: []
+    videoClipPaths: []
+  - scenarioID: verticalFlight1
+    scenarioConfig: 'CustomScenario
+
+	{
+
+		gameVersion = 1.0.2p2
+
+		campaignID = av42c_tutorials
+
+		campaignOrderIdx = 3
+
+		scenarioName = AP Vertical Flight
+
+		scenarioID = verticalFlight1
+
+		scenarioDescription = Learn how to use the hover autopilot feature.
+
+		mapID = map_akutan
+
+		vehicle = AV-42C
+
+		allowedEquips = gau-8;m230;h70-x7;h70-4x4;mk82x1;mk82x2;mk82x3;agm89x1;gbu38x1;gbu38x2;gbu38x3;gbu39x3;gbu39x4u;cbu97x1;hellfirex4;maverickx1;maverickx3;cagm-6;sidewinderx1;sidewinderx2;sidewinderx3;iris-t-x1;iris-t-x2;iris-t-x3;
+
+		forcedEquips = ;;;;;;;
+
+		forceEquips = True
+
+		normForcedFuel = 1
+
+		equipsConfigurable = False
+
+		baseBudget = 1000
+
+		isTraining = False
+
+		rtbWptID = 
+
+		refuelWptID = 
+
+		envName = day
+
+		selectableEnv = False
+
+		qsMode = None
+
+		qsLimit = -1
+
+		UNITS
+
+		{
+
+			UnitSpawner
+
+			{
+
+				unitName = Player
+
+				globalPosition = (28993.124755859375, 0.4512939453125, 31986.886596679688)
+
+				unitInstanceID = 0
+
+				unitID = PlayerSpawn
+
+				rotation = (3.358034E-06, 290.4762, -6.499421E-06)
+
+				spawnChance = 100
+
+				lastValidPlacement = (28993.124755859375, 0.4512939453125, 31986.886596679688)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					startMode = FlightReady
+
+					initialSpeed = 0
+
+					unitGroup = null
+
+				}
+
+			}
+
+		}
+
+		PATHS
+
+		{
+
+		}
+
+		WAYPOINTS
+
+		{
+
+			WAYPOINT
+
+			{
+
+				id = 0
+
+				name = landingPads
+
+				globalPoint = (29012.297149658203, 0.129425048828125, 31927.844764709473)
+
+			}
+
+		}
+
+		UNITGROUPS
+
+		{
+
+		}
+
+		TimedEventGroups
+
+		{
+
+		}
+
+		TRIGGER_EVENTS
+
+		{
+
+		}
+
+		OBJECTIVES
+
+		{
+
+		}
+
+		StaticObjects
+
+		{
+
+			StaticObject
+
+			{
+
+				prefabID = VFTraining1Prefab
+
+				id = 0
+
+				globalPos = (28993.124765872955, 0.451416015625, 31986.886573791504)
+
+				rotation = (0, 1.105762E-13, 0)
+
+			}
+
+		}
+
+		Conditionals
+
+		{
+
+		}
+
+		ConditionalActions
+
+		{
+
+		}
+
+		EventSequences
+
+		{
+
+		}
+
+		BASES
+
+		{
+
+			BaseInfo
+
+			{
+
+				id = 0
+
+				overrideBaseName = 
+
+				baseTeam = Allied
+
+			}
+
+		}
+
+		GlobalValues
+
+		{
+
+		}
+
+		Briefing
+
+		{
+
+			BRIEFING_NOTE
+
+			{
+
+				text = Vertical flight can be tricky, but by using the hover autopilot, you can take off, hover, and land with ease.
+
+				imagePath = Images\ti-t3_vtolThumbnail.png
+
+				audioClipPath = 
+
+			}
+
+		}
+
+		ResourceManifest
+
+		{
+
+			0 = Images\ti-t3_vtolThumbnail.png
+
+		}
+
+	}
+
+	'
+    image: {fileID: 2800000, guid: 0a4d4b7df6c7df44ab1e3f9a8d529a56, type: 3}
+    images:
+    - {fileID: 2800000, guid: 230d20e02b1545148be69a881750dfbb, type: 3}
+    imagePaths:
+    - Images\ti-t3_vtolThumbnail.png
+    audioClips: []
+    audioClipPaths: []
+    videoClips: []
+    videoClipPaths: []
+  vtMaps:
+  - {fileID: 11400000, guid: 9c86409042ab2cd49adb6e7d220ceb53, type: 2}
+  campaignLivery: {fileID: 0}
+  campaignLiveryOpFor: {fileID: 0}
+  perVehicleLiveries: []
+  isStandaloneScenarios: 0
+  requireDLCs:

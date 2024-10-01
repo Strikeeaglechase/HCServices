@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<WorkshopItemInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PublishedFileId>1718758336</PublishedFileId>
+  <Name>The Island</Name>
+  <Description>The Island campaign.</Description>
+  <IconFileName>image.png</IconFileName>
+  <Tags>
+    <string>Campaigns</string>
+    <string>Any Vehicle</string>
+    <string>AV-42C</string>
+  </Tags>
+</WorkshopItemInfo>

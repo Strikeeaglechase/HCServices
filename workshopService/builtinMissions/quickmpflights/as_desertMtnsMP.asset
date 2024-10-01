@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0104a367fa9d4fd11226fc9dfafebe3a, type: 3}
+  m_Name: as_desertMtnsMP
+  m_EditorClassIdentifier:
+  mapID: as_desertMtnsMP
+  mapName:
+  mapDescription:
+  mapLatitude: 0
+  mapLongitude: 0
+  mapConfig: 'VTMapCustom
+
+	{
+
+		mapID = as_desertMtnsMP
+
+		mapName = AS_DesertMtnsMP
+
+		mapDescription = A large desert map with scattered mountains, canyons, and plains. For MP
+
+		mapType = HeightMap
+
+		edgeMode = Hills
+
+		biome = Desert
+
+		seed = seed
+
+		mapSize = 64
+
+		TerrainSettings
+
+		{
+
+		}
+
+		StaticPrefabs
+
+		{
+
+			StaticPrefab
+
+			{
+
+				prefab = airbase2
+
+				id = 1
+
+				globalPos = (54574.3203125, 739.96728515625, 177659.52392578125)
+
+				rotation = (0, 294.41, 0)
+
+				grid = (17,57)
+
+				tSpacePos = (-2350.321, 2555.524, 739.967)
+
+				terrainToLocalMatrix = -0.4132629;0.910612;-1.085534E-07;-3298.39;0;-1.192093E-07;1;-739.9673;0.9106121;0.4132629;-4.926477E-08;1084.126;0;0;0;1;
+
+				baseName = 
+
+			}
+
+			StaticPrefab
+
+			{
+
+				prefab = airbase2
+
+				id = 2
+
+				globalPos = (170182.900390625, 564.210693359375, 64676.61474609375)
+
+				rotation = (0, 294.926, 0)
+
+				grid = (55,21)
+
+				tSpacePos = (-1222.901, 164.6147, 564.2108)
+
+				terrainToLocalMatrix = -0.4214468;0.9068533;-1.081053E-07;-664.6688;0;-1.192093E-07;1;-564.2107;0.9068534;0.4214468;-5.024037E-08;1039.615;0;0;0;1;
+
+				baseName = 
+
+			}
+
+		}
+
+		BezierRoads
+
+		{
+
+		}
+
+	}
+
+	
+
+	'
+  heightMap: {fileID: 2800000, guid: cc3936bedf00c374c9fdb8491ca315a3, type: 3}
+  splitHeightmaps:
+  - {fileID: 2800000, guid: 8788365879de1ab4ea69b9881e0dfd4c, type: 3}
+  - {fileID: 2800000, guid: 7536f298139b33d4bbba8741e826eca1, type: 3}
+  - {fileID: 2800000, guid: 77392bd031d8d1040896058c82a78835, type: 3}
+  - {fileID: 2800000, guid: d9997723c51776b4c8735aa9a2ea474e, type: 3}
+  previewImage: {fileID: 2800000, guid: cf07b02f144a7ef41a32432c7538ebc0, type: 3}

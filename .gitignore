@@ -5,7 +5,6 @@ carrierLandingRater/landingGraphs
 dist
 *.vtgr
 *.zip
-builtinMissions
 logs
 steamapps
 *.temp

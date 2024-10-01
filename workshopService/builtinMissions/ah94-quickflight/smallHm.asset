@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0104a367fa9d4fd11226fc9dfafebe3a, type: 3}
+  m_Name: smallHm
+  m_EditorClassIdentifier:
+  mapID: smallHm
+  mapName:
+  mapDescription:
+  mapLatitude: 0
+  mapLongitude: 0
+  mapConfig: 'VTMapCustom
+
+	{
+
+		mapID = smallHm
+
+		mapName = 
+
+		mapDescription = 
+
+		mapType = HeightMap
+
+		edgeMode = Water
+
+		biome = Boreal
+
+		seed = seed
+
+		mapSize = 35
+
+		TerrainSettings
+
+		{
+
+		}
+
+		StaticPrefabs
+
+		{
+
+			StaticPrefab
+
+			{
+
+				prefab = airbase1
+
+				id = 0
+
+				globalPos = (79247.380615234375, 38.16845703125, 30755.5302734375)
+
+				rotation = (0, 95.13094, 0)
+
+				grid = (25,10)
+
+				tSpacePos = (-2447.381, 35.53027, 38.16846)
+
+				terrainToLocalMatrix = 0.08943226;-0.9959931;1.187316E-07;254.2626;0;-1.192093E-07;1;-38.16846;-0.9959933;-0.08943225;1.066115E-08;-2434.396;0;0;0;1;
+
+				baseName = 
+
+			}
+
+		}
+
+		BezierRoads
+
+		{
+
+		}
+
+	}
+
+	
+
+	'
+  heightMap: {fileID: 2800000, guid: ae78b27e826bfe245aba7f2436b7cbaf, type: 3}
+  splitHeightmaps:
+  - {fileID: 2800000, guid: 499b14ed18e15f24c9bc9910c769ce5e, type: 3}
+  - {fileID: 2800000, guid: 1e1ade799f52cb14cb5dadbe3d013c49, type: 3}
+  - {fileID: 2800000, guid: ca0d2cd64ff0c514f807b4a516166175, type: 3}
+  - {fileID: 2800000, guid: 75dfb501b7509e344ab34fb17ed39d0f, type: 3}
+  previewImage: {fileID: 2800000, guid: 862c83a94d8fc8c45b4620090b91ece3, type: 3}

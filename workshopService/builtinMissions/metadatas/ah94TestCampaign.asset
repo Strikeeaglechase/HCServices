@@ -1,0 +1,631 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ced814a33e77c0fb2c37c3fd3a58b5d4, type: 3}
+  m_Name: ah94TestCampaign
+  m_EditorClassIdentifier:
+  campaignID: ah94TestCampaign
+  hideFromMenu: 0
+  campaignConfig: 'CAMPAIGN
+
+	{
+
+		campaignID = ah94TestCampaign
+
+		campaignName = Test
+
+		description = Enter description...
+
+		vehicle = AH-94
+
+		startingEquips = ah94_gun;h70-4x4;h70-x7;h70-x19;hellfirex4;agm145x4;ah94_agRadar;ah94_stingerL;ah94_stingerR;
+
+		availability = Sequential
+
+		multiplayer = False
+
+	}
+
+	'
+  image: {fileID: 0}
+  scenarios:
+  - scenarioID: ah94test
+    scenarioConfig: 'CustomScenario
+
+	{
+
+		gameVersion = 1.3.0p77
+
+		campaignID = ah94TestCampaign
+
+		campaignOrderIdx = 0
+
+		scenarioName = test
+
+		scenarioID = ah94test
+
+		scenarioDescription = 
+
+		mapID = bigIslands_98x3_b
+
+		vehicle = AH-94
+
+		multiplayer = False
+
+		allowedEquips = ah94_gun;h70-4x4;h70-x7;h70-x19;hellfirex4;agm145x4;ah94_agRadar;ah94_stingerL;ah94_stingerR;
+
+		forcedEquips = ;;;;;;;;
+
+		forceEquips = False
+
+		normForcedFuel = 1
+
+		equipsConfigurable = True
+
+		baseBudget = 100000
+
+		isTraining = False
+
+		rtbWptID = 
+
+		refuelWptID = 
+
+		envName = day
+
+		selectableEnv = False
+
+		qsMode = Anywhere
+
+		qsLimit = -1
+
+		UNITS
+
+		{
+
+			UnitSpawner
+
+			{
+
+				unitName = Player
+
+				globalPosition = (42963.683181762695, 97.490684509277344, 49828.587265014648)
+
+				unitInstanceID = 0
+
+				unitID = PlayerSpawn
+
+				rotation = (1.151564E-05, 74.4557, -3.203158E-06)
+
+				spawnChance = 100
+
+				lastValidPlacement = (42963.683181762695, 97.490684509277344, 49828.587265014648)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					startMode = Cold
+
+					initialSpeed = 0
+
+					unitGroup = null
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = IRAPC
+
+				globalPosition = (48977.825439453125, 63.0589599609375, 55986.158203125)
+
+				unitInstanceID = 1
+
+				unitID = IRAPC
+
+				rotation = (4.619837E-06, 346.9053, -1.074621E-06)
+
+				spawnChance = 100
+
+				lastValidPlacement = (48977.825439453125, 63.0589599609375, 55986.158203125)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = null
+
+					moveSpeed = Slow_10
+
+					behavior = Parked
+
+					defaultPath = null
+
+					waypoint = null
+
+					engageEnemies = True
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					invincible = False
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = MBT2-E Tank
+
+				globalPosition = (48239.134307861328, 109.96656799316406, 54876.18798828125)
+
+				unitInstanceID = 2
+
+				unitID = enemyMBT1
+
+				rotation = (354.8696, 324.663, 352.8116)
+
+				spawnChance = 100
+
+				lastValidPlacement = (48239.134307861328, 109.96656799316406, 54876.18798828125)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = null
+
+					moveSpeed = Slow_10
+
+					behavior = Parked
+
+					defaultPath = null
+
+					waypoint = null
+
+					stopToEngage = True
+
+					engageEnemies = True
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					invincible = False
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = Infantry
+
+				globalPosition = (48169.583938598633, 110.745361328125, 54968.762634277344)
+
+				unitInstanceID = 3
+
+				unitID = EnemySoldier
+
+				rotation = (7.676288E-06, 324.0168, -5.573699E-06)
+
+				spawnChance = 100
+
+				lastValidPlacement = (48169.583938598633, 110.745361328125, 54968.762634277344)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = null
+
+					behavior = Parked
+
+					defaultPath = null
+
+					waypoint = null
+
+					engageEnemies = True
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					invincible = False
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = Infantry
+
+				globalPosition = (48165.377807617188, 110.745361328125, 54969.993286132813)
+
+				unitInstanceID = 4
+
+				unitID = EnemySoldier
+
+				rotation = (7.676288E-06, 324.0168, -5.573699E-06)
+
+				spawnChance = 100
+
+				lastValidPlacement = (48165.377807617188, 110.745361328125, 54969.993286132813)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = null
+
+					behavior = Parked
+
+					defaultPath = null
+
+					waypoint = null
+
+					engageEnemies = True
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					invincible = False
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = Infantry MANPADS
+
+				globalPosition = (48025.916290283203, 110.74560546875, 55060.95556640625)
+
+				unitInstanceID = 5
+
+				unitID = EnemySoldierMANPAD
+
+				rotation = (7.676261E-06, 324.0168, -5.57368E-06)
+
+				spawnChance = 100
+
+				lastValidPlacement = (48025.916290283203, 110.74560546875, 55060.95556640625)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = null
+
+					behavior = Parked
+
+					defaultPath = null
+
+					waypoint = null
+
+					engageEnemies = True
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					invincible = False
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = Assault Carrier
+
+				globalPosition = (40061.958129882813, -5, 38411.67626953125)
+
+				unitInstanceID = 7
+
+				unitID = AlliedAAShip
+
+				rotation = (0, 189.9986, 0)
+
+				spawnChance = 100
+
+				lastValidPlacement = (40061.958129882813, -5, 38411.67626953125)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = Allied:Alpha
+
+					defaultBehavior = Parked
+
+					defaultWaypoint = null
+
+					defaultPath = null
+
+					hullNumber = 0
+
+					engageEnemies = True
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					invincible = False
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = Cruiser
+
+				globalPosition = (39762.99072265625, -5, 39006.15673828125)
+
+				unitInstanceID = 8
+
+				unitID = EscortCruiser
+
+				rotation = (0, 189.9986, 0)
+
+				spawnChance = 100
+
+				lastValidPlacement = (39762.99072265625, -5, 39006.15673828125)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = Allied:Alpha
+
+					defaultBehavior = Parked
+
+					defaultWaypoint = null
+
+					defaultPath = null
+
+					hullNumber = 0
+
+					engageEnemies = True
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					invincible = False
+
+					carrierSpawns = 
+
+				}
+
+			}
+
+		}
+
+		PATHS
+
+		{
+
+		}
+
+		WAYPOINTS
+
+		{
+
+			WAYPOINT
+
+			{
+
+				id = 0
+
+				name = shipwp
+
+				globalPoint = (34307.255859375, -5, -12707.80859375)
+
+			}
+
+		}
+
+		UNITGROUPS
+
+		{
+
+			ALLIED
+
+			{
+
+				Alpha = 1;7;8;
+
+			}
+
+		}
+
+		TimedEventGroups
+
+		{
+
+			TimedEventGroup
+
+			{
+
+				groupName = New Event Group
+
+				groupID = 0
+
+				beginImmediately = True
+
+				initialDelay = 0
+
+				TimedEventInfo
+
+				{
+
+					eventName = New Timed Event
+
+					time = 0
+
+					EventTarget
+
+					{
+
+						targetType = UnitGroup
+
+						targetID = 100
+
+						eventName = Move To
+
+						methodName = MoveTo
+
+						ParamInfo
+
+						{
+
+							type = Waypoint
+
+							value = 0
+
+							name = Waypoint
+
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+		TRIGGER_EVENTS
+
+		{
+
+		}
+
+		OBJECTIVES
+
+		{
+
+		}
+
+		OBJECTIVES_OPFOR
+
+		{
+
+		}
+
+		StaticObjects
+
+		{
+
+		}
+
+		Conditionals
+
+		{
+
+		}
+
+		ConditionalActions
+
+		{
+
+		}
+
+		EventSequences
+
+		{
+
+		}
+
+		BASES
+
+		{
+
+			BaseInfo
+
+			{
+
+				id = 0
+
+				overrideBaseName = 
+
+				baseTeam = Allied
+
+			}
+
+		}
+
+		GlobalValues
+
+		{
+
+		}
+
+		Briefing
+
+		{
+
+		}
+
+	}
+
+	'
+    image: {fileID: 0}
+    images: []
+    imagePaths: []
+    audioClips: []
+    audioClipPaths: []
+    videoClips: []
+    videoClipPaths: []
+  vtMaps:
+  - {fileID: 11400000, guid: 291a78622ceabf9439efcc07979233c3, type: 2}
+  campaignLivery: {fileID: 0}
+  campaignLiveryOpFor: {fileID: 0}
+  perVehicleLiveries: []
+  isStandaloneScenarios: 0
+  requireDLCs:

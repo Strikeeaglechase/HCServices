@@ -1,0 +1,2772 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ced814a33e77c0fb2c37c3fd3a58b5d4, type: 3}
+  m_Name: j4Campaign
+  m_EditorClassIdentifier:
+  campaignID: j4Campaign
+  hideFromMenu: 1
+  campaignConfig: 'CAMPAIGN
+
+	{
+
+		campaignID = j4Campaign
+
+		campaignName = July 4
+
+		description = Enter description...
+
+		vehicle = F/A-26B
+
+		startingEquips = fa26_droptank;fa26_gun;af_amraam;af_amraamRail;af_aim9;fa26_aim9x2;fa26_aim9x3;fa26_iris-t-x1;fa26_iris-t-x2;fa26_iris-t-x3;af_mk82;fa26_mk82x2;fa26_mk82x3;fa26_mk82HDx1;fa26_mk82HDx2;fa26_mk82HDx3;fa26_mk83x1;fa26_cbu97x1;h70-x7ld;h70-x7ld-under;h70-x14ld;h70-x14ld-under;fa26_cagm-6;fa26_gbu38x1;fa26_gbu38x2;fa26_gbu38x3;fa26_gbu39x4uFront;fa26_gbu39x4uRear;fa26_maverickx1;fa26_maverickx3;fa26_agm89x1;fa26_tgp;
+
+		availability = Sequential
+
+	}
+
+	'
+  image: {fileID: 2800000, guid: 0142a4c1164fb1d46a8b4f539e2c4ea9, type: 3}
+  scenarios:
+  - scenarioID: j4
+    scenarioConfig: 'CustomScenario
+
+	{
+
+		campaignID = j4Campaign
+
+		campaignOrderIdx = 0
+
+		scenarioName = July 4th
+
+		scenarioID = j4
+
+		scenarioDescription = Happy Independence day!
+
+		mapID = map_akutan
+
+		vehicle = F/A-26B
+
+		allowedEquips = fa26_droptank;fa26_gun;af_amraam;af_amraamRail;af_aim9;fa26_aim9x2;fa26_aim9x3;fa26_iris-t-x1;fa26_iris-t-x2;fa26_iris-t-x3;af_mk82;fa26_mk82x2;fa26_mk82x3;fa26_mk82HDx1;fa26_mk82HDx2;fa26_mk82HDx3;fa26_mk83x1;fa26_cbu97x1;h70-x7ld;h70-x7ld-under;h70-x14ld;h70-x14ld-under;fa26_cagm-6;fa26_gbu38x1;fa26_gbu38x2;fa26_gbu38x3;fa26_gbu39x4uFront;fa26_gbu39x4uRear;fa26_maverickx1;fa26_maverickx3;fa26_agm89x1;fa26_tgp;
+
+		forcedEquips = fa26_gun;fa26_aim9x3;af_amraamRail;af_amraamRail;af_amraam;af_amraam;af_amraam;af_amraam;af_amraamRail;af_amraamRail;fa26_aim9x3;fa26_mk83x1;fa26_mk83x1;fa26_mk83x1;fa26_tgp;
+
+		forceEquips = True
+
+		normForcedFuel = 1
+
+		equipsConfigurable = False
+
+		baseBudget = 100000
+
+		isTraining = False
+
+		rtbWptID = 
+
+		refuelWptID = 
+
+		envName = morning
+
+		selectableEnv = False
+
+		UNITS
+
+		{
+
+			UnitSpawner
+
+			{
+
+				unitName = Player
+
+				globalPosition = (88668.3203125, 3803.3916015625, 19506.1171875)
+
+				unitInstanceID = 0
+
+				unitID = PlayerSpawn
+
+				rotation = (0, 285.8589, 0)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					startMode = FlightReady
+
+					initialSpeed = 232.0351
+
+					unitGroup = Allied:Alpha
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = Mothership
+
+				globalPosition = (38538.5078125, 0, 30460.7578125)
+
+				unitInstanceID = 1
+
+				unitID = Mothership
+
+				rotation = (6.683832E-06, 348.1174, -1.406381E-06)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = F/A-26B
+
+				globalPosition = (88720.8046875, 3803.3916015625, 19438.80078125)
+
+				unitInstanceID = 2
+
+				unitID = FA-26B AI
+
+				rotation = (0, 285.8589, 0)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = Allied:Alpha
+
+					defaultBehavior = Orbit
+
+					initialSpeed = 280
+
+					defaultNavSpeed = 280
+
+					defaultOrbitPoint = null
+
+					defaultPath = null
+
+					orbitAltitude = 3000
+
+					fuel = 100
+
+					autoRefuel = True
+
+					engageEnemies = True
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					equips = af_gun;fa26_aim9x3;af_amraamRail;af_amraam;af_amraam;af_amraam;af_amraam;af_amraam;af_amraam;af_amraamRail;fa26_aim9x3;af_aim9;af_aim9;fa26_droptank;;
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = F/A-26B
+
+				globalPosition = (88829.88671875, 3803.3916015625, 19495.7138671875)
+
+				unitInstanceID = 3
+
+				unitID = FA-26B AI
+
+				rotation = (0, 285.8589, 0)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = Allied:Alpha
+
+					defaultBehavior = Orbit
+
+					initialSpeed = 280
+
+					defaultNavSpeed = 280
+
+					defaultOrbitPoint = null
+
+					defaultPath = null
+
+					orbitAltitude = 3000
+
+					fuel = 100
+
+					autoRefuel = True
+
+					engageEnemies = True
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					equips = af_gun;fa26_aim9x3;af_amraamRail;af_amraam;af_amraam;af_amraam;af_amraam;af_amraam;af_amraam;af_amraamRail;fa26_aim9x3;af_aim9;af_aim9;fa26_droptank;;
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = F/A-26B
+
+				globalPosition = (88878.77734375, 3803.3916015625, 19534.7177734375)
+
+				unitInstanceID = 4
+
+				unitID = FA-26B AI
+
+				rotation = (0, 285.8589, 0)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = Allied:Alpha
+
+					defaultBehavior = Orbit
+
+					initialSpeed = 280
+
+					defaultNavSpeed = 280
+
+					defaultOrbitPoint = null
+
+					defaultPath = null
+
+					orbitAltitude = 3000
+
+					fuel = 100
+
+					autoRefuel = True
+
+					engageEnemies = True
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					equips = af_gun;fa26_aim9x3;af_amraamRail;af_amraam;af_amraam;af_amraam;af_amraam;af_amraam;af_amraam;af_amraamRail;fa26_aim9x3;af_aim9;af_aim9;fa26_droptank;;
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = F/A-26B
+
+				globalPosition = (88926.734375, 3803.3916015625, 19441.6796875)
+
+				unitInstanceID = 5
+
+				unitID = FA-26B AI
+
+				rotation = (0, 285.8589, 0)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = Allied:Alpha
+
+					defaultBehavior = Orbit
+
+					initialSpeed = 280
+
+					defaultNavSpeed = 280
+
+					defaultOrbitPoint = null
+
+					defaultPath = null
+
+					orbitAltitude = 3000
+
+					fuel = 100
+
+					autoRefuel = True
+
+					engageEnemies = True
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					equips = af_gun;fa26_aim9x3;af_amraamRail;af_amraam;af_amraam;af_amraam;af_amraam;af_amraam;af_amraam;af_amraamRail;fa26_aim9x3;af_aim9;af_aim9;fa26_droptank;;
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = F/A-26B
+
+				globalPosition = (88970.109375, 3803.3916015625, 19357.357421875)
+
+				unitInstanceID = 6
+
+				unitID = FA-26B AI
+
+				rotation = (0, 285.8589, 0)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = Allied:Alpha
+
+					defaultBehavior = Orbit
+
+					initialSpeed = 280
+
+					defaultNavSpeed = 280
+
+					defaultOrbitPoint = null
+
+					defaultPath = null
+
+					orbitAltitude = 3000
+
+					fuel = 100
+
+					autoRefuel = True
+
+					engageEnemies = True
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					equips = af_gun;fa26_aim9x3;af_amraamRail;af_amraam;af_amraam;af_amraam;af_amraam;af_amraam;af_amraam;af_amraamRail;fa26_aim9x3;af_aim9;af_aim9;fa26_droptank;;
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = F/A-26B
+
+				globalPosition = (89084.63671875, 3803.3916015625, 19458.36328125)
+
+				unitInstanceID = 7
+
+				unitID = FA-26B AI
+
+				rotation = (0, 285.8589, 0)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = Allied:Alpha
+
+					defaultBehavior = Orbit
+
+					initialSpeed = 280
+
+					defaultNavSpeed = 280
+
+					defaultOrbitPoint = null
+
+					defaultPath = null
+
+					orbitAltitude = 3000
+
+					fuel = 100
+
+					autoRefuel = True
+
+					engageEnemies = True
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					equips = af_gun;fa26_aim9x3;af_amraamRail;af_amraam;af_amraam;af_amraam;af_amraam;af_amraam;af_amraam;af_amraamRail;fa26_aim9x3;af_aim9;af_aim9;fa26_droptank;;
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = F/A-26B
+
+				globalPosition = (88912.4140625, 3803.3916015625, 19266.55078125)
+
+				unitInstanceID = 8
+
+				unitID = FA-26B AI
+
+				rotation = (0, 285.8589, 0)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = Allied:Alpha
+
+					defaultBehavior = Orbit
+
+					initialSpeed = 280
+
+					defaultNavSpeed = 280
+
+					defaultOrbitPoint = null
+
+					defaultPath = null
+
+					orbitAltitude = 3000
+
+					fuel = 100
+
+					autoRefuel = True
+
+					engageEnemies = True
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					equips = af_gun;fa26_aim9x3;af_amraamRail;af_amraam;af_amraam;af_amraam;af_amraam;af_amraam;af_amraam;af_amraamRail;fa26_aim9x3;af_aim9;af_aim9;fa26_droptank;;
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = F/A-26B
+
+				globalPosition = (88979.71875, 3803.3916015625, 19598.513671875)
+
+				unitInstanceID = 9
+
+				unitID = FA-26B AI
+
+				rotation = (0, 285.8589, 0)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = Allied:Alpha
+
+					defaultBehavior = Orbit
+
+					initialSpeed = 280
+
+					defaultNavSpeed = 280
+
+					defaultOrbitPoint = null
+
+					defaultPath = null
+
+					orbitAltitude = 3000
+
+					fuel = 100
+
+					autoRefuel = True
+
+					engageEnemies = True
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					equips = af_gun;fa26_aim9x3;af_amraamRail;af_amraam;af_amraam;af_amraam;af_amraam;af_amraam;af_amraam;af_amraamRail;fa26_aim9x3;af_aim9;af_aim9;fa26_droptank;;
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = F/A-26B
+
+				globalPosition = (89000.875, 3803.3916015625, 19256.466796875)
+
+				unitInstanceID = 10
+
+				unitID = FA-26B AI
+
+				rotation = (0, 285.8589, 0)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = Allied:Alpha
+
+					defaultBehavior = Orbit
+
+					initialSpeed = 280
+
+					defaultNavSpeed = 280
+
+					defaultOrbitPoint = null
+
+					defaultPath = null
+
+					orbitAltitude = 3000
+
+					fuel = 100
+
+					autoRefuel = True
+
+					engageEnemies = True
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					equips = af_gun;fa26_aim9x3;af_amraamRail;af_amraam;af_amraam;af_amraam;af_amraam;af_amraam;af_amraam;af_amraamRail;fa26_aim9x3;af_aim9;af_aim9;fa26_droptank;;
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = F/A-26B
+
+				globalPosition = (89920.8125, 3803.3916015625, 27508.60546875)
+
+				unitInstanceID = 11
+
+				unitID = FA-26B AI
+
+				rotation = (0, 273.0364, 0)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = Allied:Bravo
+
+					defaultBehavior = Orbit
+
+					initialSpeed = 280
+
+					defaultNavSpeed = 280
+
+					defaultOrbitPoint = 0
+
+					defaultPath = null
+
+					orbitAltitude = 3000
+
+					fuel = 100
+
+					autoRefuel = True
+
+					engageEnemies = True
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					equips = af_gun;fa26_aim9x3;af_amraamRail;af_amraam;af_amraam;af_amraam;af_amraam;af_amraam;af_amraam;af_amraamRail;fa26_aim9x3;af_aim9;af_aim9;fa26_droptank;;
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = F/A-26B
+
+				globalPosition = (90868, 3803.3916015625, 28636.84375)
+
+				unitInstanceID = 12
+
+				unitID = FA-26B AI
+
+				rotation = (0, 273.0364, 0)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = Allied:Bravo
+
+					defaultBehavior = Orbit
+
+					initialSpeed = 280
+
+					defaultNavSpeed = 280
+
+					defaultOrbitPoint = 0
+
+					defaultPath = null
+
+					orbitAltitude = 3000
+
+					fuel = 100
+
+					autoRefuel = True
+
+					engageEnemies = True
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					equips = af_gun;fa26_aim9x3;af_amraamRail;af_amraam;af_amraam;af_amraam;af_amraam;af_amraam;af_amraam;af_amraamRail;fa26_aim9x3;af_aim9;af_aim9;fa26_droptank;;
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = F/A-26B
+
+				globalPosition = (90877.74609375, 3803.3916015625, 27015.6884765625)
+
+				unitInstanceID = 13
+
+				unitID = FA-26B AI
+
+				rotation = (0, 273.0364, 0)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = Allied:Bravo
+
+					defaultBehavior = Orbit
+
+					initialSpeed = 280
+
+					defaultNavSpeed = 280
+
+					defaultOrbitPoint = 0
+
+					defaultPath = null
+
+					orbitAltitude = 3000
+
+					fuel = 100
+
+					autoRefuel = True
+
+					engageEnemies = True
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					equips = af_gun;fa26_aim9x3;af_amraamRail;af_amraam;af_amraam;af_amraam;af_amraam;af_amraam;af_amraam;af_amraamRail;fa26_aim9x3;af_aim9;af_aim9;fa26_droptank;;
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = F/A-26B
+
+				globalPosition = (90869.91015625, 3803.3916015625, 28319.54296875)
+
+				unitInstanceID = 14
+
+				unitID = FA-26B AI
+
+				rotation = (0, 273.0364, 0)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = Allied:Bravo
+
+					defaultBehavior = Orbit
+
+					initialSpeed = 280
+
+					defaultNavSpeed = 280
+
+					defaultOrbitPoint = 0
+
+					defaultPath = null
+
+					orbitAltitude = 3000
+
+					fuel = 100
+
+					autoRefuel = True
+
+					engageEnemies = True
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					equips = af_gun;fa26_aim9x3;af_amraamRail;af_amraam;af_amraam;af_amraam;af_amraam;af_amraam;af_amraam;af_amraamRail;fa26_aim9x3;af_aim9;af_aim9;fa26_droptank;;
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = F/A-26B
+
+				globalPosition = (90882.6640625, 3803.3916015625, 26197.7646484375)
+
+				unitInstanceID = 15
+
+				unitID = FA-26B AI
+
+				rotation = (0, 273.0364, 0)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = Allied:Bravo
+
+					defaultBehavior = Orbit
+
+					initialSpeed = 280
+
+					defaultNavSpeed = 280
+
+					defaultOrbitPoint = 0
+
+					defaultPath = null
+
+					orbitAltitude = 3000
+
+					fuel = 100
+
+					autoRefuel = True
+
+					engageEnemies = True
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					equips = af_gun;fa26_aim9x3;af_amraamRail;af_amraam;af_amraam;af_amraam;af_amraam;af_amraam;af_amraam;af_amraamRail;fa26_aim9x3;af_aim9;af_aim9;fa26_droptank;;
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = F/A-26B
+
+				globalPosition = (81392.96875, 3803.3916015625, 8561.818359375)
+
+				unitInstanceID = 16
+
+				unitID = FA-26B AI
+
+				rotation = (0, 309.8822, 0)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = Allied:Charlie
+
+					defaultBehavior = Orbit
+
+					initialSpeed = 280
+
+					defaultNavSpeed = 280
+
+					defaultOrbitPoint = 0
+
+					defaultPath = null
+
+					orbitAltitude = 3000
+
+					fuel = 100
+
+					autoRefuel = True
+
+					engageEnemies = True
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					equips = af_gun;fa26_aim9x3;af_amraamRail;af_amraam;af_amraam;af_amraam;af_amraam;af_amraam;af_amraam;af_amraamRail;fa26_aim9x3;af_aim9;af_aim9;fa26_droptank;;
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = F/A-26B
+
+				globalPosition = (81596.37890625, 3803.3916015625, 8871.32421875)
+
+				unitInstanceID = 17
+
+				unitID = FA-26B AI
+
+				rotation = (0, 309.8822, 0)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = Allied:Charlie
+
+					defaultBehavior = Orbit
+
+					initialSpeed = 280
+
+					defaultNavSpeed = 280
+
+					defaultOrbitPoint = 0
+
+					defaultPath = null
+
+					orbitAltitude = 3000
+
+					fuel = 100
+
+					autoRefuel = True
+
+					engageEnemies = True
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					equips = af_gun;fa26_aim9x3;af_amraamRail;af_amraam;af_amraam;af_amraam;af_amraam;af_amraam;af_amraam;af_amraamRail;fa26_aim9x3;af_aim9;af_aim9;fa26_droptank;;
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = F/A-26B
+
+				globalPosition = (82164.71875, 3803.3916015625, 9736.1015625)
+
+				unitInstanceID = 18
+
+				unitID = FA-26B AI
+
+				rotation = (0, 309.8822, 0)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = Allied:Charlie
+
+					defaultBehavior = Orbit
+
+					initialSpeed = 280
+
+					defaultNavSpeed = 280
+
+					defaultOrbitPoint = 0
+
+					defaultPath = null
+
+					orbitAltitude = 3000
+
+					fuel = 100
+
+					autoRefuel = True
+
+					engageEnemies = True
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					equips = af_gun;fa26_aim9x3;af_amraamRail;af_amraam;af_amraam;af_amraam;af_amraam;af_amraam;af_amraam;af_amraamRail;fa26_aim9x3;af_aim9;af_aim9;fa26_droptank;;
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = F/A-26B
+
+				globalPosition = (80917.27734375, 3803.3916015625, 7838.0234375)
+
+				unitInstanceID = 19
+
+				unitID = FA-26B AI
+
+				rotation = (0, 309.8822, 0)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = Allied:Charlie
+
+					defaultBehavior = Orbit
+
+					initialSpeed = 280
+
+					defaultNavSpeed = 280
+
+					defaultOrbitPoint = 0
+
+					defaultPath = null
+
+					orbitAltitude = 3000
+
+					fuel = 100
+
+					autoRefuel = True
+
+					engageEnemies = True
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					equips = af_gun;fa26_aim9x3;af_amraamRail;af_amraam;af_amraam;af_amraam;af_amraam;af_amraam;af_amraam;af_amraamRail;fa26_aim9x3;af_aim9;af_aim9;fa26_droptank;;
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = F/A-26B
+
+				globalPosition = (82222.11328125, 3803.3916015625, 9133.23828125)
+
+				unitInstanceID = 20
+
+				unitID = FA-26B AI
+
+				rotation = (0, 309.8822, 0)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					unitGroup = Allied:Charlie
+
+					defaultBehavior = Orbit
+
+					initialSpeed = 280
+
+					defaultNavSpeed = 280
+
+					defaultOrbitPoint = 0
+
+					defaultPath = null
+
+					orbitAltitude = 3000
+
+					fuel = 100
+
+					autoRefuel = True
+
+					engageEnemies = True
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+					equips = af_gun;fa26_aim9x3;af_amraamRail;af_amraam;af_amraam;af_amraam;af_amraam;af_amraam;af_amraam;af_amraamRail;fa26_aim9x3;af_aim9;af_aim9;fa26_droptank;;
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = Fire Ctrl Radar P
+
+				globalPosition = (38724.3271484375, 0, 28777.326171875)
+
+				unitInstanceID = 21
+
+				unitID = PatRadarTrailer
+
+				rotation = (8.309292E-06, 111.2636, 6.898144E-06)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					engageEnemies = True
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = Fire Ctrl Radar P
+
+				globalPosition = (44005.4140625, 820.57421875, 31056.853515625)
+
+				unitInstanceID = 22
+
+				unitID = PatRadarTrailer
+
+				rotation = (4.786458, 150.6848, 358.8195)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					engageEnemies = True
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = Fire Ctrl Radar P
+
+				globalPosition = (43988.44921875, 820.220703125, 31089.09765625)
+
+				unitInstanceID = 23
+
+				unitID = PatRadarTrailer
+
+				rotation = (359.1707, 282.4873, 357.6607)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					engageEnemies = True
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = Fire Ctrl Radar P
+
+				globalPosition = (35372.94921875, 932.29296875, 30584.30078125)
+
+				unitInstanceID = 24
+
+				unitID = PatRadarTrailer
+
+				rotation = (347.8475, 261.1229, 357.5124)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					engageEnemies = True
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = SAM Launcher P
+
+				globalPosition = (38688.4873046875, 105.705078125, 31300.626953125)
+
+				unitInstanceID = 25
+
+				unitID = PatriotLauncher
+
+				rotation = (0, 261.2651, 0)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					radarUnits = 21;22;23;24;
+
+					allowReload = True
+
+					reloadTime = 2
+
+					engageEnemies = False
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = SAM Launcher P
+
+				globalPosition = (38566.9990234375, 176.869140625, 31049.298828125)
+
+				unitInstanceID = 26
+
+				unitID = PatriotLauncher
+
+				rotation = (0, 261.2651, 0)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					radarUnits = 21;22;23;24;
+
+					allowReload = True
+
+					reloadTime = 2
+
+					engageEnemies = False
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = SAM Launcher P
+
+				globalPosition = (38195.3740234375, 105.705078125, 30690.255859375)
+
+				unitInstanceID = 27
+
+				unitID = PatriotLauncher
+
+				rotation = (0, 261.2651, 0)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					radarUnits = 21;22;23;24;
+
+					allowReload = True
+
+					reloadTime = 2
+
+					engageEnemies = False
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = SAM Launcher P
+
+				globalPosition = (38445.6171875, 149.033203125, 30046.80078125)
+
+				unitInstanceID = 28
+
+				unitID = PatriotLauncher
+
+				rotation = (5.186284E-07, 261.2651, 3.375474E-06)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					radarUnits = 21;22;23;24;
+
+					allowReload = True
+
+					reloadTime = 2
+
+					engageEnemies = False
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = SAM Launcher P
+
+				globalPosition = (38194.4677734375, 105.705078125, 29189.220703125)
+
+				unitInstanceID = 29
+
+				unitID = PatriotLauncher
+
+				rotation = (0, 261.2651, 0)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					radarUnits = 21;22;23;24;
+
+					allowReload = True
+
+					reloadTime = 2
+
+					engageEnemies = False
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = SAM Launcher P
+
+				globalPosition = (40053.84375, 0, 30907.46484375)
+
+				unitInstanceID = 30
+
+				unitID = PatriotLauncher
+
+				rotation = (9.607828E-06, 261.2651, -4.931364E-06)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					radarUnits = 21;22;23;24;
+
+					allowReload = True
+
+					reloadTime = 2
+
+					engageEnemies = False
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = SAM Launcher P
+
+				globalPosition = (39183.814453125, 121.072265625, 30315.306640625)
+
+				unitInstanceID = 31
+
+				unitID = PatriotLauncher
+
+				rotation = (0, 254.2509, 0)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					radarUnits = 21;22;23;24;
+
+					allowReload = True
+
+					reloadTime = 2
+
+					engageEnemies = False
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = SAM Launcher P
+
+				globalPosition = (39195.34765625, 104.705078125, 30701.703125)
+
+				unitInstanceID = 32
+
+				unitID = PatriotLauncher
+
+				rotation = (0, 218.6419, 0)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					radarUnits = 21;22;23;24;
+
+					allowReload = True
+
+					reloadTime = 2
+
+					engageEnemies = False
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+				}
+
+			}
+
+			UnitSpawner
+
+			{
+
+				unitName = SAM Launcher P
+
+				globalPosition = (39193.68359375, 104.705078125, 31061.826171875)
+
+				unitInstanceID = 33
+
+				unitID = PatriotLauncher
+
+				rotation = (0, 102.9023, 0)
+
+				spawnFlags = 
+
+				UnitFields
+
+				{
+
+					radarUnits = 21;22;23;24;
+
+					allowReload = True
+
+					reloadTime = 2
+
+					engageEnemies = False
+
+					detectionMode = Default
+
+					spawnOnStart = True
+
+				}
+
+			}
+
+		}
+
+		PATHS
+
+		{
+
+		}
+
+		WAYPOINTS
+
+		{
+
+			WAYPOINT
+
+			{
+
+				id = 0
+
+				name = attackPt
+
+				globalPoint = (38520.240112304688, 0, 30484.720153808594)
+
+			}
+
+		}
+
+		UNITGROUPS
+
+		{
+
+			ALLIED
+
+			{
+
+				Alpha = 2;0;2;3;4;5;6;7;8;9;10;
+
+				Bravo = 2;11;12;13;14;15;
+
+				Charlie = 2;16;17;18;19;20;
+
+			}
+
+		}
+
+		TimedEventGroups
+
+		{
+
+			TimedEventGroup
+
+			{
+
+				groupName = AlliedWings
+
+				groupID = 0
+
+				beginImmediately = True
+
+				initialDelay = 0
+
+				TimedEventInfo
+
+				{
+
+					eventName = joinPlayer
+
+					time = 1
+
+					EventTarget
+
+					{
+
+						targetType = UnitGroup
+
+						targetID = 100
+
+						eventName = Form On Pilot
+
+						methodName = FormOnPilot
+
+						ParamInfo
+
+						{
+
+							type = UnitReference
+
+							value = 0
+
+							name = Target Leader
+
+							ParamAttrInfo
+
+							{
+
+								type = PilotUnitFilter
+
+								data = null
+
+							}
+
+							ParamAttrInfo
+
+							{
+
+								type = TeamOptions
+
+								data = SameTeam
+
+							}
+
+						}
+
+					}
+
+				}
+
+				TimedEventInfo
+
+				{
+
+					eventName = intro comms
+
+					time = 3
+
+					EventTarget
+
+					{
+
+						targetType = System
+
+						targetID = 0
+
+						eventName = Radio Message
+
+						methodName = RadioMessage
+
+						ParamInfo
+
+						{
+
+							type = VTSAudioReference
+
+							value = j4\intro.ogg
+
+							name = Audio
+
+						}
+
+					}
+
+				}
+
+			}
+
+			TimedEventGroup
+
+			{
+
+				groupName = delayedLaser
+
+				groupID = 1
+
+				beginImmediately = False
+
+				initialDelay = 0
+
+				TimedEventInfo
+
+				{
+
+					eventName = objSpotted
+
+					time = 20
+
+					EventTarget
+
+					{
+
+						targetType = System
+
+						targetID = 0
+
+						eventName = Radio Message
+
+						methodName = RadioMessage
+
+						ParamInfo
+
+						{
+
+							type = VTSAudioReference
+
+							value = j4\objectSpotted.ogg
+
+							name = Audio
+
+						}
+
+					}
+
+					EventTarget
+
+					{
+
+						targetType = System
+
+						targetID = 0
+
+						eventName = Radio Message
+
+						methodName = RadioMessage
+
+						ParamInfo
+
+						{
+
+							type = VTSAudioReference
+
+							value = j4\whatIsThatThing.ogg
+
+							name = Audio
+
+						}
+
+					}
+
+				}
+
+				TimedEventInfo
+
+				{
+
+					eventName = rdyForCombat
+
+					time = 40
+
+					EventTarget
+
+					{
+
+						targetType = System
+
+						targetID = 0
+
+						eventName = Radio Message
+
+						methodName = RadioMessage
+
+						ParamInfo
+
+						{
+
+							type = VTSAudioReference
+
+							value = j4\getReadyForCombat.ogg
+
+							name = Audio
+
+						}
+
+					}
+
+					EventTarget
+
+					{
+
+						targetType = System
+
+						targetID = 0
+
+						eventName = Radio Message
+
+						methodName = RadioMessage
+
+						ParamInfo
+
+						{
+
+							type = VTSAudioReference
+
+							value = j4\radarOffline.ogg
+
+							name = Audio
+
+						}
+
+					}
+
+				}
+
+				TimedEventInfo
+
+				{
+
+					eventName = openingAtBottom
+
+					time = 100
+
+					EventTarget
+
+					{
+
+						targetType = System
+
+						targetID = 0
+
+						eventName = Radio Message
+
+						methodName = RadioMessage
+
+						ParamInfo
+
+						{
+
+							type = VTSAudioReference
+
+							value = j4\openingAtBottom.ogg
+
+							name = Audio
+
+						}
+
+					}
+
+				}
+
+				TimedEventInfo
+
+				{
+
+					eventName = fireTheLaser
+
+					time = 300
+
+					EventTarget
+
+					{
+
+						targetType = Unit
+
+						targetID = 1
+
+						eventName = Fire
+
+						methodName = FireBeam
+
+					}
+
+				}
+
+				TimedEventInfo
+
+				{
+
+					eventName = fail
+
+					time = 310
+
+					EventTarget
+
+					{
+
+						targetType = Objective
+
+						targetID = 0
+
+						eventName = Fail Objective
+
+						methodName = FailObjective
+
+					}
+
+				}
+
+			}
+
+		}
+
+		TRIGGER_EVENTS
+
+		{
+
+			TriggerEvent
+
+			{
+
+				id = 0
+
+				enabled = True
+
+				waypoint = 0
+
+				eventName = enterAlien
+
+				radius = 42000
+
+				sphericalRadius = False
+
+				triggerMode = AnyAllied
+
+				proxyMode = OnEnter
+
+				EventInfo
+
+				{
+
+					eventName = 
+
+					EventTarget
+
+					{
+
+						targetType = Unit
+
+						targetID = 1
+
+						eventName = Enter
+
+						methodName = Enter
+
+					}
+
+					EventTarget
+
+					{
+
+						targetType = Timed_Events
+
+						targetID = 1
+
+						eventName = Begin
+
+						methodName = Begin
+
+					}
+
+				}
+
+			}
+
+		}
+
+		OBJECTIVES
+
+		{
+
+			Objective
+
+			{
+
+				objectiveName = July 4
+
+				objectiveInfo = Defend the city from the enemy attack.
+
+				objectiveID = 0
+
+				required = True
+
+				completionReward = 0
+
+				waypoint = 0
+
+				autoSetWaypoint = True
+
+				startMode = Immediate
+
+				objectiveType = Destroy
+
+				startEvent
+
+				{
+
+					EventInfo
+
+					{
+
+						eventName = Start Event
+
+					}
+
+				}
+
+				failEvent
+
+				{
+
+					EventInfo
+
+					{
+
+						eventName = Failed Event
+
+					}
+
+				}
+
+				completeEvent
+
+				{
+
+					EventInfo
+
+					{
+
+						eventName = Completed Event
+
+						EventTarget
+
+						{
+
+							targetType = Timed_Events
+
+							targetID = 1
+
+							eventName = Stop
+
+							methodName = Stop
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = Unit
+
+							targetID = 25
+
+							eventName = Set Engage Enemies
+
+							methodName = SetEngageEnemies
+
+							ParamInfo
+
+							{
+
+								type = System.Boolean
+
+								value = True
+
+								name = Engage
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = Unit
+
+							targetID = 26
+
+							eventName = Set Engage Enemies
+
+							methodName = SetEngageEnemies
+
+							ParamInfo
+
+							{
+
+								type = System.Boolean
+
+								value = True
+
+								name = Engage
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = Unit
+
+							targetID = 27
+
+							eventName = Set Engage Enemies
+
+							methodName = SetEngageEnemies
+
+							ParamInfo
+
+							{
+
+								type = System.Boolean
+
+								value = True
+
+								name = Engage
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = Unit
+
+							targetID = 28
+
+							eventName = Set Engage Enemies
+
+							methodName = SetEngageEnemies
+
+							ParamInfo
+
+							{
+
+								type = System.Boolean
+
+								value = True
+
+								name = Engage
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = Unit
+
+							targetID = 29
+
+							eventName = Set Engage Enemies
+
+							methodName = SetEngageEnemies
+
+							ParamInfo
+
+							{
+
+								type = System.Boolean
+
+								value = True
+
+								name = Engage
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = Unit
+
+							targetID = 30
+
+							eventName = Set Engage Enemies
+
+							methodName = SetEngageEnemies
+
+							ParamInfo
+
+							{
+
+								type = System.Boolean
+
+								value = True
+
+								name = Engage
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = Unit
+
+							targetID = 31
+
+							eventName = Set Engage Enemies
+
+							methodName = SetEngageEnemies
+
+							ParamInfo
+
+							{
+
+								type = System.Boolean
+
+								value = True
+
+								name = Engage
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = Unit
+
+							targetID = 32
+
+							eventName = Set Engage Enemies
+
+							methodName = SetEngageEnemies
+
+							ParamInfo
+
+							{
+
+								type = System.Boolean
+
+								value = True
+
+								name = Engage
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = Unit
+
+							targetID = 33
+
+							eventName = Set Engage Enemies
+
+							methodName = SetEngageEnemies
+
+							ParamInfo
+
+							{
+
+								type = System.Boolean
+
+								value = True
+
+								name = Engage
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = UnitGroup
+
+							targetID = 100
+
+							eventName = Set Engage Enemies
+
+							methodName = SetEngageEnemies
+
+							ParamInfo
+
+							{
+
+								type = System.Boolean
+
+								value = False
+
+								name = Engage
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = UnitGroup
+
+							targetID = 101
+
+							eventName = Set Engage Enemies
+
+							methodName = SetEngageEnemies
+
+							ParamInfo
+
+							{
+
+								type = System.Boolean
+
+								value = False
+
+								name = Engage
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = UnitGroup
+
+							targetID = 102
+
+							eventName = Set Engage Enemies
+
+							methodName = SetEngageEnemies
+
+							ParamInfo
+
+							{
+
+								type = System.Boolean
+
+								value = False
+
+								name = Engage
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = UnitGroup
+
+							targetID = 100
+
+							eventName = Fly Orbit
+
+							methodName = FlyOrbit
+
+							ParamInfo
+
+							{
+
+								type = Waypoint
+
+								value = 0
+
+								name = Waypoint
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 15500
+
+								name = Radius
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1000,25000)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 7500
+
+								name = Altitude
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1500,8000)
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = UnitGroup
+
+							targetID = 101
+
+							eventName = Fly Orbit
+
+							methodName = FlyOrbit
+
+							ParamInfo
+
+							{
+
+								type = Waypoint
+
+								value = 0
+
+								name = Waypoint
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 15500
+
+								name = Radius
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1000,25000)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 7500
+
+								name = Altitude
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1500,8000)
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = UnitGroup
+
+							targetID = 102
+
+							eventName = Fly Orbit
+
+							methodName = FlyOrbit
+
+							ParamInfo
+
+							{
+
+								type = Waypoint
+
+								value = 0
+
+								name = Waypoint
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 15500
+
+								name = Radius
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1000,25000)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 7500
+
+								name = Altitude
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1500,8000)
+
+								}
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = System
+
+							targetID = 0
+
+							eventName = Radio Message
+
+							methodName = RadioMessage
+
+							ParamInfo
+
+							{
+
+								type = VTSAudioReference
+
+								value = j4\mothershipDestroyed.ogg
+
+								name = Audio
+
+							}
+
+						}
+
+						EventTarget
+
+						{
+
+							targetType = Unit
+
+							targetID = 1
+
+							eventName = Disengage Fighters
+
+							methodName = DisengageFighters
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 6000
+
+								name = Radius
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (1000,15000)
+
+								}
+
+							}
+
+							ParamInfo
+
+							{
+
+								type = System.Single
+
+								value = 2250
+
+								name = Altitude
+
+								ParamAttrInfo
+
+								{
+
+									type = MinMax
+
+									data = (150,9000)
+
+								}
+
+							}
+
+						}
+
+					}
+
+				}
+
+				fields
+
+				{
+
+					targets = 1;
+
+					minRequired = 1
+
+					perUnitReward = 0
+
+					fullCompleteBonus = 0
+
+				}
+
+			}
+
+		}
+
+		StaticObjects
+
+		{
+
+		}
+
+		Briefing
+
+		{
+
+			BRIEFING_NOTE
+
+			{
+
+				text = Happy Independence day!
+
+				imagePath = j4\fireworks.jpg
+
+				audioClipPath = 
+
+			}
+
+			BRIEFING_NOTE
+
+			{
+
+				text = An unidentified flying object has been detected over the island.  It appears to be giving off the same signals as those recorded near the recent attacks on mainland cities, so we''re assuming hostility.  Find it and destroy it at all cost.
+
+				imagePath = TheIsland\Mission5\ti-m5_img_island.png
+
+				audioClipPath = 
+
+			}
+
+		}
+
+		ResourceManifest
+
+		{
+
+			0 = j4\intro.ogg
+
+			1 = j4\objectSpotted.ogg
+
+			2 = j4\whatIsThatThing.ogg
+
+			3 = j4\getReadyForCombat.ogg
+
+			4 = j4\radarOffline.ogg
+
+			5 = j4\openingAtBottom.ogg
+
+			6 = j4\mothershipDestroyed.ogg
+
+			7 = j4\fireworks.jpg
+
+			8 = TheIsland\Mission5\ti-m5_img_island.png
+
+		}
+
+	}
+
+	'
+    image: {fileID: 2800000, guid: 6c8d4b8e810bf3f49ab36a5f7e2a9d7f, type: 3}
+    images:
+    - {fileID: 2800000, guid: 557b8d4af4e3b924d9c6c80e88f6cd57, type: 3}
+    - {fileID: 2800000, guid: c852f2c7548bb3441b572501f2696ffc, type: 3}
+    imagePaths:
+    - j4\fireworks.jpg
+    - TheIsland\Mission5\ti-m5_img_island.png
+    audioClips:
+    - {fileID: 8300000, guid: 10288a63c6d62c147b3cae7b2f2f3ea7, type: 3}
+    - {fileID: 8300000, guid: e68f83affdfff8d4195918abd75d4788, type: 3}
+    - {fileID: 8300000, guid: 6c61195280cc2b544af743ebc920c211, type: 3}
+    - {fileID: 8300000, guid: 06fadd722cdab5740b128a020726ed6e, type: 3}
+    - {fileID: 8300000, guid: 72d559effd6325241aa7a3b697c0a1e4, type: 3}
+    - {fileID: 8300000, guid: 95aa2ded5d71bd84aa31a5e016385ad5, type: 3}
+    - {fileID: 8300000, guid: 9c1067c01c0e99647882b2859a7056d7, type: 3}
+    audioClipPaths:
+    - j4\intro.ogg
+    - j4\objectSpotted.ogg
+    - j4\whatIsThatThing.ogg
+    - j4\getReadyForCombat.ogg
+    - j4\radarOffline.ogg
+    - j4\openingAtBottom.ogg
+    - j4\mothershipDestroyed.ogg
+    videoClips: []
+    videoClipPaths: []
+  vtMaps: []
+  campaignLivery: {fileID: 0}
+  campaignLiveryOpFor: {fileID: 0}
+  perVehicleLiveries: []
+  isStandaloneScenarios: 0
+  requireDLCs:

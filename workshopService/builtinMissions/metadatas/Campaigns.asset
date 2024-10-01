@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6eab3de3b40f1b3611555dc0e7d37c7, type: 3}
+  m_Name: Campaigns
+  m_EditorClassIdentifier:
+  campaigns:
+  - {fileID: 11400000, guid: f9e2e7d4368a7f04587faa37f7b7a2c4, type: 2}
+  - {fileID: 11400000, guid: 15cb1ae3cb636914296e66c00b01e630, type: 2}
+  - {fileID: 11400000, guid: 779b2d623e0774e4abd75dae8d0d7ad4, type: 2}
+  - {fileID: 11400000, guid: 913f2df94a8410f4b92f9aafc27cffba, type: 2}
+  - {fileID: 11400000, guid: 5a69f8d39c8c34b4cbfd9573c7971807, type: 2}
+  - {fileID: 11400000, guid: 1fee552bf7c391949b5067792bc591ed, type: 2}
+  - {fileID: 11400000, guid: 8ae4b67bc9ee48d43b84cfc6962f7daa, type: 2}
+  - {fileID: 11400000, guid: 3672bff4a9246d243a3677cdcfbe36ab, type: 2}
+  - {fileID: 11400000, guid: a07637e4584cc444d9341366b30953bb, type: 2}
+  - {fileID: 11400000, guid: 4197f98023275a84b8a66789ece9b8f4, type: 2}
+  tutorials:
+  - {fileID: 11400000, guid: acf6050cb7514d54880129907606f4ca, type: 2}
+  - {fileID: 11400000, guid: 2eebe93f578a4fb49952ce0b9235a4df, type: 2}
+  - {fileID: 11400000, guid: 23069a47e896a15428ef1157437f5b8a, type: 2}
+  multiplayerCampaigns:
+  - {fileID: 11400000, guid: 5370c545ce50db04ca332e739469f505, type: 2}
+  - {fileID: 11400000, guid: d653e1bd46e177b409be45ab8763556b, type: 2}
+  - {fileID: 11400000, guid: 32bb8b2c6095641408df7875d822a7cd, type: 2}
+  - {fileID: 11400000, guid: 99c7f6c65903f8c4f8d462265023ceea, type: 2}
+  - {fileID: 11400000, guid: f4befdb845898774f9b603cee1e7bfa2, type: 2}

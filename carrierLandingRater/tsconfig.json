@@ -10,8 +10,8 @@
 		"baseUrl": "./src",
 		"lib": ["es2022", "DOM"],
 		"paths": {
-			"serviceLib/*": ["../../MicroserviceArch/serviceLib/dist/*"],
-			"common/*": ["../../VTOLLiveViewerCommon/dist/*"],
+			"serviceLib/*": ["../../../MicroserviceArch/serviceLib/dist/*"],
+			"common/*": ["../../../VTOLLiveViewerCommon/dist/*"],
 		},
 		"plugins": [
 			{ "transform": "typescript-transform-paths" },
@@ -20,7 +20,7 @@
 	},
 	"include": ["src/"],
 	"references": [
-		{ "path": "../MicroserviceArch/serviceLib" },
-		{ "path": "../VTOLLiveViewerCommon" }
+		{ "path": "../../MicroserviceArch/serviceLib" },
+		{ "path": "../../VTOLLiveViewerCommon" }
 	]
 }

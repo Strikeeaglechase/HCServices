@@ -10,18 +10,18 @@
 		"baseUrl": "./src",
 		"lib": ["ES2019"],
 		"paths": {
-			"serviceLib/*": ["../../MicroserviceArch/serviceLib/dist/*"],
-			"common/*": ["../../VTOLLiveViewerCommon/dist/*"],
+			"serviceLib/*": ["../../../MicroserviceArch/serviceLib/dist/*"],
+			"common/*": ["../../../VTOLLiveViewerCommon/dist/*"],
 		},
 		"plugins": [
-			{ "transform": "../MicroserviceArch/transformer/dist/serviceTransformer.js" },
+			{ "transform": "../../MicroserviceArch/transformer/dist/serviceTransformer.js" },
 			{ "transform": "typescript-transform-paths" },
 			{ "transform": "typescript-transform-paths", "afterDeclarations": true },
 		]
 	},
 	"include": ["src/"],
 	"references": [
-		{ "path": "../MicroserviceArch/serviceLib" },
-		// { "path": "../VTOLLiveViewerCommon" }
+		{ "path": "../../MicroserviceArch/serviceLib" },
+		// { "path": "../../VTOLLiveViewerCommon" }
 	]
 }

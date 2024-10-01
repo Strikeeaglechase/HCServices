@@ -1,0 +1,29 @@
+{
+	"name": "tacviewService",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"prepare": "ts-patch install -s",
+		"build": "npx tsc"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"dotenv": "^16.0.1",
+		"three": "^0.168.0",
+		"ts-node": "^10.9.1",
+		"typescript": "^5.3.3",
+		"typescript-transform-paths": "^3.4.6",
+		"unzipper": "^0.10.14",
+		"uuid": "^8.3.2"
+	},
+	"devDependencies": {
+		"@types/node": "^20.5.0",
+		"@types/unzipper": "^0.10.7",
+		"@types/uuid": "^8.3.4",
+		"ts-patch": "^3.0.1"
+	}
+}

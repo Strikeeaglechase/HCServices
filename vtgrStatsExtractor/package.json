@@ -1,0 +1,37 @@
+{
+	"name": "substrate-bot",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"prepare": "ts-patch install -s",
+		"build": "npx tsc"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"archiver": "^5.3.1",
+		"cli-progress": "^3.12.0",
+		"clui": "^0.3.6",
+		"esm": "^3.2.25",
+		"get-cursor-position": "^2.0.0",
+		"ts-node": "^10.9.1",
+		"typescript": "^5.0.0",
+		"typescript-transform-paths": "^3.4.6",
+		"unzipper": "^0.10.14",
+		"uuid": "^9.0.0",
+		"ws": "^8.14.2"
+	},
+	"devDependencies": {
+		"@types/archiver": "^5.3.2",
+		"@types/cli-progress": "^3.11.5",
+		"@types/cors": "^2.8.13",
+		"@types/jsonwebtoken": "^9.0.2",
+		"@types/node": "^18.11.9",
+		"@types/unzipper": "^0.10.6",
+		"@types/uuid": "^9.0.2",
+		"ts-patch": "^3.0.1"
+	}
+}

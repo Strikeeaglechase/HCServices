@@ -1,5 +1,5 @@
 import { RPCPacket } from "common/rpc.js";
-import { RawPlayerInfo, VTGRHeader, VTGRMetadata } from "common/shared.js";
+import { CURRENT_VTGR_METADATA_VERSION, RawPlayerInfo, VTGRHeader, VTGRMetadata } from "common/shared.js";
 import express from "express";
 import fs from "fs";
 import path from "path";
@@ -81,6 +81,7 @@ class GameDataManager {
 		});
 
 		this.recoverRecordings();
+		this.updateOldMetadata();
 	}
 
 	private async recoverRecordings() {
@@ -105,6 +106,19 @@ class GameDataManager {
 		await Promise.all(proms);
 	}
 
+	private async updateOldMetadata() {
+		const headers = await DBService.getAllRecordedLobbies();
+		const needsUpdating = headers.filter(h => !h.info?.metadata?.version || h.info.metadata.version != CURRENT_VTGR_METADATA_VERSION);
+		console.log(`Found ${needsUpdating.length} recordings that need metadata updating`);
+
+		for (let i = 0; i < needsUpdating.length; i++) {
+			const header = needsUpdating[i];
+			await this.extractLobbyMetadata(header);
+
+			console.log(`Updated metadata for ${header.id} (${i + 1}/${needsUpdating.length})`);
+		}
+	}
+
 	public async restartRecorder(lobbyId: string) {
 		const recorder = this.recorders[lobbyId];
 		if (!recorder) return;
@@ -123,10 +137,13 @@ class GameDataManager {
 			id: header.id,
 			players: [],
 			netInstantiates: 0,
-			totalPackets: 0
+			totalPackets: 0,
+			version: CURRENT_VTGR_METADATA_VERSION,
+			errored: false
 		};
 
 		let currentBuffer = "";
+		let packetsProcessed = 0;
 		packetStream.on("data", (packets: string) => {
 			currentBuffer += packets.toString();
 			const rpcs = currentBuffer.split("\n");
@@ -137,21 +154,23 @@ class GameDataManager {
 				const rpcObj = JSON.parse(rpc);
 				this.maybeUpdateMetadata(metadata, rpcObj);
 			});
-			// const rpcs = packets
-			// 	.toString()
-			// 	.split("\n")
-			// 	.map(p => {
-			// 		if (p.length == 0) return null;
-			// 		return JSON.parse(p);
-			// 	})
-			// 	.filter(p => p != null);
 
-			// rpcs.forEach(rpc => this.maybeUpdateMetadata(metadata, rpc));
+			packetsProcessed += rpcs.length;
 		});
 
 		await new Promise<void>(res => {
 			packetStream.on("close", async () => {
-				await DBService.updateRecordedLobbyMetadata(metadata);
+				if (packetsProcessed == 0) {
+					metadata.errored = true;
+					console.warn(`No packets processed for ${header.id}, marking as errored`);
+				}
+
+				if (packetsProcessed == 0 && header.info.metadata) {
+					console.warn(`No packets processed for ${header.id}, using existing metadata`);
+				} else {
+					await DBService.updateRecordedLobbyMetadata(metadata);
+				}
+
 				console.log(`Metadata extraction for ${header.id} completed, resolved ${metadata.players.length} players`);
 				res();
 			});

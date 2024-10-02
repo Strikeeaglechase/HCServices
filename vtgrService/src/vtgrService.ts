@@ -43,7 +43,7 @@ class VTGRBodyReader {
 		const buffer = Buffer.concat(this.buffers);
 		const chunk = buffer.subarray(0, currentChunkSize);
 
-		const chunkPackets = decompressRpcPackets(chunk);
+		const chunkPackets = decompressRpcPackets(chunk) ?? [];
 
 		for (let i = 0; i < chunkPackets.length; i += this.packetsPerChunk) {
 			const rpcChunk = chunkPackets.slice(i, i + this.packetsPerChunk);
@@ -146,11 +146,18 @@ class VTGRService {
 		}
 
 		const readStream = StorageService.read(`recordings/${replayId}.vtgr`);
-		readStream.pipe(unzipper.Parse()).on("entry", (entry: Entry) => {
-			const fileName = entry.path;
-			if (fileName == "data.bin") new VTGRBodyReader(header, entry, writeStream);
-			else entry.autodrain();
-		});
+		readStream
+			.pipe(unzipper.Parse())
+			.on("entry", (entry: Entry) => {
+				const fileName = entry.path;
+				if (fileName == "data.bin") new VTGRBodyReader(header, entry, writeStream);
+				else entry.autodrain();
+			})
+			.on("close", () => writeStream.end())
+			.on("error", err => {
+				console.error(err);
+				writeStream.end();
+			});
 	}
 
 	private async compressAndFinalize(vtgrHeader: VTGRHeader, fileName: string) {

@@ -1,10 +1,10 @@
 import { createCanvas, Image } from "canvas";
 import { RPCPacket } from "common/rpc.js";
+import { IVector3, Vector } from "common/vector.js";
 import fs from "fs";
 import GIFEncoder from "gifencoder";
 import * as THREE from "three";
 
-import { IVector3, Vector } from "../../VTOLLiveViewerCommon/dist/vector.js";
 import { Parser } from "./parser.js";
 import { Color, ColorValue } from "./renderer/color.js";
 import { Renderer } from "./renderer/renderer.js";

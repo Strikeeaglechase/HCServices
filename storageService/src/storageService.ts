@@ -56,7 +56,14 @@ class StorageService {
 	}
 
 	@ReadStream
-	read(stream: Writable, key: string) {
+	async read(stream: Writable, key: string) {
+		const exists = await this.storage.exists(key);
+		if (!exists) {
+			stream.end();
+			console.error(`Requested file ${key} does not exist`);
+			return;
+		}
+
 		this.storage.downloadStream(key, stream);
 	}
 

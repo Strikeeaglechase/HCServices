@@ -81,7 +81,7 @@ class GameDataManager {
 		});
 
 		this.recoverRecordings();
-		this.updateOldMetadata();
+		// this.updateOldMetadata();
 	}
 
 	private async recoverRecordings() {

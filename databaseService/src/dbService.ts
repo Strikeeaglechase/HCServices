@@ -1,4 +1,4 @@
-import { DbUserEntry, HCUser, RecordedLobbyPacket, ServiceCallMetrics, UserScopes, VTGRHeader, VTGRMetadata } from "common/shared.js";
+import { AuthType, DbUserEntry, HCUser, RecordedLobbyPacket, ServiceCallMetrics, UserScopes, VTGRHeader, VTGRMetadata } from "common/shared.js";
 import { Callable, ReadStream } from "serviceLib/serviceHandler.js";
 import { Writable } from "stream";
 import { v4 as uuidv4 } from "uuid";
@@ -99,6 +99,11 @@ class DBService {
 	@Callable
 	public async createUser(user: DbUserEntry): Promise<void> {
 		await this.users.add(user);
+	}
+
+	@Callable
+	public async appendUserLoginHistory(id: string, loginTime: number, ip: string, authType: AuthType) {
+		this.users.collection.updateOne({ id: id }, { $push: { authHistory: { type: authType, time: loginTime, ip: ip } } });
 	}
 
 	@Callable

@@ -1,5 +1,5 @@
 import { spawn } from "child_process";
-import { MissionInfo, Team, Vector3 } from "common/shared.js";
+import { MissionInfo, PhoneticLetters, Team, Vector3 } from "common/shared.js";
 import cors from "cors";
 import express from "express";
 import fs from "fs";
@@ -94,6 +94,11 @@ class WorkshopService {
 		buildBuiltinFile();
 		this.builtinMissionInfo = JSON.parse(fs.readFileSync(`${this.basePath}/builtins.json`, "ascii"));
 		this.steamdbLog = fs.createWriteStream(`${this.basePath}/steamdb.log`, { flags: "a" });
+
+		// On startup delete any leftover media files
+		console.log(`Deleting leftover media files`);
+		this.recursivelyDeleteUselessMedia(`${this.basePath}/steamapps/workshop/content/${VTOL_ID}`);
+		console.log(`Deleting leftover media files complete`);
 
 		this.clearSteamCache();
 		this.setupRoutes();
@@ -285,11 +290,15 @@ class WorkshopService {
 		const unitSpawns: Node<MPSpawnNodeValues>[] = mission.getNodes("UnitSpawner");
 		const alliedSpawns = unitSpawns.filter(node => node.getValue("unitID") == "MultiplayerSpawn");
 		const enemySpawns = unitSpawns.filter(node => node.getValue("unitID") == "MultiplayerSpawnEnemy");
-		const playerSpawns: { name: string; id: number }[] = [];
+		const playerSpawns: { name: string; id: number; vehicle: string; unitGroup: string; slotCount: number }[] = [];
 		const processSpawn = (spawn: Node<MPSpawnNodeValues>) => {
+			const ufs = spawn.getNode("UnitFields");
 			playerSpawns.push({
 				id: spawn.getValue<number>("unitInstanceID"),
-				name: spawn.getValue<string>("unitID")
+				name: spawn.getValue<string>("unitID"),
+				vehicle: ufs.getValue("vehicle"),
+				unitGroup: ufs.getValue("unitGroup"),
+				slotCount: ufs.getValue("slots") ?? 1
 			});
 		};
 		alliedSpawns.forEach(processSpawn);
@@ -313,6 +322,22 @@ class WorkshopService {
 			[Team.Unknown]: 0
 		};
 
+		const alliedUnitGroupIds: Partial<Record<PhoneticLetters, number[]>> = {};
+		const enemyUnitGroupIds: Partial<Record<PhoneticLetters, number[]>> = {};
+		const unitGroupsNode = mission.getNode("UNITGROUPS");
+		const alliedUnitGroups = unitGroupsNode.getNode("ALLIED");
+		const enemyUnitGroups = unitGroupsNode.getNode("ENEMY");
+
+		Object.keys(PhoneticLetters).forEach((key: keyof typeof PhoneticLetters) => {
+			const letter = PhoneticLetters[key];
+			if (!isNaN(Number(key))) return;
+
+			const alliedGroup = alliedUnitGroups?.getValue(key);
+			const enemyGroup = enemyUnitGroups?.getValue(key);
+			if (alliedGroup) alliedUnitGroupIds[letter] = (alliedGroup as number[]).slice(1);
+			if (enemyGroup) enemyUnitGroupIds[letter] = (enemyGroup as number[]).slice(1);
+		});
+
 		const missionData: MissionInfo = {
 			id: mission.getValue<string>("scenarioID"),
 			name: mission.getValue<string>("scenarioName"),
@@ -323,8 +348,11 @@ class WorkshopService {
 			spawns: playerSpawns,
 			allUnitSpawns: allUnitSpawns,
 			waypoints: waypoints,
-			bullseye: bullseye
+			bullseye: bullseye,
+			alliedUnitGroupIds: alliedUnitGroupIds,
+			enemyUnitGroupIds: enemyUnitGroupIds
 		};
+
 		this.missionDataCache[`${workshopId}/${missionId}`] = { data: missionData, time: Date.now() };
 
 		return missionData;
@@ -382,11 +410,36 @@ class WorkshopService {
 				parts.forEach(part => {
 					// if (part.trim().length > 0) console.log(`SteamCMD: ${part}`);
 					if (part.includes("Success. Downloaded ")) {
+						this.deleteUselessMedia(id);
 						res();
 						hasRes = true;
 					}
 				});
 			});
+		});
+	}
+
+	private deleteUselessMedia(wsId: string) {
+		const path = `${this.basePath}/steamapps/workshop/content/${VTOL_ID}/${wsId}`;
+		if (!fs.existsSync(path)) {
+			console.warn(`Path ${path} does not exist. Skipping media deletion`);
+			return;
+		}
+
+		this.recursivelyDeleteUselessMedia(path);
+	}
+
+	private recursivelyDeleteUselessMedia(path: string) {
+		const deleteExtensions = [".ogg", ".wav", ".mp3", ".mp4"];
+		const files = fs.readdirSync(path);
+		files.forEach(file => {
+			const filePath = path + "/" + file;
+			if (fs.statSync(filePath).isDirectory()) {
+				this.recursivelyDeleteUselessMedia(filePath);
+			} else if (deleteExtensions.some(ext => file.endsWith(ext))) {
+				console.log(`Deleting media file ${filePath}`);
+				fs.unlinkSync(filePath);
+			}
 		});
 	}
 

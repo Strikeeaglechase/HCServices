@@ -1,8 +1,8 @@
+import { RPCPacket } from "common/rpc.js";
+import { RawPlayerInfo } from "common/shared.js";
 import fs from "fs";
 import * as THREE from "three";
 
-import { RPCPacket } from "../../VTOLLiveViewerCommon/dist/rpc.js";
-import { RawPlayerInfo } from "../../VTOLLiveViewerCommon/dist/shared.js";
 import { VTGRHeader } from "./app.js";
 
 const rad = (deg: number): number => (deg * Math.PI) / 180;

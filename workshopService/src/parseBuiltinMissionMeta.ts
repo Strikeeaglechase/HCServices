@@ -1,4 +1,4 @@
-import { MissionInfo, Team, Vector3 } from "common/shared.js";
+import { MissionInfo, PhoneticLetters, Team, Vector3 } from "common/shared.js";
 import fs from "fs";
 
 import { Node, parse } from "./vtsToJson.js";
@@ -52,11 +52,15 @@ function processMission(mission: Node<CustomScenarioValues>) {
 	const unitSpawns: Node<MPSpawnNodeValues>[] = mission.getNodes("UnitSpawner");
 	const alliedSpawns = unitSpawns.filter(node => node.getValue("unitID") == "MultiplayerSpawn");
 	const enemySpawns = unitSpawns.filter(node => node.getValue("unitID") == "MultiplayerSpawnEnemy");
-	const playerSpawns: { name: string; id: number }[] = [];
+	const playerSpawns: { name: string; id: number; vehicle: string; unitGroup: string; slotCount: number }[] = [];
 	const processSpawn = (spawn: Node<MPSpawnNodeValues>) => {
+		const ufs = spawn.getNode("UnitFields");
 		playerSpawns.push({
 			id: spawn.getValue<number>("unitInstanceID"),
-			name: spawn.getValue<string>("unitID")
+			name: spawn.getValue<string>("unitID"),
+			vehicle: ufs.getValue("vehicle"),
+			unitGroup: ufs.getValue("unitGroup"),
+			slotCount: ufs.getValue("slots") ?? 1
 		});
 	};
 	alliedSpawns.forEach(processSpawn);
@@ -80,6 +84,22 @@ function processMission(mission: Node<CustomScenarioValues>) {
 		[Team.Unknown]: 0
 	};
 
+	const alliedUnitGroupIds: Partial<Record<PhoneticLetters, number[]>> = {};
+	const enemyUnitGroupIds: Partial<Record<PhoneticLetters, number[]>> = {};
+	const unitGroupsNode = mission.getNode("UNITGROUPS");
+	const alliedUnitGroups = unitGroupsNode.getNode("ALLIED");
+	const enemyUnitGroups = unitGroupsNode.getNode("ENEMY");
+
+	Object.keys(PhoneticLetters).forEach((key: keyof typeof PhoneticLetters) => {
+		const letter = PhoneticLetters[key];
+		if (!isNaN(Number(key))) return;
+
+		const alliedGroup = alliedUnitGroups?.getValue(key);
+		const enemyGroup = enemyUnitGroups?.getValue(key);
+		if (alliedGroup) alliedUnitGroupIds[letter] = (alliedGroup as number[]).slice(1);
+		if (enemyGroup) enemyUnitGroupIds[letter] = (enemyGroup as number[]).slice(1);
+	});
+
 	const missionData: MissionInfo = {
 		id: mission.getValue<string>("scenarioID"),
 		name: mission.getValue<string>("scenarioName"),
@@ -90,7 +110,9 @@ function processMission(mission: Node<CustomScenarioValues>) {
 		spawns: playerSpawns,
 		allUnitSpawns: allUnitSpawns,
 		waypoints: waypoints,
-		bullseye: bullseye
+		bullseye: bullseye,
+		alliedUnitGroupIds: alliedUnitGroupIds,
+		enemyUnitGroupIds: enemyUnitGroupIds
 	};
 	console.log(`Processed ${missionData.name} (${missionData.id})`);
 	missionDatas.push(missionData);

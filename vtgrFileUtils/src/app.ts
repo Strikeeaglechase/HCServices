@@ -1,9 +1,8 @@
+import { decompressRpcPackets } from "common/compression/vtcompression.js";
+import { RPCPacket } from "common/rpc.js";
 import fs from "fs";
 import { Readable } from "stream";
 import unzipper, { Entry } from "unzipper";
-
-import { decompressRpcPackets } from "../../VTOLLiveViewerCommon/dist/compression/vtcompression.js";
-import { RPCPacket } from "../../VTOLLiveViewerCommon/src/rpc.js";
 
 const targetFile = "../input/CAW requal-2024-05-01T13_47_58.723Z.vtgr";
 

@@ -1,7 +1,7 @@
 import { Logger } from "common/logger.js";
 import { AuthType, DbUserEntry, HCUser, UserScopes } from "common/shared.js";
 import cors from "cors";
-import express, { Response } from "express";
+import express, { Request, Response } from "express";
 import jwt from "jsonwebtoken";
 import fetch from "node-fetch";
 import { DBService } from "serviceLib/serviceDefs/DBService.js";
@@ -138,7 +138,8 @@ class AuthenticationManager {
 				scopes: [UserScopes.USER],
 				lastLoginTime: Date.now(),
 				createdAt: Date.now(),
-				lastUserObject: user
+				lastUserObject: user,
+				authHistory: []
 			};
 			user.scopes = newUser.scopes;
 			DBService.createUser(newUser);
@@ -169,9 +170,11 @@ class AuthenticationManager {
 		return token;
 	}
 
-	public async handleUserLoginRequest(user: UserObject, authType: AuthType, res: Response) {
+	public async handleUserLoginRequest(user: UserObject, authType: AuthType, req: Request, res: Response) {
 		const token = await this.createJWT(user, authType);
-		console.log(cookieOpts);
+		// console.log(cookieOpts);
+		const ip = req.headers["cf-connecting-ip"] ? req.headers["cf-connecting-ip"] : req.ip;
+		DBService.appendUserLoginHistory(user.steamid, Date.now(), ip.toString(), authType);
 		res.cookie(cookieKey, token, cookieOpts).redirect(process.env.CLIENT_URL);
 		// res.cookie(cookieKey, token, ).redirect(process.env.CLIENT_URL);
 	}

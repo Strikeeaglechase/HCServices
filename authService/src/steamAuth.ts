@@ -38,7 +38,7 @@ class SteamAuthManager {
 			try {
 				const user = await this.steam.authenticate(req);
 				Logger.info(`User ${user.username} (${user.steamid}) authenticated via Steam.`);
-				this.authenticationManager.handleUserLoginRequest(user, AuthType.STEAM, res);
+				this.authenticationManager.handleUserLoginRequest(user, AuthType.STEAM, req, res);
 			} catch (err) {
 				Logger.error(`Exception while trying to authenticate user: ${err.message}`);
 				Logger.error(err);

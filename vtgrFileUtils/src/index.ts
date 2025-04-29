@@ -1,6 +1,6 @@
+import { Logger } from "common/logger.js";
 import { config } from "dotenv";
 
-import { Logger } from "../../VTOLLiveViewerCommon/dist/logger.js";
 import { run } from "./app.js";
 
 config();

@@ -17,8 +17,8 @@ function vector(input: string) {
 		z: parseFloat(values[2])
 	};
 }
-function isVector(v: any): v is { x: number, y: number, z: number; } {
-	return (v as { x: number; }).x != undefined;
+function isVector(v: any): v is { x: number; y: number; z: number } {
+	return (v as { x: number }).x != undefined;
 }
 const validNumbers = "1234567890.-";
 const isNumric = (str: string) => str.split("").every(c => validNumbers.includes(c));
@@ -30,8 +30,12 @@ function parseValue(input: string): Value {
 	if (input === "") return "";
 	if (isNumric(input)) return parseFloat(input);
 	if (input[0] == "(" && input[input.length - 1] == ")") return vector(input);
-	if (input.endsWith(";") && isNumric(input.split(";")[0])) return input.split(";").map(v => parseFloat(v));
-	if (input.endsWith(";")) return input.split(";");
+	if (input.endsWith(";") && isNumric(input.split(";")[0]))
+		return input
+			.split(";")
+			.map(v => parseFloat(v))
+			.slice(0, -1);
+	if (input.endsWith(";")) return input.split(";").slice(0, -1);
 	return input;
 }
 function saveValue(input: Value): string {
@@ -44,11 +48,17 @@ function saveValue(input: Value): string {
 	return input.toString();
 }
 
-type Value = string | number | boolean | string[] | {
-	x: number;
-	y: number;
-	z: number;
-} | number[];
+type Value =
+	| string
+	| number
+	| boolean
+	| string[]
+	| {
+			x: number;
+			y: number;
+			z: number;
+	  }
+	| number[];
 
 class Node<ValueKey extends string = string> {
 	name: string;

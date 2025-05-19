@@ -61,6 +61,8 @@ class GameDataRecorder {
 		DBService.addRecordedLobbyPacket(initPacket);
 		this.packet(resyncPackets);
 		console.log(`Game data recorder for ${this} initialized (${this.recordingNumber}) - ${this.isStopped}`);
+
+		Application.assignLobbyReplayId(this.gameId, this.recordingId);
 	}
 
 	public async stop() {

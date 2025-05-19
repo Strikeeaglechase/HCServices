@@ -113,7 +113,8 @@ class VTGRService {
 		const header: VTGRHeader = {
 			info: info,
 			id: info.recordingId,
-			chunks: chunks
+			chunks: chunks,
+			includesMission: true
 		};
 		console.log(`Compressing and finalizing file for ${recordingId}`);
 		await this.compressAndFinalize(header, recordingPath + info.recordingId);
@@ -175,6 +176,34 @@ class VTGRService {
 		const header = JSON.stringify(vtgrHeader);
 		archive.append(header, { name: "header.json" });
 		archive.append(input, { name: "data.bin" });
+
+		// Fetch mission and map
+		const missionVts = await WorkshopService.getRawVts(vtgrHeader.info.workshopId, vtgrHeader.info.missionId);
+		if (missionVts) {
+			archive.append(missionVts, { name: "mission.vts" });
+		} else {
+			console.warn(`No mission vts found for ${vtgrHeader.info.workshopId}/${vtgrHeader.info.missionId}`);
+		}
+
+		// const mapImages: { name: string; data: Buffer }[] = [];
+		let i = 0;
+		while (true) {
+			const mapImage = await WorkshopService.getMapImage(
+				vtgrHeader.info.workshopId,
+				vtgrHeader.info.map,
+				i.toString(),
+				vtgrHeader.info.workshopId == "built-in"
+			);
+
+			if (mapImage == null) break;
+
+			const buf = Buffer.from(mapImage, "base64");
+			archive.append(buf, { name: `map_${i}.png` });
+			console.log(` - Found map image ${i} (${buf.length} bytes)`);
+
+			i++;
+		}
+
 		archive.finalize();
 
 		// Upload header

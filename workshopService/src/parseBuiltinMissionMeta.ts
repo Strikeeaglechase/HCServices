@@ -47,8 +47,8 @@ type MPSpawnNodeValues =
 	| "editorPlacementMode"
 	| "spawnFlags";
 
-const missionDatas: MissionInfo[] = [];
-function processMission(mission: Node<CustomScenarioValues>) {
+const missionDatas: { info: MissionInfo; rawVts: string }[] = [];
+function processMission(mission: Node<CustomScenarioValues>, rawVts: string) {
 	const unitSpawns: Node<MPSpawnNodeValues>[] = mission.getNodes("UnitSpawner");
 	const alliedSpawns = unitSpawns.filter(node => node.getValue("unitID") == "MultiplayerSpawn");
 	const enemySpawns = unitSpawns.filter(node => node.getValue("unitID") == "MultiplayerSpawnEnemy");
@@ -115,7 +115,7 @@ function processMission(mission: Node<CustomScenarioValues>) {
 		enemyUnitGroupIds: enemyUnitGroupIds
 	};
 	console.log(`Processed ${missionData.name} (${missionData.id})`);
-	missionDatas.push(missionData);
+	missionDatas.push({ info: missionData, rawVts: rawVts });
 }
 
 function buildBuiltinFile() {
@@ -144,7 +144,7 @@ function buildBuiltinFile() {
 
 				const mission = parse<CustomScenarioValues>(str.map(str => str.trim()));
 				if (mission.getValue("multiplayer")) {
-					processMission(mission);
+					processMission(mission, str.join("\n"));
 					// fs.writeFileSync(`../metaOut/${mission.getValue("campaignID")}-${mission.getValue("scenarioID")}.vts`, str.join("\n"));
 				}
 

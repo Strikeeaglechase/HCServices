@@ -76,9 +76,9 @@ const mission_data_cache_time = 1000 * 60 * 60; // 1 hour
 class WorkshopService {
 	private api: express.Express;
 	private basePath = path.join(process.cwd(), "..");
-	private builtinMissionInfo: MissionInfo[];
+	private builtinMissionInfo: { info: MissionInfo; rawVts: string }[];
 	private workshopDownloadCache: Record<string, number> = {};
-	private missionDataCache: Record<string, { data: MissionInfo; time: number }> = {};
+	private missionDataCache: Record<string, { info: MissionInfo; rawVts: string; time: number }> = {};
 
 	private workshopDownloadQueue: DownloadJob[] = [];
 	private steamdbLog: fs.WriteStream;
@@ -156,23 +156,20 @@ class WorkshopService {
 		setTimeout(() => this.runWorkshopQueue(), 100);
 	}
 
-	private readMaybeEncryptedText(content: string) {
-		const parseRegular = (text: string) => parse<CustomScenarioValues>(text.split("\t").join("").split("\n"));
-		const parseEncrypt = (text: string) =>
-			parseRegular(
-				text
-					.split("")
-					.map(c => String.fromCharCode((c.charCodeAt(0) - 88) % 256))
-					.join("")
-			);
-
-		try {
-			const mission = parseRegular(content);
-			if (mission != null) return mission;
-			return parseEncrypt(content);
-		} catch (e) {
-			return parseEncrypt(content);
+	private decryptMaybeEncryptedText(text: string) {
+		if (text.includes("CustomScenario")) {
+			return text
+				.split("")
+				.map(c => String.fromCharCode((c.charCodeAt(0) - 88) % 256))
+				.join("");
 		}
+
+		return text;
+	}
+
+	private parseMaybeEncryptedCustomScenario(content: string) {
+		const decrypted = this.decryptMaybeEncryptedText(content);
+		return parse<CustomScenarioValues>(decrypted.split("\t").join("").split("\n"));
 	}
 
 	private async waitForFile(path: string, timeout: number) {
@@ -216,13 +213,31 @@ class WorkshopService {
 				return res.sendStatus(400);
 			}
 
-			const builtinMission = this.builtinMissionInfo.find(m => m.campaignId == workshopId && m.id == missionId);
-			if (builtinMission) return res.send(builtinMission);
+			const builtinMission = this.builtinMissionInfo.find(m => m.info.campaignId == workshopId && m.info.id == missionId);
+			if (builtinMission) return res.send(builtinMission.info);
 
 			const missionInfo = await this.getMissionInfo(workshopId, missionId);
 			if (!missionInfo) return res.sendStatus(404);
 
 			res.send(missionInfo);
+		});
+
+		this.api.get("/raw_vts", async (req, res) => {
+			const workshopId = req.query.workshopId?.toString(); //2785198049
+			const missionId = decodeURI(req.query.missionId?.toString()); //Dynamic_Liberation_H
+			console.log(`Mission data request for ${workshopId} - ${missionId}`);
+			if (!workshopId || !missionId) {
+				console.warn(`Missing workshopId or missionId (${workshopId} - ${missionId})`);
+				return res.sendStatus(400);
+			}
+
+			const builtinMission = this.builtinMissionInfo.find(m => m.info.campaignId == workshopId && m.info.id == missionId);
+			if (builtinMission) return res.send(builtinMission.rawVts);
+
+			const rawVts = await this.getRawMissionVts(workshopId, missionId);
+			if (!rawVts) return res.sendStatus(404);
+
+			res.send(rawVts);
 		});
 
 		this.api.get("/map/:workshopId/:mapId/:image", async (req, res) => {
@@ -259,14 +274,43 @@ class WorkshopService {
 	}
 
 	@Callable
-	public async getMissionInfo(workshopId: string, missionId: string): Promise<MissionInfo> {
+	public getMapImage(workshopId: string, mapId: string, image: string, isBuiltIn: boolean): string | null {
+		const folderPath = isBuiltIn
+			? `${this.basePath}/builtinMissions/${workshopId.toLowerCase()}/${mapId.toLowerCase()}`
+			: `${this.basePath}/steamapps/workshop/content/${VTOL_ID}/${workshopId}/${mapId}`;
+
+		const imagePath = this.loadMapImage(folderPath, image);
+
+		if (typeof imagePath == "number") return null;
+
+		const file = fs.readFileSync(imagePath, "binary");
+		const base64 = Buffer.from(file, "binary").toString("base64");
+		return base64;
+	}
+
+	@Callable
+	public async getRawVts(workshopId: string, missionId: string): Promise<string> {
+		const builtinMission = this.builtinMissionInfo.find(m => m.info.campaignId == workshopId && m.info.id == missionId);
+		if (builtinMission) return builtinMission.rawVts;
+
+		const rawVts = await this.getRawMissionVts(workshopId, missionId);
+		if (!rawVts) {
+			console.warn(`No raw VTS found for ${workshopId} - ${missionId}`);
+			return null;
+		}
+
+		return rawVts;
+	}
+
+	@Callable
+	public async getRawMissionVts(workshopId: string, missionId: string): Promise<string> {
 		if (this.missionDataCache[`${workshopId}/${missionId}`]) {
 			const cache = this.missionDataCache[`${workshopId}/${missionId}`];
 			const dt = Date.now() - cache.time;
 			if (dt < mission_data_cache_time) {
 				console.log(`Fast return for ${workshopId}/${missionId} as it is cached`);
 				// return res.send(cache.data);
-				return cache.data;
+				return cache.rawVts;
 			}
 		}
 
@@ -286,7 +330,24 @@ class WorkshopService {
 		// I don't know what this `.` check is checking for.
 		// if (workshopId.includes(".") || missionId.includes(".")) return res.sendStatus(400); // This was breaking my mission that had  "1.6" in it?
 		const file = fs.readFileSync(`${this.basePath}/steamapps/workshop/content/${VTOL_ID}/${workshopId}/${missionId}/${missionId}.vtsb`, "binary");
-		const mission = this.readMaybeEncryptedText(file);
+
+		return this.decryptMaybeEncryptedText(file);
+	}
+
+	@Callable
+	public async getMissionInfo(workshopId: string, missionId: string): Promise<MissionInfo> {
+		if (this.missionDataCache[`${workshopId}/${missionId}`]) {
+			const cache = this.missionDataCache[`${workshopId}/${missionId}`];
+			const dt = Date.now() - cache.time;
+			if (dt < mission_data_cache_time) {
+				console.log(`Fast return for ${workshopId}/${missionId} as it is cached`);
+				// return res.send(cache.data);
+				return cache.info;
+			}
+		}
+
+		const file = await this.getRawMissionVts(workshopId, missionId);
+		const mission = this.parseMaybeEncryptedCustomScenario(file); // Really `getRawVts` should decrypt the file, so should always be decrypted at this point
 		const unitSpawns: Node<MPSpawnNodeValues>[] = mission.getNodes("UnitSpawner");
 		const alliedSpawns = unitSpawns.filter(node => node.getValue("unitID") == "MultiplayerSpawn");
 		const enemySpawns = unitSpawns.filter(node => node.getValue("unitID") == "MultiplayerSpawnEnemy");
@@ -353,7 +414,7 @@ class WorkshopService {
 			enemyUnitGroupIds: enemyUnitGroupIds
 		};
 
-		this.missionDataCache[`${workshopId}/${missionId}`] = { data: missionData, time: Date.now() };
+		this.missionDataCache[`${workshopId}/${missionId}`] = { info: missionData, rawVts: file, time: Date.now() };
 
 		return missionData;
 	}

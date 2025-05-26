@@ -157,7 +157,7 @@ class WorkshopService {
 	}
 
 	private decryptMaybeEncryptedText(text: string) {
-		if (text.includes("CustomScenario")) {
+		if (!text.includes("CustomScenario")) {
 			return text
 				.split("")
 				.map(c => String.fromCharCode((c.charCodeAt(0) - 88) % 256))
@@ -347,6 +347,11 @@ class WorkshopService {
 		}
 
 		const file = await this.getRawMissionVts(workshopId, missionId);
+		if (file == null) {
+			console.warn(`No file found for ${workshopId}/${missionId}`);
+			return null;
+		}
+
 		const mission = this.parseMaybeEncryptedCustomScenario(file); // Really `getRawVts` should decrypt the file, so should always be decrypted at this point
 		const unitSpawns: Node<MPSpawnNodeValues>[] = mission.getNodes("UnitSpawner");
 		const alliedSpawns = unitSpawns.filter(node => node.getValue("unitID") == "MultiplayerSpawn");

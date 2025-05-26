@@ -58,40 +58,44 @@ class AuthenticationManager {
 	}
 
 	private async checkForDonors() {
-		const donorsReq = await fetch("https://sso.isan.to/members/1015729793733492756/1070916759932117034");
-		const donors = (await donorsReq.json()) as string[];
+		try {
+			const donorsReq = await fetch("https://sso.isan.to/members/1015729793733492756/1070916759932117034");
+			const donors = (await donorsReq.json()) as string[];
 
-		const users = await Promise.all(
-			donors.map(async donorId => {
-				const req = await fetch("https://hs.vtolvr.live/api/v1/public/users_did/" + donorId);
-				if (req.status !== 200) return null;
-				const hsAccount = (await req.json()) as { id: string; discordId: string };
-				const hcAccount = await DBService.getUser(hsAccount.id);
-				return { hsAccount, hcAccount };
-			})
-		);
+			const users = await Promise.all(
+				donors.map(async donorId => {
+					const req = await fetch("https://hs.vtolvr.live/api/v1/public/users_did/" + donorId);
+					if (req.status !== 200) return null;
+					const hsAccount = (await req.json()) as { id: string; discordId: string };
+					const hcAccount = await DBService.getUser(hsAccount.id);
+					return { hsAccount, hcAccount };
+				})
+			);
 
-		users.forEach(u => {
-			if (!u) return;
-			if (!u.hcAccount) return;
-			if (!u.hcAccount.scopes.includes(UserScopes.DONOR)) {
-				u.hcAccount.scopes.push(UserScopes.DONOR);
-				DBService.updateUserScopes(u.hcAccount.id, u.hcAccount.scopes);
+			users.forEach(u => {
+				if (!u) return;
+				if (!u.hcAccount) return;
+				if (!u.hcAccount.scopes.includes(UserScopes.DONOR)) {
+					u.hcAccount.scopes.push(UserScopes.DONOR);
+					DBService.updateUserScopes(u.hcAccount.id, u.hcAccount.scopes);
 
-				console.log(`Added donor scope to ${u.hcAccount.id}`);
-			}
-		});
+					console.log(`Added donor scope to ${u.hcAccount.id}`);
+				}
+			});
 
-		const donorSteamIds = users.map(u => u?.hcAccount?.id);
-		const hcDonors = await DBService.getUsersWithScope(UserScopes.DONOR);
-		hcDonors.forEach(d => {
-			if (!donorSteamIds.includes(d.id)) {
-				d.scopes = d.scopes.filter(s => s !== UserScopes.DONOR);
-				DBService.updateUserScopes(d.id, d.scopes);
+			const donorSteamIds = users.map(u => u?.hcAccount?.id);
+			const hcDonors = await DBService.getUsersWithScope(UserScopes.DONOR);
+			hcDonors.forEach(d => {
+				if (!donorSteamIds.includes(d.id)) {
+					d.scopes = d.scopes.filter(s => s !== UserScopes.DONOR);
+					DBService.updateUserScopes(d.id, d.scopes);
 
-				console.log(`Removed donor scope from ${d.id}`);
-			}
-		});
+					console.log(`Removed donor scope from ${d.id}`);
+				}
+			});
+		} catch (e) {
+			console.log(`Failed to fetch donors: ${e}`);
+		}
 	}
 
 	public readToken(token: string): HCUser | null {

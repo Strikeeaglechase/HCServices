@@ -30,15 +30,21 @@ class StorageService {
 				.split("")
 				.filter(c => allowableChars.test(c))
 				.join("");
-			console.log(req.query.file, fileName);
+			// console.log(req.query.file, fileName);
 			const fileNameRegex = new RegExp(`^${fileName}$`);
 			const downloadStream = await this.storage.getDownloadStream(req.query.key);
 			downloadStream
 				.pipe(unzipper.ParseOne(fileNameRegex).on("error", err => console.error(err)))
 				.pipe(res)
 				.on("error", err => {
-					console.error(err);
-					res.sendStatus(500);
+					if (err.name == "PATTERN_NOT_FOUND") {
+						console.log(`File ${fileName} not found in zip ${req.query.key}`);
+						res.sendStatus(404);
+						return;
+					} else {
+						console.error(err);
+						res.sendStatus(500);
+					}
 				})
 				.on("finish", () => {
 					res.status(200).end();

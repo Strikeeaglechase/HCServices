@@ -11,3 +11,5 @@ steamapps
 *.log
 
 .env
+steamcmd
+builtins.json

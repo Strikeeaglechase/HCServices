@@ -480,6 +480,11 @@ class WorkshopService {
 						res();
 						hasRes = true;
 					}
+
+					if (part.includes("This computer has not been authenticated for your account using Steam Guard")) {
+						console.error("SteamCMD failed due to Steam Guard authentication.");
+						res();
+					}
 				});
 			});
 		});
@@ -496,6 +501,8 @@ class WorkshopService {
 	}
 
 	private recursivelyDeleteUselessMedia(path: string) {
+		if (!fs.existsSync(path)) return;
+
 		const deleteExtensions = [".ogg", ".wav", ".mp3", ".mp4"];
 		const files = fs.readdirSync(path);
 		files.forEach(file => {

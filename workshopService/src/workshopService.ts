@@ -1,5 +1,5 @@
 import { spawn } from "child_process";
-import { MissionInfo, PhoneticLetters, Team, Vector3 } from "common/shared.js";
+import { MissionInfo, MissionSpawnInfo, PhoneticLetters, Team, Vector3 } from "common/shared.js";
 import cors from "cors";
 import express from "express";
 import fs from "fs";
@@ -59,6 +59,27 @@ function decode(value: number, ...rest: any[]) {
 	if (val < 0) val += 256;
 	return val;
 }
+
+function normalizeVehicleName(name: string): string {
+	return name.replaceAll("-", "").replaceAll("/", "");
+}
+
+const vehicleMaxSlotCounts: Record<string, number> = {
+	// Vanilla AC:
+	"AV42C": 1,
+	"FA26B": 1,
+	"F45A": 1,
+
+	// DLC AC:
+	"T55": 2,
+	"EF24G": 2,
+	"AH94": 2,
+
+	// Modding AC:
+	"F16": 1,
+	"A10D": 1,
+	"AH6 Little Bird": 2
+};
 
 interface DownloadJob {
 	id: string;
@@ -356,19 +377,9 @@ class WorkshopService {
 		const unitSpawns: Node<MPSpawnNodeValues>[] = mission.getNodes("UnitSpawner");
 		const alliedSpawns = unitSpawns.filter(node => node.getValue("unitID") == "MultiplayerSpawn");
 		const enemySpawns = unitSpawns.filter(node => node.getValue("unitID") == "MultiplayerSpawnEnemy");
-		const playerSpawns: { name: string; id: number; vehicle: string; unitGroup: string; slotCount: number }[] = [];
-		const processSpawn = (spawn: Node<MPSpawnNodeValues>) => {
-			const ufs = spawn.getNode("UnitFields");
-			playerSpawns.push({
-				id: spawn.getValue<number>("unitInstanceID"),
-				name: spawn.getValue<string>("unitID"),
-				vehicle: ufs.getValue("vehicle"),
-				unitGroup: ufs.getValue("unitGroup"),
-				slotCount: ufs.getValue("slots") ?? 1
-			});
-		};
-		alliedSpawns.forEach(processSpawn);
-		enemySpawns.forEach(processSpawn);
+		const processedAlliedSpawns = alliedSpawns.map(WorkshopService.processSpawn);
+		const processedEnemySpawns = enemySpawns.map(WorkshopService.processSpawn);
+		const playerSpawns: MissionSpawnInfo[] = processedAlliedSpawns.concat(processedEnemySpawns);
 		const allUnitSpawns = unitSpawns.map(node => ({
 			id: node.getValue<number>("unitInstanceID"),
 			name: node.getValue<string>("unitID")
@@ -422,6 +433,32 @@ class WorkshopService {
 		this.missionDataCache[`${workshopId}/${missionId}`] = { info: missionData, rawVts: file, time: Date.now() };
 
 		return missionData;
+	}
+
+	private static processSpawn(spawn: Node<MPSpawnNodeValues>): MissionSpawnInfo {
+		const ufs = spawn.getNode("UnitFields") ?? spawn.getNode("unitFields");
+		const altSpawns = spawn.getNodes("altSpawn");
+
+		const altSpawnInfos = altSpawns.map(WorkshopService.processSpawn);
+		const localSlotCount = +(ufs.getValue("slots") ?? 1);
+		let maxSlotCount = Math.max(...altSpawnInfos.map(s => s.slotCount), localSlotCount);
+		const normName = normalizeVehicleName(ufs.getValue("vehicle"));
+
+		if (!vehicleMaxSlotCounts[normName]) {
+			console.warn(`Unknown vehicle ${normName} for spawn ${spawn.getValue("unitID")}. Not able to determine max slot count.`);
+		} else {
+			maxSlotCount = Math.min(maxSlotCount, vehicleMaxSlotCounts[normName]);
+		}
+
+		return {
+			id: spawn.getValue<number>("unitInstanceID"),
+			name: spawn.getValue<string>("unitID"),
+			vehicle: ufs.getValue("vehicle"),
+			unitGroup: ufs.getValue("unitGroup"),
+			slotCount: maxSlotCount,
+			initialSlotCount: localSlotCount,
+			altSpawns: altSpawnInfos
+		};
 	}
 
 	private downloadWorkshopFile(id: string) {

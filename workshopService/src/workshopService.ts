@@ -292,6 +292,8 @@ class WorkshopService {
 			// console.warn(`No preview image found for ${req.params.workshopId} - ${req.params.missionId}`);
 			res.sendStatus(404);
 		});
+
+		this.api.get("/health", (req, res) => res.sendStatus(200));
 	}
 
 	@Callable

@@ -57,6 +57,8 @@ class StorageService {
 				});
 		});
 
+		this.api.get("/health", (req, res) => res.sendStatus(200));
+
 		this.api.listen(parseInt(process.env.API_PORT), () => {
 			console.log(`Storage API opened on ${process.env.API_PORT}`);
 		});

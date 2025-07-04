@@ -53,6 +53,8 @@ class AuthenticationManager {
 			res.cookie(cookieKey, token, cookieOpts).redirect(process.env.CLIENT_URL);
 		});
 
+		this.api.get("/health", (req, res) => res.sendStatus(200));
+
 		setInterval(() => this.checkForDonors(), 1000 * 60); // Check for donors every minute
 		this.checkForDonors();
 	}

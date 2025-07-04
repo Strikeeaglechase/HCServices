@@ -80,6 +80,8 @@ class GameDataManager {
 			}
 		});
 
+		this.api.get("/health", (req, res) => res.sendStatus(200));
+
 		this.recoverRecordings();
 		// this.updateOldMetadata();
 	}

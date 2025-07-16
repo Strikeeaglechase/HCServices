@@ -17,7 +17,8 @@
 			{ "transform": "../../MicroserviceArch/transformer/dist/serviceTransformer.js" },
 			{ "transform": "typescript-transform-paths" },
 			{ "transform": "typescript-transform-paths", "afterDeclarations": true }
-		]
+		],
+		"skipLibCheck": true
 	},
 	"include": ["src/"],
 	"references": [{ "path": "../../MicroserviceArch/serviceLib" }]

@@ -1,8 +1,7 @@
 import { decompressRpcPackets } from "common/compression/vtcompression.js";
+import { RPCPacket } from "common/rpc.js";
 import { VTGRHeader } from "common/shared.js";
 import { Readable } from "stream";
-
-import { RPCPacket } from "../../VTOLLiveViewerCommon/src/rpc.js";
 
 class VTGRBodyReader {
 	private buffers: Buffer[] = [];

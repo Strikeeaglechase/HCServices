@@ -1,9 +1,9 @@
+import { RPCPacket } from "common/rpc.js";
 import { VTGRHeader } from "common/shared.js";
 import { IVector3 } from "common/vector.js";
 import fs from "fs";
 import unzipper, { Entry } from "unzipper";
 
-import { RPCPacket } from "../../VTOLLiveViewerCommon/src/rpc.js";
 import { VTGRBodyReader } from "./bodyReader.js";
 import { Entity } from "./entity.js";
 import { RPCConsumer } from "./rpcConsumer.js";

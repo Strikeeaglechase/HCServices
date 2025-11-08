@@ -13,10 +13,10 @@
 	"license": "ISC",
 	"dependencies": {
 		"archiver": "^5.3.1",
-		"canvas": "^2.11.2",
 		"cors": "^2.8.5",
 		"express": "^4.19.2",
 		"gifencoder": "^2.0.1",
+		"canvas": "npm:@napi-rs/canvas@latest",
 		"three": "^0.163.0",
 		"ts-node": "^10.9.1",
 		"typescript": "^5.0.0",
@@ -33,5 +33,8 @@
 		"@types/unzipper": "^0.10.6",
 		"@types/uuid": "^9.0.2",
 		"ts-patch": "^3.0.1"
+	},
+	"overrides": {
+		"canvas": "npm:@napi-rs/canvas@latest"
 	}
 }

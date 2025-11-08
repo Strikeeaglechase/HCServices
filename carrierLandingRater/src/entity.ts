@@ -292,7 +292,7 @@ class Entity extends RPCConsumer {
 		// CAW8 logo
 		this.drawLogo(renderer);
 
-		const buf = canvas.toBuffer();
+		const buf = canvas.toBuffer("image/png");
 		const cleanName = (landingCounter++).toString().padStart(2, "0") + "_" + name.replaceAll(" ", "_") + "_" + wire.replaceAll(" ", "_");
 		// fs.writeFileSync(`../landingGraphs/${cleanName}.png`, buf);
 		Parser.instance.resultImages.push({ name: `${cleanName}.png`, data: buf });

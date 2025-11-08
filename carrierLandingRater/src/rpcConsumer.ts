@@ -1,4 +1,5 @@
-import { RPCPacket } from "../../VTOLLiveViewerCommon/src/rpc.js";
+import { RPCPacket } from "common/rpc.js";
+
 import { Parser } from "./parser.js";
 
 interface RPCWaitResolver {

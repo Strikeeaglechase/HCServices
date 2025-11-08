@@ -17,5 +17,5 @@ if (process.env.SERVICE_CONNECTOR_URL) {
 	run();
 } else {
 	const parser = new Parser();
-	parser.initFromFile("../replay4.vtgr");
+	parser.initFromFile("../replay12.vtgr");
 }

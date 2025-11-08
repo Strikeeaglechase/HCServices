@@ -1,5 +1,5 @@
 // const { createCanvas, loadImage } = require("canvas");
-import { Canvas, CanvasRenderingContext2D } from "canvas";
+import { Canvas, SKRSContext2D } from "canvas";
 
 import { Color, ColorValue } from "./color.js";
 
@@ -13,7 +13,7 @@ interface Point {
 
 class Renderer {
 	private canvas: Canvas;
-	public ctx: CanvasRenderingContext2D;
+	public ctx: SKRSContext2D;
 	private transformStack: Array<{ r: number; x: number; y: number }> = [];
 	private prevArgs = { x: 0, y: 0, w: 0, h: 0 };
 

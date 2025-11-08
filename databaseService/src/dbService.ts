@@ -72,9 +72,11 @@ class DBService {
 			filter["info.startTime"]["$lte"] = upperDateBound;
 		}
 
+		console.log(`Executing recorded lobbies stream with filter: ${JSON.stringify(filter)}`);
 		const cursor = this.storedLobbies.collection.find(filter).sort({ "info.startTime": -1 }).limit(REPLAY_REQ_LIMIT);
 
 		await cursor.forEach(doc => {
+			console.log(`Streaming recorded lobby ${doc.info.lobbyName} (${doc.id})`);
 			stream.write(JSON.stringify(doc));
 		});
 

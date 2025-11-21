@@ -85,6 +85,8 @@ class AuthenticationManager {
 				}
 			});
 
+			console.log(`Checked ${users.length} donors from HS SSO`);
+
 			const donorSteamIds = users.map(u => u?.hcAccount?.id);
 			const hcDonors = await DBService.getUsersWithScope(UserScopes.DONOR);
 			hcDonors.forEach(d => {
@@ -97,6 +99,7 @@ class AuthenticationManager {
 			});
 		} catch (e) {
 			console.log(`Failed to fetch donors: ${e}`);
+			console.log(e);
 		}
 	}
 

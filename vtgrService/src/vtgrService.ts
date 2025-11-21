@@ -125,6 +125,7 @@ class VTGRService {
 		// console.log(` - Finished dumping lobby ${info.lobbyName} (${info.lobbyId}) to a file`);
 		fs.unlinkSync(recordingPath + info.recordingId + ".temp");
 
+		console.log(`Firing VTGR finalized event for ${recordingId}`);
 		this.vtgrFileFinalized(lobbyId, header);
 	}
 

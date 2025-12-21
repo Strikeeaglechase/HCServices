@@ -157,9 +157,14 @@ class GameDataRecorder {
 	}
 
 	private packet(packets: RPCPacket[]) {
-		packets.filter(p => p != null).forEach(p => (p.timestamp = Date.now()));
+		// packets.filter(p => p != null).forEach(p => (p.timestamp = Date.now()));
 		// this.packetQueue.push(...packets); Overflow's if too many packets are sent at once, so switch to loop
-		for (let i = 0; i < packets.length; i++) this.packetQueue.push(packets[i]);
+		for (let i = 0; i < packets.length; i++) {
+			if (packets[i].orgTimestamp) packets[i].timestamp = packets[i].orgTimestamp;
+			else packets[i].timestamp = Date.now();
+
+			if (packets[i] != null) this.packetQueue.push(packets[i]);
+		}
 	}
 
 	public toString() {

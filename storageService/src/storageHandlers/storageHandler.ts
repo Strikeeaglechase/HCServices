@@ -13,6 +13,7 @@ abstract class StorageHandler {
 
 	public abstract exists(key: string): Promise<boolean>;
 	public abstract sizeof(key: string): Promise<number>;
+	public abstract getAbsolutePath(key: string): Promise<string>;
 }
 
 export { StorageHandler };

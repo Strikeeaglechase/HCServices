@@ -92,6 +92,10 @@ class FSStorage extends StorageHandler {
 		return stats.size;
 	}
 
+	public async getAbsolutePath(key: string): Promise<string> {
+		return this.dir(key);
+	}
+
 	private dir(dirPath: string) {
 		if (dirPath.includes("/")) dirPath = dirPath.replace("/", "\\");
 		const parts = dirPath.split("\\");

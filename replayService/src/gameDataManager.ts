@@ -7,6 +7,7 @@ import { Application } from "serviceLib/serviceDefs/Application.js";
 import { DBService } from "serviceLib/serviceDefs/DBService.js";
 import { StorageService } from "serviceLib/serviceDefs/StorageService.js";
 import { VTGRService } from "serviceLib/serviceDefs/VTGRService.js";
+import { execFile } from "child_process";
 
 import { GameDataRecorder } from "./gameDataRecorder.js";
 
@@ -132,6 +133,46 @@ class GameDataManager {
 	}
 
 	private async extractLobbyMetadata(header: VTGRHeader) {
+		const absolutePath = await StorageService.getAbsolutePath(`recordings/${header.id}.vtgr`);
+		const executorPath = path.resolve("../../../VTGRMetadataDump/target/release/vtgr_metadata_dump.exe");
+		console.log(`Starting metadata extraction for ${header.id} using external tool`);
+		await new Promise<void>(res => {
+			execFile(executorPath, [absolutePath], async (error, stdout, stderr) => {
+				if (error) {
+					console.error(`Error extracting metadata for ${header.id}: ${error.message}`);
+					const metadata: Partial<VTGRMetadata> = {
+						id: header.id,
+						errored: true
+					};
+
+					await DBService.updateRecordedLobbyMetadata(metadata as VTGRMetadata);
+					res();
+					return;
+				}
+
+				if (stderr) {
+					console.warn(`Stderr from metadata extraction for ${header.id}: ${stderr}`);
+				}
+
+				try {
+					const metadata: VTGRMetadata = JSON.parse(stdout);
+					await DBService.updateRecordedLobbyMetadata(metadata);
+					console.log(`Metadata extraction for ${header.id} completed, resolved ${metadata.players.length} players`);
+					res();
+				} catch (parseError) {
+					console.error(`Error parsing metadata JSON for ${header.id}: ${parseError}`);
+					const metadata: Partial<VTGRMetadata> = {
+						id: header.id,
+						errored: true
+					};
+					await DBService.updateRecordedLobbyMetadata(metadata as VTGRMetadata);
+					res();
+				}
+			});
+		});
+	}
+
+	private async extractLobbyMetadataOld(header: VTGRHeader) {
 		console.log(`Starting metadata extraction for ${header.id}`);
 		const packetStream = VTGRService.readRecordingPackets(header.id);
 
@@ -141,7 +182,8 @@ class GameDataManager {
 			netInstantiates: 0,
 			totalPackets: 0,
 			version: CURRENT_VTGR_METADATA_VERSION,
-			errored: false
+			errored: false,
+			containsSupplementalSensorData: false
 		};
 
 		let currentBuffer = "";
@@ -194,6 +236,10 @@ class GameDataManager {
 					.forEach(p => metadata.players.push({ name: p.pilotName, id: p.steamId }));
 				break;
 			}
+			case "VTOLLobby.RadarDataReport":
+			case "VTOLLobby.IRDataReport":
+				metadata.containsSupplementalSensorData = true;
+				break;
 		}
 	}
 }

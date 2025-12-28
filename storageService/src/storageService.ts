@@ -78,7 +78,7 @@ class StorageService {
 			return;
 		}
 
-		this.storage.downloadStream(key, stream);
+		await this.storage.downloadStream(key, stream);
 	}
 
 	@Callable
@@ -94,6 +94,11 @@ class StorageService {
 	@Callable
 	async exists(key: string): Promise<boolean> {
 		return await this.storage.exists(key);
+	}
+
+	@Callable
+	async getAbsolutePath(key: string): Promise<string> {
+		return await this.storage.getAbsolutePath(key);
 	}
 
 	@Callable

@@ -1,4 +1,4 @@
-import { HCUser } from "common/shared.js";
+import { HCAutoJoinToken, HCUser } from "common/shared.js";
 import { Callable } from "serviceLib/serviceHandler.js";
 
 import { AuthenticationManager } from "./authenticationManager.js";
@@ -24,6 +24,16 @@ class AuthService {
 	@Callable
 	public async cloneJWT(user: HCUser): Promise<string> {
 		return await this.manager.cloneJWT(user);
+	}
+
+	@Callable
+	public createAutoJoinToken(steamId: string): string {
+		return this.manager.createAutoJoinJWT(steamId);
+	}
+
+	@Callable
+	public readAutoJoinToken(token: string): HCAutoJoinToken | null {
+		return this.manager.readAutoJoinJWT(token);
 	}
 }
 

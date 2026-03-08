@@ -1,5 +1,5 @@
 import { Logger } from "common/logger.js";
-import { AuthType, DbUserEntry, HCUser, UserScopes } from "common/shared.js";
+import { AuthType, DbUserEntry, HCAutoJoinToken, HCUser, UserScopes } from "common/shared.js";
 import cors from "cors";
 import express, { Request, Response } from "express";
 import jwt from "jsonwebtoken";
@@ -177,6 +177,21 @@ class AuthenticationManager {
 		const token = jwt.sign(user, process.env.JWT_KEY, { expiresIn: JWT_EXPIRY });
 		Logger.info(`Cloned a JWT for user ${user.username} (${user.id})`);
 		return token;
+	}
+
+	public createAutoJoinJWT(steamId: string) {
+		const token: HCAutoJoinToken = { steamId };
+		const signed = jwt.sign(token, process.env.JWT_KEY, { expiresIn: Infinity });
+		return signed;
+	}
+
+	public readAutoJoinJWT(token: string): HCAutoJoinToken | null {
+		try {
+			const decoded = jwt.verify(token, process.env.JWT_KEY);
+			return decoded as HCAutoJoinToken;
+		} catch (e) {
+			return null;
+		}
 	}
 
 	public async handleUserLoginRequest(user: UserObject, authType: AuthType, req: Request, res: Response) {

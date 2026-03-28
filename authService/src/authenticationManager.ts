@@ -181,7 +181,7 @@ class AuthenticationManager {
 
 	public createAutoJoinJWT(steamId: string) {
 		const token: HCAutoJoinToken = { steamId };
-		const signed = jwt.sign(token, process.env.JWT_KEY, { expiresIn: Infinity });
+		const signed = jwt.sign(token, process.env.JWT_KEY);
 		return signed;
 	}
 

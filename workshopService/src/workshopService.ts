@@ -78,7 +78,8 @@ const vehicleMaxSlotCounts: Record<string, number> = {
 	// Modding AC:
 	"F16": 1,
 	"A10D": 1,
-	"AH6 Little Bird": 2
+	"AH6 Little Bird": 2,
+	"F22A": 1
 };
 
 interface DownloadJob {
